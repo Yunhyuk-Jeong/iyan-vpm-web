@@ -70,6 +70,8 @@ a {
 }
 
 .top-tabs {
+  --tab-indicator-width: 136px;
+  --tab-indicator-x: 6px;
   position: fixed;
   top: 22px;
   left: 50%;
@@ -84,6 +86,22 @@ a {
   backdrop-filter: blur(18px);
   transform: translateX(-50%);
   view-transition-name: top-tabs;
+}
+
+.top-tabs::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 0;
+  z-index: -1;
+  width: var(--tab-indicator-width);
+  height: calc(100% - 12px);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateX(var(--tab-indicator-x));
+  transition:
+    width 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .page--home .transition-source {
@@ -119,7 +137,6 @@ a {
 }
 
 .top-tab--active {
-  background: rgba(255, 255, 255, 0.12);
   color: var(--ink);
 }
 
@@ -342,6 +359,37 @@ h1 {
   gap: 26px;
 }
 
+.js .portfolio-view > .section-kicker,
+.js .portfolio-view > .portfolio-title,
+.js .portfolio-view > .portfolio-copy,
+.js .portfolio-view > .product-grid {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 520ms ease,
+    transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.js .page--portfolio.is-visible .portfolio-view > .section-kicker,
+.js .page--portfolio.is-visible .portfolio-view > .portfolio-title,
+.js .page--portfolio.is-visible .portfolio-view > .portfolio-copy,
+.js .page--portfolio.is-visible .portfolio-view > .product-grid {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.js .page--portfolio.is-visible .portfolio-title {
+  transition-delay: 70ms;
+}
+
+.js .page--portfolio.is-visible .portfolio-copy {
+  transition-delay: 120ms;
+}
+
+.js .page--portfolio.is-visible .product-grid {
+  transition-delay: 170ms;
+}
+
 .section-kicker {
   margin: 0;
   color: var(--blue);
@@ -393,11 +441,52 @@ h1 {
     transform 160ms ease;
 }
 
+.js .product-card {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 420ms ease,
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.js .page--portfolio.is-visible .product-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.js .page--portfolio.is-visible .product-card:nth-child(1) {
+  transition-delay: 190ms;
+}
+
+.js .page--portfolio.is-visible .product-card:nth-child(2) {
+  transition-delay: 220ms;
+}
+
+.js .page--portfolio.is-visible .product-card:nth-child(3) {
+  transition-delay: 250ms;
+}
+
+.js .page--portfolio.is-visible .product-card:nth-child(4) {
+  transition-delay: 280ms;
+}
+
+.js .page--portfolio.is-visible .product-card:nth-child(n + 5) {
+  transition-delay: 310ms;
+}
+
 .product-card:hover {
   background: rgba(255, 255, 255, 0.105);
   border-color: rgba(255, 255, 255, 0.24);
   box-shadow: var(--shadow);
   transform: translateY(-3px);
+}
+
+.js .page--portfolio.is-visible .product-card:hover {
+  transform: translateY(-3px);
+  transition-delay: 0ms;
 }
 
 .product-card:focus-visible {
