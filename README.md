@@ -1,11 +1,11 @@
 # Iyan-Kim / WooYuJin
 
-스크롤 없이 한 화면에 표시되는 개인 링크 페이지입니다.
+A simple one-screen link page for the Iyan VPM repository.
 
 ## Structure
 
-- `index.html`: 페이지 콘텐츠와 4개 링크
-- `styles.css`: 단일 화면 레이아웃, 버튼, 반응형 스타일
+- `index.html`: Page content and links
+- `styles.css`: Single-screen layout, button styles, responsive rules
 
 ## Links
 
