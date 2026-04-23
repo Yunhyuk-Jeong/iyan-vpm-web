@@ -4,8 +4,9 @@ A simple one-screen link page for the Iyan VPM repository.
 
 ## Structure
 
-- `index.html`: Page content and links
-- `styles.css`: Single-screen layout, button styles, responsive rules
+- `index.html`: Home and portfolio sections
+- `styles.css`: Dark theme, tabs, buttons, scroll snap, responsive rules
+- `script.js`: Updates the active navigation tab while scrolling
 
 ## Links
 
