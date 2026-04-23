@@ -14,7 +14,7 @@
   --orange-soft: rgba(242, 140, 40, 0.14);
   --shadow: 0 24px 72px rgba(0, 0, 0, 0.36);
   font-family:
-    "Segoe UI Variable Display", "Aptos Display", Inter, ui-sans-serif,
+    "Plus Jakarta Sans", "Segoe UI Variable Display", Inter, ui-sans-serif,
     system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
@@ -148,12 +148,12 @@ a {
 }
 
 .page--home {
+  position: relative;
   min-height: 100dvh;
   grid-template-rows: 1fr auto 1fr;
 }
 
 .link-hub {
-  position: relative;
   z-index: 1;
   display: grid;
   grid-row: 2;
@@ -193,11 +193,10 @@ h1 {
   gap: 0.24em;
   margin: 0;
   color: var(--ink);
-  font-family:
-    "Segoe UI Variable Display", "Aptos Display", Inter, ui-sans-serif,
+  font-family: "Sora", "Plus Jakarta Sans", "Segoe UI Variable Display", Inter, ui-sans-serif,
     system-ui, sans-serif;
   font-size: 4.7rem;
-  font-weight: 760;
+  font-weight: 700;
   letter-spacing: 0;
   line-height: 1;
   text-shadow: 0 18px 54px rgba(0, 0, 0, 0.34);
@@ -205,14 +204,13 @@ h1 {
 }
 
 .link-hub h1 {
-  font-family:
-    "Google Sans Flex", "Google Sans", "Product Sans", "Segoe UI Variable Display",
-    "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  font-family: "Sora", "Plus Jakarta Sans", "Segoe UI Variable Display", "Segoe UI",
+    ui-sans-serif, system-ui, sans-serif;
   font-size: 7.9rem;
-  font-weight: 840;
-  letter-spacing: 0.01em;
+  font-weight: 620;
+  letter-spacing: -0.01em;
   line-height: 0.94;
-  transform: translateY(-6px);
+  transform: translateY(-4px);
 }
 
 .slash {
@@ -242,11 +240,118 @@ h1 {
   backdrop-filter: blur(18px);
 }
 
+.contact-links {
+  position: fixed;
+  right: 24px;
+  bottom: 92px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.contact-chip {
+  display: inline-flex;
+  width: 56px;
+  height: 56px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
+  color: #ffffff;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.contact-chip:hover {
+  transform: translateY(-2px);
+}
+
+.contact-chip:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.32);
+  outline-offset: 3px;
+}
+
+.contact-chip--discord {
+  border-color: rgba(88, 101, 242, 0.26);
+  background: rgba(88, 101, 242, 0.14);
+  color: #eef1ff;
+}
+
+.contact-chip--discord:hover {
+  background: #5865f2;
+  border-color: transparent;
+  box-shadow: 0 18px 44px rgba(88, 101, 242, 0.28);
+}
+
+.contact-chip--x:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.contact-chip svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 34px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #d7e0ef;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.88;
+  transform: translateX(-50%);
+  transition:
+    color 160ms ease,
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.scroll-cue:hover {
+  color: #ffffff;
+  opacity: 1;
+  transform: translateX(-50%) translateY(2px);
+}
+
+.scroll-cue:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.32);
+  outline-offset: 6px;
+  border-radius: 999px;
+}
+
+.scroll-cue span:last-child {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
 .link-button {
   display: inline-flex;
   min-height: 58px;
   align-items: center;
   justify-content: center;
+  gap: 10px;
   border: 1px solid var(--line);
   border-radius: 10px;
   background: var(--button);
@@ -263,6 +368,13 @@ h1 {
     color 160ms ease,
     transform 160ms ease,
     box-shadow 160ms ease;
+}
+
+.link-button svg {
+  width: 19px;
+  height: 19px;
+  flex: 0 0 auto;
+  fill: currentColor;
 }
 
 .link-button:hover {
@@ -425,13 +537,19 @@ h1 {
 }
 
 .product-card {
+  --card-accent: #ffbb8a;
+  --card-accent-soft: rgba(242, 140, 40, 0.22);
+  --card-accent-border: rgba(242, 140, 40, 0.3);
   display: grid;
+  position: relative;
   gap: 10px;
   overflow: hidden;
   padding: 12px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--card-accent-border);
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.075);
+  background:
+    linear-gradient(180deg, var(--card-accent-soft), rgba(255, 255, 255, 0.075)),
+    rgba(255, 255, 255, 0.075);
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.18);
   backdrop-filter: blur(16px);
   transition:
@@ -439,6 +557,15 @@ h1 {
     border-color 160ms ease,
     box-shadow 160ms ease,
     transform 160ms ease;
+}
+
+.product-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  background: linear-gradient(90deg, var(--card-accent), transparent 78%);
+  opacity: 0.72;
 }
 
 .js .product-card {
@@ -478,9 +605,13 @@ h1 {
 }
 
 .product-card:hover {
-  background: rgba(255, 255, 255, 0.105);
-  border-color: rgba(255, 255, 255, 0.24);
-  box-shadow: var(--shadow);
+  background:
+    linear-gradient(180deg, var(--card-accent-soft), rgba(255, 255, 255, 0.105)),
+    rgba(255, 255, 255, 0.105);
+  border-color: var(--card-accent-border);
+  box-shadow:
+    0 20px 48px rgba(0, 0, 0, 0.28),
+    0 0 0 1px rgba(255, 255, 255, 0.03);
   transform: translateY(-3px);
 }
 
@@ -502,6 +633,27 @@ h1 {
   background: rgba(255, 255, 255, 0.08);
 }
 
+.product-badge {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 0 12px;
+  border: 1px solid rgba(104, 169, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(10, 16, 26, 0.78);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+  color: #dceaff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .product-card span {
   color: var(--muted);
   font-size: 0.9rem;
@@ -511,7 +663,7 @@ h1 {
 }
 
 .product-card h2 {
-  min-height: 3.25em;
+  min-height: 2.45em;
   margin: 0;
   color: var(--ink);
   font-size: 1.12rem;
@@ -519,19 +671,48 @@ h1 {
   padding: 0 4px;
 }
 
-.product-card h2::after {
-  content: "VRChat Gimmick";
-  display: block;
-  margin-top: 8px;
-  color: var(--muted);
-  font-size: 0.78rem;
-  font-weight: 680;
-  letter-spacing: 0.04em;
+.product-type {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  margin: 0 4px 2px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: var(--card-accent-soft);
+  color: var(--card-accent);
+  font-size: 0.74rem;
+  font-weight: 760;
+  letter-spacing: 0.05em;
   line-height: 1;
+  text-transform: uppercase;
 }
 
-.product-card--unity-tool h2::after {
-  content: "Unity Tool";
+.product-card--unity-tool {
+  --card-accent: #8bbdff;
+  --card-accent-soft: rgba(80, 150, 255, 0.18);
+  --card-accent-border: rgba(80, 150, 255, 0.28);
+}
+
+.product-card--latest {
+  box-shadow:
+    0 20px 46px rgba(0, 0, 0, 0.22),
+    0 0 0 1px rgba(104, 169, 255, 0.12),
+    0 0 30px rgba(104, 169, 255, 0.1);
+}
+
+.product-card--latest::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(104, 169, 255, 0.18);
+  pointer-events: none;
+}
+
+.product-card--latest img {
+  box-shadow: 0 18px 42px rgba(104, 169, 255, 0.14);
 }
 
 ::view-transition-old(root),
@@ -625,7 +806,7 @@ h1 {
   }
 
   .link-hub h1 {
-    font-size: 5.15rem;
+    font-size: 5rem;
   }
 
   .link-grid {
@@ -669,7 +850,7 @@ h1 {
   }
 
   .link-hub h1 {
-    font-size: 3.32rem;
+    font-size: 3.22rem;
     letter-spacing: 0.01em;
     transform: translateY(-3px);
   }
@@ -685,6 +866,13 @@ h1 {
     font-size: 0.72rem;
   }
 
+  .scroll-cue {
+    gap: 10px;
+    bottom: 24px;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+  }
+
   .link-hub::before {
     margin-bottom: 16px;
   }
@@ -695,12 +883,29 @@ h1 {
     padding: 7px;
   }
 
+  .contact-links {
+    right: 18px;
+    bottom: 78px;
+    gap: 8px;
+  }
+
+  .contact-chip {
+    width: 50px;
+    height: 50px;
+  }
+
+  .contact-chip svg {
+    width: 22px;
+    height: 22px;
+  }
+
   .product-grid {
     grid-template-columns: 1fr;
   }
 
   .link-button {
     min-height: 52px;
+    gap: 8px;
   }
 
   .mail-button {
@@ -771,6 +976,10 @@ h1 {
 
   .role {
     margin: 14px 0 16px;
+  }
+
+  .scroll-cue {
+    bottom: 14px;
   }
 
   .link-button {
