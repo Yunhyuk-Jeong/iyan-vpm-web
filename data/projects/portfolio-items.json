@@ -1,5 +1,20 @@
 ﻿[
 	{
+		"date": "2026-04-24",
+		"address": "https://zrpt.booth.pm/items/8252804",
+		"shopName": "029 Shop",
+		"productName": "Onsenato",
+		"tag": "VRChat Gimmick",
+		"platform": "VRChat",
+		"category": "Gimmick",
+		"builtWith": "Unity",
+		"description": {
+			"ko": "Onsenato는 Rigidbody와 Fixed Joint 등 유니티 물리 시스템과 PhysBone을 활용하여 상의와 하의를 당기면 메쉬가 교체되며 자연스럽게 벗겨지고, 물리 기반으로 움직이며 잡을 수 있도록 구현한 기믹 시스템입니다.",
+			"en": "Onsenato is a gimmick system that combines Unity physics components such as Rigidbody and Fixed Joint with PhysBone, allowing upper and lower garments to swap meshes and be removed when pulled, while behaving naturally and remaining interactable.",
+			"ja": "OnsenatoはRigidbodyやFixed JointなどのUnity物理システムとPhysBoneを組み合わせ、上衣と下衣を引っ張ることでメッシュが切り替わり自然に脱衣され、物理的に動作しながら掴めるようにしたギミックシステムです。"
+		}
+	},
+	{
 		"date": "2026-04-13",
 		"address": "https://milktank-booth.booth.pm/items/8195979",
 		"shopName": "Studio Iyan",
