@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-label="Project placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#141b28" />
+      <stop offset="100%" stop-color="#0b0d12" />
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2f80ed" />
+      <stop offset="100%" stop-color="#f28c28" />
+    </linearGradient>
+  </defs>
+  <rect width="640" height="640" fill="url(#bg)" />
+  <circle cx="178" cy="174" r="124" fill="#2f80ed" fill-opacity="0.12" />
+  <circle cx="496" cy="454" r="146" fill="#f28c28" fill-opacity="0.1" />
+  <rect x="92" y="92" width="456" height="456" rx="36" fill="#111722" stroke="#ffffff" stroke-opacity="0.08" />
+  <path d="M219 206h202v20H219zm0 64h202v20H219zm0 64h132v20H219z" fill="#ffffff" fill-opacity="0.22" />
+  <rect x="219" y="392" width="124" height="32" rx="16" fill="url(#glow)" fill-opacity="0.86" />
+</svg>

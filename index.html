@@ -34,18 +34,26 @@
 
 <body>
   <header class="top-tabs" aria-label="Primary navigation">
-    <a class="top-tab top-tab--active" href="#home" aria-current="page" data-section-link="home">HOME</a>
-    <a class="top-tab" href="#portfolio" data-section-link="portfolio">PORTFOLIO</a>
+    <a class="top-tab top-tab--active" href="#home" aria-current="page" data-section-link="home"
+      data-i18n="nav.home">HOME</a>
+    <a class="top-tab" href="#portfolio" data-section-link="portfolio" data-i18n="nav.portfolio">PORTFOLIO</a>
   </header>
+
+  <div class="language-switcher" aria-label="Language selector">
+    <button class="language-switcher__button language-switcher__button--active" type="button"
+      data-language="ko">KO</button>
+    <button class="language-switcher__button" type="button" data-language="en">EN</button>
+    <button class="language-switcher__button" type="button" data-language="ja">JA</button>
+  </div>
 
   <main>
     <section class="page page--home" id="home" aria-labelledby="site-title">
       <div class="link-hub">
-        <p class="home-kicker">VRChat Gimmicks &amp; Unity Tools</p>
+        <p class="home-kicker" data-i18n="home.kicker">VRChat Gimmicks &amp; Unity Tools</p>
         <h1 id="site-title">
           <span>Iyan-Kim</span>
         </h1>
-        <p class="role">Game Developer</p>
+        <p class="role" data-i18n="home.role">Game Developer</p>
 
         <nav class="link-grid transition-source" aria-label="Repository and profile links">
           <a class="link-button link-button--blue"
@@ -54,7 +62,7 @@
               <path
                 d="M12 3 4.5 7.2v9.6L12 21l7.5-4.2V7.2L12 3Zm0 2.18 5.43 3.04L12 11.26 6.57 8.22 12 5.18Zm-5.7 4.15 4.95 2.78v5.73L6.3 15.06V9.33Zm6.45 8.51v-5.73l4.95-2.78v5.73l-4.95 2.78Z" />
             </svg>
-            Add to VCC
+            <span data-i18n="home.addVcc">Add to VCC</span>
           </a>
           <a class="link-button link-button--blue"
             href="vcc://vpm/addRepo?url=https://raw.githubusercontent.com/Yunhyuk-Jeong/iyan-vpm/main/vpm.json">
@@ -62,7 +70,7 @@
               <path
                 d="M12 3 4.5 7.2v9.6L12 21l7.5-4.2V7.2L12 3Zm0 2.18 5.43 3.04L12 11.26 6.57 8.22 12 5.18Zm-5.7 4.15 4.95 2.78v5.73L6.3 15.06V9.33Zm6.45 8.51v-5.73l4.95-2.78v5.73l-4.95 2.78Z" />
             </svg>
-            Add to ALCOM
+            <span data-i18n="home.addAlcom">Add to ALCOM</span>
           </a>
           <a class="link-button" href="https://github.com/Yunhyuk-Jeong" rel="noreferrer">
             <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -98,7 +106,7 @@
         </div>
 
         <a class="scroll-cue" href="#portfolio" aria-label="Go to portfolio section">
-          <span>Portfolio</span>
+          <span data-i18n="home.scrollCue">Portfolio</span>
           <span aria-hidden="true">↓</span>
         </a>
       </div>
@@ -106,160 +114,66 @@
 
     <section class="page page--portfolio" id="portfolio" aria-labelledby="portfolio-title">
       <div class="portfolio-view">
-        <p class="section-kicker">Portfolio</p>
-        <h1 class="portfolio-title" id="portfolio-title">VRChat Gimmicks &amp; Unity Tools</h1>
-        <p class="portfolio-copy">
+        <p class="section-kicker" data-i18n="portfolio.kicker">Portfolio</p>
+        <h1 class="portfolio-title" id="portfolio-title" data-i18n="portfolio.title">VRChat Gimmicks &amp; Unity Tools
+        </h1>
+        <p class="portfolio-copy" data-i18n="portfolio.copy">
           A collection of projects, products, gimmicks, and tools I have worked on.
         </p>
 
-        <div class="product-grid transition-source" aria-label="Portfolio products">
-          <a class="product-card product-card--unity-tool product-card--latest"
-            href="https://milktank-booth.booth.pm/items/8195979" rel="noreferrer">
-            <strong class="product-badge">Latest</strong>
-            <img
-              src="https://booth.pximg.net/c/620x620/1d187d21-c0be-4826-a685-9aede7244e4c/i/8195979/969e495d-23b5-4e86-8f38-d4b6cb4b08f3_base_resized.jpg"
-              alt="VSF Avatar Converter thumbnail" loading="lazy" />
-            <span>Studio Iyan</span>
-            <h2>VSF Avatar Converter</h2>
-            <p class="product-type">Unity Tool</p>
-          </a>
-          <a class="product-card" href="https://mashiro-vrc.booth.pm/items/8176127" rel="noreferrer">
-            <img
-              src="https://booth.pximg.net/c/620x620/7a3410b9-cd7b-458a-b08a-c706c6fa8b68/i/8176127/3a14ba5e-53ed-4943-8246-dee8ecca91e6_base_resized.jpg"
-              alt="Preppy Tweed thumbnail" loading="lazy" />
-            <span>mashiro</span>
-            <h2>Preppy Tweed</h2>
-            <p class="product-type">VRChat Gimmick</p>
-          </a>
-          <a class="product-card" href="https://noirvail029.booth.pm/items/8111161" rel="noreferrer">
-            <img
-              src="https://booth.pximg.net/c/620x620/1c6855db-ca4f-4deb-b638-7b36c8b49bdd/i/8111161/0628656d-eab3-4745-af1a-c38f9de39043_base_resized.jpg"
-              alt="ROUGHCUT thumbnail" loading="lazy" />
-            <span>NOIRVAIL</span>
-            <h2>ROUGHCUT</h2>
-            <p class="product-type">VRChat Gimmick</p>
-          </a>
-          <a class="product-card" href="https://vellie.booth.pm/items/7947850" rel="noreferrer">
-            <img
-              src="https://booth.pximg.net/c/620x620/3010b825-ea16-4bf4-8382-806a47c9e0cc/i/7947850/db25d0dd-e5bb-4ca2-abcb-16e6340b0f0d_base_resized.jpg"
-              alt="Urban Trench - Central thumbnail" loading="lazy" />
-            <span>VELLIE</span>
-            <h2>Urban Trench - Central</h2>
-            <p class="product-type">VRChat Gimmick</p>
-          </a>
-          <a class="product-card" href="https://zrpt.booth.pm/items/7952957" rel="noreferrer">
-            <img
-              src="https://booth.pximg.net/c/620x620/0c79c40e-1531-4dae-8bbf-5fb67235555f/i/7952957/16bd6529-73c0-43db-ae78-24bacdc102bf_base_resized.jpg"
-              alt="Lunar Shard thumbnail" loading="lazy" />
-            <span>029 Shop</span>
-            <h2>Lunar Shard</h2>
-            <p class="product-type">VRChat Gimmick</p>
-          </a>
-          <a class="product-card" href="https://velvetsky.booth.pm/items/7923451" rel="noreferrer">
-            <img
-              src="https://booth.pximg.net/c/620x620/9cef401b-c87a-471e-a3b0-fbc62975d452/i/7923451/88c011a2-f89c-4b9d-ac86-2262f1c592e3_base_resized.jpg"
-              alt="Project-KATANA thumbnail" loading="lazy" />
-            <span>Velvet Sky</span>
-            <h2>Project-KATANA</h2>
-            <p class="product-type">VRChat Gimmick</p>
-          </a>
-          <a class="product-card" href="https://foxyplay.booth.pm/items/7850009" rel="noreferrer">
-            <img
-              src="https://booth.pximg.net/c/620x620/bb54b09c-8d71-43ff-b237-47565f9181fa/i/7850009/f300bd4a-2f7c-4056-87b4-8372eab6530f_base_resized.jpg"
-              alt="Night_In thumbnail" loading="lazy" />
-            <span>FOXYPLAY</span>
-            <h2>Night_In</h2>
-            <p class="product-type">VRChat Gimmick</p>
-          </a>
-          <a class="product-card" href="https://zrpt.booth.pm/items/7827998" rel="noreferrer">
-            <img
-              src="https://booth.pximg.net/c/620x620/0c79c40e-1531-4dae-8bbf-5fb67235555f/i/7827998/10804c07-0495-431d-badc-cae67077c292_base_resized.jpg"
-              alt="Neon Tracker thumbnail" loading="lazy" />
-            <span>029 Shop</span>
-            <h2>Neon Tracker</h2>
-            <p class="product-type">VRChat Gimmick</p>
-          </a>
-          <a class="product-card" href="https://minuel.booth.pm/items/7763811" rel="noreferrer">
-            <img
-              src="https://booth.pximg.net/c/620x620/ba2a2144-f010-4dd1-a09e-c0faa40e6386/i/7763811/559f8c5c-d6e6-4f37-bc31-8be4dabf9a24_base_resized.jpg"
-              alt="Silk Kitsune thumbnail" loading="lazy" />
-            <span>MINUEL</span>
-            <h2>Silk Kitsune</h2>
-            <p class="product-type">VRChat Gimmick</p>
-          </a>
-          <a class="product-card" href="https://rinnetokyo.booth.pm/items/7746556" rel="noreferrer">
-            <img
-              src="https://booth.pximg.net/c/620x620/05231431-3203-4c92-a7d2-5305f52af13e/i/7746556/53e043dd-7a8f-4fcd-ba7e-700166940b3f_base_resized.jpg"
-              alt="Tsukiyo no Mai thumbnail" loading="lazy" />
-            <span>RINNE TOKYO</span>
-            <h2>Tsukiyo no Mai</h2>
-            <p class="product-type">VRChat Gimmick</p>
-          </a>
-          <a class="product-card" href="https://vellie.booth.pm/items/7640274" rel="noreferrer">
-            <img
-              src="https://booth.pximg.net/c/620x620/3010b825-ea16-4bf4-8382-806a47c9e0cc/i/7640274/cee3ab46-2554-4374-9c1b-61b81eec8bbc_base_resized.jpg"
-              alt="Midnight Waltz - Secret thumbnail" loading="lazy" />
-            <span>VELLIE</span>
-            <h2>Midnight Waltz - Secret</h2>
-            <p class="product-type">VRChat Gimmick</p>
-          </a>
-          <a class="product-card" href="https://monvie.booth.pm/items/7571117" rel="noreferrer">
-            <img
-              src="https://booth.pximg.net/c/620x620/b026caae-3419-4847-a240-0580f4dea49f/i/7571117/28c3566d-4de6-46e4-b8fe-decf2ce253cc_base_resized.jpg"
-              alt="Scarlet Rouge thumbnail" loading="lazy" />
-            <span>MONVIE</span>
-            <h2>Scarlet Rouge</h2>
-            <p class="product-type">VRChat Gimmick</p>
-          </a>
-          <a class="product-card" href="https://rinnetokyo.booth.pm/items/7467197" rel="noreferrer">
-            <img
-              src="https://booth.pximg.net/c/620x620/05231431-3203-4c92-a7d2-5305f52af13e/i/7467197/94455245-dee9-41f3-a822-4a10843912b2_base_resized.jpg"
-              alt="Onigokko thumbnail" loading="lazy" />
-            <span>RINNE TOKYO</span>
-            <h2>Onigokko</h2>
-            <p class="product-type">VRChat Gimmick</p>
-          </a>
-          <a class="product-card" href="https://monvie.booth.pm/items/7409855" rel="noreferrer">
-            <img
-              src="https://booth.pximg.net/c/620x620/b026caae-3419-4847-a240-0580f4dea49f/i/7409855/c5faa5f5-346b-47c9-bcf1-41750d984084_base_resized.jpg"
-              alt="Liliy Bloom thumbnail" loading="lazy" />
-            <span>MONVIE</span>
-            <h2>Liliy Bloom</h2>
-            <p class="product-type">VRChat Gimmick</p>
-          </a>
-          <a class="product-card" href="https://foxyplay.booth.pm/items/7386927" rel="noreferrer">
-            <img
-              src="https://booth.pximg.net/c/620x620/bb54b09c-8d71-43ff-b237-47565f9181fa/i/7386927/f770abec-fddd-4dc3-a16d-1b988fa2a47a_base_resized.jpg"
-              alt="Codebreaker thumbnail" loading="lazy" />
-            <span>FOXYPLAY</span>
-            <h2>Codebreaker</h2>
-            <p class="product-type">VRChat Gimmick</p>
-          </a>
-          <a class="product-card" href="https://mireneline.booth.pm/items/7247229" rel="noreferrer">
-            <img
-              src="https://booth.pximg.net/c/620x620/b8b6bf47-96ab-4578-ba00-b509e4a37adc/i/7247229/598e3084-8aef-408e-9de4-f61d108f40fc_base_resized.jpg"
-              alt="PSYKHE thumbnail" loading="lazy" />
-            <span>Mirene Line</span>
-            <h2>PSYKHE</h2>
-            <p class="product-type">VRChat Gimmick</p>
-          </a>
-          <a class="product-card" href="https://rinnetokyo.booth.pm/items/7192364" rel="noreferrer">
-            <img
-              src="https://booth.pximg.net/c/620x620/05231431-3203-4c92-a7d2-5305f52af13e/i/7192364/875e73ab-aae6-48c4-9204-25d2c1e931d1_base_resized.jpg"
-              alt="Tsukitsune no Me thumbnail" loading="lazy" />
-            <span>RINNE TOKYO</span>
-            <h2>Tsukitsune no Me</h2>
-            <p class="product-type">VRChat Gimmick</p>
-          </a>
+        <div class="portfolio-filters" role="tablist" aria-label="Portfolio filters">
+          <button class="filter-chip filter-chip--active" type="button" data-filter-button="all" aria-pressed="true"
+            data-i18n="filters.all">All</button>
+          <button class="filter-chip" type="button" data-filter-button="vrchat-gimmick" aria-pressed="false"
+            data-i18n="filters.vrchat-gimmick">VRChat Gimmick</button>
+          <button class="filter-chip" type="button" data-filter-button="unity-tool" aria-pressed="false"
+            data-i18n="filters.unity-tool">Unity Tool</button>
         </div>
+
+        <p class="portfolio-status" id="portfolio-status" role="status" aria-live="polite">
+          Loading projects...
+        </p>
+        <div class="product-grid transition-source" id="product-grid" aria-label="Portfolio products"></div>
       </div>
     </section>
+
+    <div class="project-modal" id="project-modal" hidden aria-hidden="true">
+      <div class="project-modal__backdrop" data-modal-close="true"></div>
+      <div class="project-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+        <button class="project-modal__close" type="button" aria-label="Close project details" data-modal-close="true">
+          &times;
+        </button>
+        <div class="project-modal__media">
+          <div class="project-modal__media-frame">
+            <img id="project-modal-image" src="" alt="" />
+          </div>
+        </div>
+        <div class="project-modal__content">
+          <p class="project-modal__eyebrow" id="project-modal-shop"></p>
+          <p class="project-modal__date" id="project-modal-date" hidden></p>
+          <h2 class="project-modal__title" id="project-modal-title"></h2>
+          <div class="project-modal__meta">
+            <span class="project-modal__meta-chip" id="project-modal-platform"></span>
+            <span class="project-modal__meta-chip" id="project-modal-category"></span>
+            <span class="project-modal__meta-chip" id="project-modal-built-with"></span>
+          </div>
+          <p class="project-modal__summary" id="project-modal-summary"></p>
+          <div class="project-modal__actions">
+            <a class="project-modal__link" id="project-modal-link" href="" rel="noreferrer" target="_blank">
+              <span data-i18n="modal.visit">Visit BOOTH</span>
+            </a>
+            <button class="project-modal__ghost" type="button" data-modal-close="true"
+              data-i18n="modal.close">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <a class="mail-button" href="mailto:yunhyukjeong02@gmail.com" aria-label="Email Yunhyuk Jeong">
       @
     </a>
   </main>
-  <script src="./script.js"></script>
+  <script type="module" src="./script.js"></script>
 </body>
 
 </html>

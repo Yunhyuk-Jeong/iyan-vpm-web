@@ -1,0 +1,257 @@
+﻿[
+	{
+		"date": "2026-04-13",
+		"address": "https://milktank-booth.booth.pm/items/8195979",
+		"shopName": "Studio Iyan",
+		"productName": "VSF Avatar Converter",
+		"tag": "Unity Tool",
+		"platform": "Unity",
+		"category": "Tool",
+		"builtWith": "Unity",
+		"description": {
+			"ko": "VSF Avatar Converter는 VRChat 아바타를 VSeeFace에서 사용 가능한 형식으로 손쉽게 변환할 수 있도록 지원하는 툴입니다.",
+			"en": "VSF Avatar Converter is a tool that enables easy conversion of VRChat avatars into formats compatible with VSeeFace.",
+			"ja": "VSF Avatar ConverterはVRChatアバターをVSeeFaceで使用可能な形式へ簡単に変換できるツールです。"
+		}
+	},
+	{
+		"date": "2026-04-08",
+		"address": "https://mashiro-vrc.booth.pm/items/8176127",
+		"shopName": "mashiro",
+		"productName": "Preppy Tweed",
+		"tag": "VRChat Gimmick",
+		"platform": "VRChat",
+		"category": "Gimmick",
+		"builtWith": "Unity",
+		"description": {
+			"ko": "Preppy Tweed는 가방을 트리거로 사용하는 화장품 기믹 시스템으로, 손 제스처에 따라 쿠션과 틴트를 소환하고 각 아이템의 열림/분리/기능을 상호작용으로 제어할 수 있으며, 가방에 접촉 시 모든 상태가 초기화됩니다. 또한 연출 모드, 전체 기믹 온오프, 펜라이트 기능 및 색상 설정 등의 추가 옵션을 지원합니다.",
+			"en": "Preppy Tweed is a cosmetic gimmick system that uses a bag as a trigger, allowing a cushion or tint to be summoned via hand gestures and controlled through interactions such as opening, detaching, and activating functions, with all states resetting upon contact with the bag. Additional options include presentation mode, full gimmick toggle, and penlight feature and color settings.",
+			"ja": "Preppy Tweedはバッグをトリガーとしたコスメギミックシステムで、ジェスチャーに応じてクッションやティントを生成し、開閉や分離、各種機能をインタラクションで操作でき、バッグに触れることで全状態がリセットされます。さらに演出モードやギミック全体のオンオフ、ペンライト機能およびカラー設定などのオプションにも対応しています。"
+		}
+	},
+	{
+		"date": "2026-03-22",
+		"address": "https://noirvail029.booth.pm/items/8111161",
+		"shopName": "NOIRVAIL",
+		"productName": "ROUGHCUT",
+		"tag": "VRChat Gimmick",
+		"platform": "VRChat",
+		"category": "Gimmick",
+		"builtWith": "Unity",
+		"description": {
+			"ko": "ROUGHCUT은 마스크를 올리고 내리는 등 다양한 마스크 상호작용을 지원하는 기믹 시스템입니다.",
+			"en": "ROUGHCUT is a gimmick system that supports various mask interactions, such as raising and lowering the mask.",
+			"ja": "ROUGHCUTはマスクの上げ下げなど、さまざまなマスクのインタラクションに対応したギミックシステムです。"
+		}
+	},
+	{
+		"date": "2026-02-12",
+		"address": "https://vellie.booth.pm/items/7947850",
+		"shopName": "VELLIE",
+		"productName": "Urban Trench - Central",
+		"tag": "VRChat Gimmick",
+		"platform": "VRChat",
+		"category": "Gimmick",
+		"builtWith": "Unity",
+		"description": {
+			"ko": "Urban Trench - Central는 제스처를 통해 선글라스를 착용하거나 벗을 수 있는 기믹 시스템입니다.",
+			"en": "Urban Trench - Central is a gimmick system that allows sunglasses to be worn or removed through gestures.",
+			"ja": "Urban Trench - Centralはジェスチャーによってサングラスの着脱が可能なギミックシステムです。"
+		}
+	},
+	{
+		"date": "2026-02-07",
+		"address": "https://zrpt.booth.pm/items/7952957",
+		"shopName": "029 Shop",
+		"productName": "Lunar Shard",
+		"tag": "VRChat Gimmick",
+		"platform": "VRChat",
+		"category": "Gimmick",
+		"builtWith": "Unity",
+		"description": {
+			"ko": "Lunar Shard는 칼을 꺼내 정수/역수 그립으로 전환하고, 트레일 효과를 온·오프할 수 있는 기믹 시스템입니다.",
+			"en": "Lunar Shard is a gimmick system that allows a blade to be drawn, switched between standard and reverse grips, and toggle its trail effect.",
+			"ja": "Lunar Shardは刀を取り出し、順手・逆手の持ち替えが可能で、トレイルエフェクトのオン・オフを切り替えられるギミックシステムです。"
+		}
+	},
+	{
+		"date": "2026-01-28",
+		"address": "https://velvetsky.booth.pm/items/7923451",
+		"shopName": "Velvet Sky",
+		"productName": "Project-KATANA",
+		"tag": "VRChat Gimmick",
+		"platform": "VRChat",
+		"category": "Gimmick",
+		"builtWith": "Unity",
+		"description": {
+			"ko": "Project-KATANA는 가슴 앞에서 손을 모아 주먹을 쥐는 동작으로 Dissolve 효과를 통해 칼을 생성하고, 다시 손을 모아 등의 칼을 Dissolve로 온·오프할 수 있는 기믹 시스템으로, 다른 사람의 칼과 충돌 시 사운드가 재생되며 검 끝에서는 트레일이 작동합니다.",
+			"en": "Project-KATANA is a gimmick system where clenching a fist in front of the chest summons a sword via a dissolve effect, and bringing the hands together toggles the back-mounted sword with dissolve, playing a sound on collision with other swords and generating a trail effect from the blade tip.",
+			"ja": "Project-KATANAは胸の前で手を構えて拳を握ることでDissolveエフェクトにより刀を生成し、再び手を合わせることで背中の刀をDissolveでオン・オフできるギミックシステムで、他の人の刀と衝突するとサウンドが再生され、刃先にはトレイルが発生します。"
+		}
+	},
+	{
+		"date": "2026-01-08",
+		"address": "https://foxyplay.booth.pm/items/7850009",
+		"shopName": "FOXYPLAY",
+		"productName": "Night_In",
+		"tag": "VRChat Gimmick",
+		"platform": "VRChat",
+		"category": "Gimmick",
+		"builtWith": "Unity",
+		"description": {
+			"ko": "Night_In은 상의 속옷의 PhysBone을 잡아당겨 형태를 변형할 수 있으며, 하의 속옷을 잡아당겨 벗기거나 당기는 상호작용이 가능한 기믹 시스템입니다.",
+			"en": "Night_In is a gimmick system that allows the upper undergarment to be deformed by pulling its PhysBone, and enables interaction with the lower undergarment to pull or remove it.",
+			"ja": "Night_Inは上半身のインナーに設定されたPhysBoneを引くことで形状を変形でき、下半身のインナーも引っ張って動かしたり取り外したりできるインタラクションが可能なギミックシステムです。"
+		}
+	},
+	{
+		"date": "2026-01-02",
+		"address": "https://zrpt.booth.pm/items/7827998",
+		"shopName": "029 Shop",
+		"productName": "Neon Tracker",
+		"tag": "VRChat Gimmick",
+		"platform": "VRChat",
+		"category": "Gimmick",
+		"builtWith": "Unity",
+		"description": {
+			"ko": "Neon Tracker는 가슴 중앙의 PhysBone을 당겨 지퍼를 열고, 이후 상태를 리셋할 수 있는 기믹 시스템입니다.",
+			"en": "Neon Tracker is a gimmick system where pulling a PhysBone at the center of the chest opens a zipper, with an option to reset it afterward.",
+			"ja": "Neon Trackerは胸中央のPhysBoneを引くことでジッパーが開き、その後リセットが可能なギミックシステムです。"
+		}
+	},
+	{
+		"date": "2025-12-17",
+		"address": "https://minuel.booth.pm/items/7763811",
+		"shopName": "MINUEL",
+		"productName": "Silk Kitsune",
+		"tag": "VRChat Gimmick",
+		"platform": "VRChat",
+		"category": "Gimmick",
+		"builtWith": "Unity",
+		"description": {
+			"ko": "Silk Kitsune는 머리에 장착된 가면을 쓰고 벗을 수 있는 기믹 시스템으로, 양옆에 떠 있는 도깨비불에 다양한 파티클 시스템을 적용하여 생동감 있는 연출을 구현했습니다.",
+			"en": "Silk Kitsune is a gimmick system that allows the head-mounted mask to be worn and removed, featuring vivid visual effects created with various particle systems on the floating foxfire flames at both sides.",
+			"ja": "Silk Kitsuneは頭部に装着された仮面の着脱が可能なギミックシステムで、両側に浮かぶ鬼火に複数のパーティクルシステムを用いることで、生き生きとした演出を実現しています。"
+		}
+	},
+	{
+		"date": "2025-12-10",
+		"address": "https://rinnetokyo.booth.pm/items/7746556",
+		"shopName": "RINNE TOKYO",
+		"productName": "Tsukiyo no Mai",
+		"tag": "VRChat Gimmick",
+		"platform": "VRChat",
+		"category": "Gimmick",
+		"builtWith": "Unity",
+		"description": {
+			"ko": "月夜の舞는 쿠나이를 활용한 기믹 시스템으로, 입에 물고 있는 쿠나이를 손으로 잡아 손가락에 걸어 회전시키거나 정수/역수 그립으로 전환할 수 있으며, 발사 기능도 포함되어 있습니다. 또한 상대를 찔러 월드에 고정시키면 커스텀 스크린 셰이더가 작동하여 특수 이펙트가 적용됩니다.",
+			"en": "月夜の舞 is a kunai-based gimmick system that allows a kunai held in the mouth to be grabbed by hand, spun on the finger, and switched between standard and reverse grips, with an option to launch it. When the kunai is embedded into a target and pinned to the world, a custom screen shader activates to apply a visual effect.",
+			"ja": "月夜の舞はクナイを用いたギミックシステムで、口にくわえたクナイを手で掴み、指に掛けて回転させたり順手・逆手に持ち替えることができ、投擲も可能です。さらに相手に刺してワールドに固定すると、カスタムスクリーンシェーダーが作動し、特殊なエフェクトが適用されます。"
+		}
+	},
+	{
+		"date": "2025-11-12",
+		"address": "https://vellie.booth.pm/items/7640274",
+		"shopName": "VELLIE",
+		"productName": "Midnight Waltz - Secret",
+		"tag": "VRChat Gimmick",
+		"platform": "VRChat",
+		"category": "Gimmick",
+		"builtWith": "Unity",
+		"description": {
+			"ko": "Midnight Waltz - Secret은 레이피어 기반의 기믹 시스템으로, 허리춤의 검집에서 칼을 잡아당겨 꺼내고 역수로 잡아 다시 수납할 수 있으며, 콜라이더와 충돌 시 불꽃 파티클이 발생하고 칼끝에서는 트레일이 생성됩니다.",
+			"en": "Midnight Waltz - Secret is a rapier-based gimmick system that allows the blade to be drawn from a waist-mounted scabbard and sheathed in a reverse grip, generating spark particles on collision with colliders and a trail effect from the tip.",
+			"ja": "Midnight Waltz - Secretはレイピアを用いたギミックシステムで、腰に装備された鞘から引き抜いて取り出し、逆手で再び納刀することができ、コライダーと衝突すると火花のパーティクルが発生し、刃先からはトレイルが生成されます。"
+		}
+	},
+	{
+		"date": "2025-10-23",
+		"address": "https://monvie.booth.pm/items/7571117",
+		"shopName": "MONVIE",
+		"productName": "Scarlet Rouge",
+		"tag": "VRChat Gimmick",
+		"platform": "VRChat",
+		"category": "Gimmick",
+		"builtWith": "Unity",
+		"description": {
+			"ko": "Scarlet Rouge는 카람빗을 활용한 기믹 시스템으로, 꺼내기, 정수/역수 그립 전환, 손가락에 걸어 회전시키기 등 다양한 동작을 수행할 수 있으며, 월드에 고정하는 기능도 포함되어 있습니다.",
+			"en": "Scarlet Rouge is a karambit-based gimmick system that supports drawing, switching between standard and reverse grips, and finger spinning, along with a feature to pin the weapon to the world.",
+			"ja": "Scarlet Rougeはカランビットを用いたギミックシステムで、取り出し、順手・逆手の持ち替え、指に掛けて回転させるなどの動作に加え、ワールドへ固定する機能も備えています。"
+		}
+	},
+	{
+		"date": "2025-09-25",
+		"address": "https://rinnetokyo.booth.pm/items/7467197",
+		"shopName": "RINNE TOKYO",
+		"productName": "Onigokko",
+		"tag": "VRChat Gimmick",
+		"platform": "VRChat",
+		"category": "Gimmick",
+		"builtWith": "Unity",
+		"description": {
+			"ko": "鬼ごっこ는 등에 장착된 두 개의 칼을 각각의 손으로 잡을 수 있는 기믹 시스템으로, 칼을 서로 부딪히면 사운드가 재생되며 칼끝에서는 트레일이 생성됩니다.",
+			"en": "鬼ごっこ is a gimmick system that allows two swords mounted on the back to be held in each hand, playing a sound when they collide and generating a trail effect at the blade tips.",
+			"ja": "鬼ごっこは背中に装備された2本の刀をそれぞれの手で持つことができるギミックシステムで、刀同士をぶつけるとサウンドが再生され、刃先にはトレイルが生成されます。"
+		}
+	},
+	{
+		"date": "2025-09-10",
+		"address": "https://monvie.booth.pm/items/7409855",
+		"shopName": "MONVIE",
+		"productName": "Liliy Bloom",
+		"tag": "VRChat Gimmick",
+		"platform": "VRChat",
+		"category": "Gimmick",
+		"builtWith": "Unity",
+		"description": {
+			"ko": "Liliy Bloom은 발리송을 활용한 다양한 애니메이션이 구현된 기믹 시스템으로, 돌리기, 잡기, 역수 전환, 던지기 등 다양한 동작을 수행할 수 있습니다.",
+			"en": "Liliy Bloom is a gimmick system featuring a variety of balisong animations, allowing actions such as spinning, catching, reverse grip switching, and throwing.",
+			"ja": "Liliy Bloomはバタフライナイフを用いた多彩なアニメーションを実装したギミックシステムで、回転、キャッチ、逆手への持ち替え、投擲などの動作を行うことができます。"
+		}
+	},
+	{
+		"date": "2025-09-04",
+		"address": "https://foxyplay.booth.pm/items/7386927",
+		"shopName": "FOXYPLAY",
+		"productName": "Codebreaker",
+		"tag": "VRChat Gimmick",
+		"platform": "VRChat",
+		"category": "Gimmick",
+		"builtWith": "Unity",
+		"description": {
+			"ko": "Codebreaker는 두 가지 채찍(긴 채찍과 짧은 채찍)을 꺼낼 수 있으며, 긴 채찍은 바닥에 닿을 때, 짧은 채찍은 반대 손에 닿을 때 각각 사운드가 재생되는 기믹입니다.",
+			"en": "Codebreaker features two whips, a long whip and a short whip; the long whip plays a sound when it hits the ground, while the short whip plays a sound when it contacts the opposite hand.",
+			"ja": "Codebreakerはロングウィップとショートウィップの2種類の鞭を取り出すことができ、ロングウィップは地面に触れた際に、ショートウィップは反対の手に触れた際にそれぞれサウンドが再生されるギミックです。"
+		}
+	},
+	{
+		"date": "2025-07-31",
+		"address": "https://mireneline.booth.pm/items/7247229",
+		"shopName": "Mirene Line",
+		"productName": "PSYKHE",
+		"tag": "VRChat Gimmick",
+		"platform": "VRChat",
+		"category": "Gimmick",
+		"builtWith": "Unity",
+		"description": {
+			"ko": "PSYKHE의 왼쪽 팔에 장착된 펜을 꺼낼 수 있으며, 해당 펜을 통해 파티클 시스템을 활용한 글씨 쓰기 기능을 사용할 수 있는 기믹입니다.",
+			"en": "A pen attached to PSYKHE’s left arm can be drawn and used to write in the air using a particle system.",
+			"ja": "PSYKHEの左腕に装備されたペンを取り出すことができ、そのペンを使ってパーティクルシステムを活用した空中描画を行えるギミックです。"
+		}
+	},
+	{
+		"date": "2025-07-17",
+		"address": "https://rinnetokyo.booth.pm/items/7192364",
+		"shopName": "RINNE TOKYO",
+		"productName": "Tsukitsune no Me",
+		"tag": "VRChat Gimmick",
+		"platform": "VRChat",
+		"category": "Gimmick",
+		"builtWith": "Unity",
+		"description": {
+			"ko": "月狐の眼의 머리 장식에 포함된 담뱃대를 상호작용으로 집을 수 있으며, 대기 상태에서는 연기가 지속적으로 발생하고, 입으로 가져가 흡연 동작을 연출할 수 있는 기믹입니다.",
+			"en": "An interactive smoking pipe attached to the head accessory of 月狐の眼, emitting smoke while idle and allowing it to be picked up and brought to the mouth to simulate a smoking action.",
+			"ja": "「月狐の眼」のヘッドアクセサリーに付属するキセルをインタラクションで掴むことができ、待機中は煙が発生し、口元に運ぶことで喫煙動作を再現できるギミックです。"
+		}
+	}
+]
