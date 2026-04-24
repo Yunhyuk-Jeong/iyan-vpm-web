@@ -136,6 +136,9 @@ const portfolioSection = document.getElementById('portfolio');
 const filterButtons = [...document.querySelectorAll('[data-filter-button]')];
 const languageButtons = [...document.querySelectorAll('[data-language]')];
 const productGrid = document.getElementById('product-grid');
+const portfolioMore = document.getElementById('portfolio-more');
+const portfolioToggleButton = document.getElementById('portfolio-toggle');
+const portfolioToggleLabel = document.getElementById('portfolio-toggle-label');
 const portfolioStatus = document.getElementById('portfolio-status');
 const projectModal = document.getElementById('project-modal');
 const projectModalImage = document.getElementById('project-modal-image');
@@ -149,6 +152,7 @@ const projectModalSummary = document.getElementById('project-modal-summary');
 const projectModalLink = document.getElementById('project-modal-link');
 
 let activeFilter = 'all';
+let visiblePortfolioCount = 12;
 let currentLanguage = 'en';
 let currentStatusKey = 'loadingProjects';
 let currentStatusError = false;
@@ -157,6 +161,7 @@ let activeModalProject = null;
 let modalCloseTimer = null;
 let projectById = new Map();
 const filterHideTimers = new WeakMap();
+const INITIAL_PORTFOLIO_VISIBLE_COUNT = 12;
 
 const getProjectCards = () => [...document.querySelectorAll('.product-card')];
 
@@ -261,6 +266,8 @@ const clearStatus = () => {
 	portfolioStatus.classList.remove('portfolio-status--error');
 };
 
+const getFilteredCards = () => getProjectCards().filter((card) => card.dataset.matchesFilter === 'true');
+
 const showCard = (card) => {
 	const hideTimer = filterHideTimers.get(card);
 	if (hideTimer) {
@@ -313,8 +320,58 @@ const hideCard = (card) => {
 	filterHideTimers.set(card, timer);
 };
 
+const getPortfolioToggleText = () => {
+	const fallbackText = {
+		showMore: 'Show More',
+		showLess: 'Show Less',
+	};
+
+	return {
+		showMore: getText('portfolio.showMore') || fallbackText.showMore,
+		showLess: getText('portfolio.showLess') || fallbackText.showLess,
+	};
+};
+
+const updatePortfolioToggle = () => {
+	if (!portfolioMore || !portfolioToggleButton || !portfolioToggleLabel) {
+		return;
+	}
+
+	const filteredCards = getFilteredCards();
+	const shouldShowToggle = filteredCards.length > INITIAL_PORTFOLIO_VISIBLE_COUNT;
+	const isExpanded = visiblePortfolioCount >= filteredCards.length;
+	const toggleText = getPortfolioToggleText();
+
+	portfolioMore.hidden = !shouldShowToggle;
+	portfolioToggleButton.setAttribute('aria-expanded', String(isExpanded));
+	portfolioToggleLabel.textContent = isExpanded ? toggleText.showLess : toggleText.showMore;
+};
+
+const updateVisibleCards = () => {
+	let visibleMatchIndex = 0;
+
+	getProjectCards().forEach((card) => {
+		const matchesFilter = card.dataset.matchesFilter === 'true';
+		const shouldShow = matchesFilter && visibleMatchIndex < visiblePortfolioCount;
+
+		if (matchesFilter) {
+			visibleMatchIndex += 1;
+		}
+
+		if (shouldShow) {
+			showCard(card);
+			return;
+		}
+
+		hideCard(card);
+	});
+
+	updatePortfolioToggle();
+};
+
 const applyFilter = (filterValue) => {
 	activeFilter = filterValue;
+	visiblePortfolioCount = INITIAL_PORTFOLIO_VISIBLE_COUNT;
 
 	filterButtons.forEach((button) => {
 		const isActive = button.dataset.filterButton === filterValue;
@@ -325,14 +382,10 @@ const applyFilter = (filterValue) => {
 	getProjectCards().forEach((card) => {
 		const cardType = card.dataset.type;
 		const matchesFilter = filterValue === 'all' || (filterValue === 'unity-tool' && cardType === 'unity-tool') || (filterValue === 'vrchat-gimmick' && cardType === 'vrchat-gimmick');
-
-		if (matchesFilter) {
-			showCard(card);
-			return;
-		}
-
-		hideCard(card);
+		card.dataset.matchesFilter = String(matchesFilter);
 	});
+
+	updateVisibleCards();
 };
 
 const updateLocalizedCardLabels = () => {
@@ -364,6 +417,8 @@ const updateLocalizedStaticText = () => {
 	if (!portfolioStatus?.hidden) {
 		setStatus(currentStatusKey, currentStatusError);
 	}
+
+	updatePortfolioToggle();
 };
 
 const updateModalContent = (project) => {
@@ -485,6 +540,9 @@ const renderProjects = (projects) => {
 	}
 
 	productGrid.replaceChildren(...projects.map(createProjectCard));
+	getProjectCards().forEach((card) => {
+		card.dataset.matchesFilter = 'true';
+	});
 	updateLocalizedCardLabels();
 };
 
@@ -537,6 +595,13 @@ filterButtons.forEach((button) => {
 	button.addEventListener('click', () => {
 		applyFilter(button.dataset.filterButton || 'all');
 	});
+});
+
+portfolioToggleButton?.addEventListener('click', () => {
+	const filteredCards = getFilteredCards();
+	const isExpanded = visiblePortfolioCount >= filteredCards.length;
+	visiblePortfolioCount = isExpanded ? INITIAL_PORTFOLIO_VISIBLE_COUNT : filteredCards.length;
+	updateVisibleCards();
 });
 
 languageButtons.forEach((button) => {
@@ -599,7 +664,12 @@ updateActiveSectionFromScroll();
 if (portfolioSection) {
 	const portfolioRevealObserver = new IntersectionObserver(
 		([entry]) => {
-			portfolioSection.classList.toggle('is-visible', entry.isIntersecting);
+			if (!entry.isIntersecting) {
+				return;
+			}
+
+			portfolioSection.classList.add('is-visible');
+			portfolioRevealObserver.unobserve(portfolioSection);
 		},
 		{
 			rootMargin: '-12% 0px -18% 0px',

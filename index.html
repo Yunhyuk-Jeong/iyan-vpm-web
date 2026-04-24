@@ -88,23 +88,6 @@
           </a>
         </nav>
 
-        <div class="contact-links" aria-label="Additional contact links">
-          <a class="contact-chip contact-chip--discord" href="https://discord.gg/sEk64xkY" rel="noreferrer"
-            aria-label="Discord" title="Discord">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M19.54 5.34a16.4 16.4 0 0 0-4.09-1.28.06.06 0 0 0-.07.03c-.18.33-.38.77-.52 1.11a15.2 15.2 0 0 0-5.72 0 11 11 0 0 0-.53-1.11.06.06 0 0 0-.07-.03 16.35 16.35 0 0 0-4.09 1.28.05.05 0 0 0-.03.02C1.84 9.18 1.18 12.9 1.5 16.57a.07.07 0 0 0 .03.05 16.7 16.7 0 0 0 4.91 2.49.06.06 0 0 0 .07-.02c.38-.52.72-1.07 1.01-1.65a.06.06 0 0 0-.03-.08 10.87 10.87 0 0 1-1.55-.74.06.06 0 0 1-.01-.1c.1-.08.2-.15.3-.23a.07.07 0 0 1 .07-.01c3.25 1.48 6.77 1.48 9.98 0a.07.07 0 0 1 .08.01c.1.08.2.16.3.23a.06.06 0 0 1-.01.1c-.49.29-1.01.53-1.56.74a.06.06 0 0 0-.03.08c.29.58.63 1.13 1.01 1.65a.06.06 0 0 0 .07.02 16.65 16.65 0 0 0 4.91-2.49.06.06 0 0 0 .03-.05c.39-4.24-.65-7.93-2.92-11.21a.05.05 0 0 0-.03-.02ZM9.47 14.33c-.95 0-1.72-.87-1.72-1.94s.76-1.94 1.72-1.94c.97 0 1.73.88 1.72 1.94 0 1.07-.76 1.94-1.72 1.94Zm5.06 0c-.95 0-1.72-.87-1.72-1.94s.76-1.94 1.72-1.94c.97 0 1.73.88 1.72 1.94 0 1.07-.75 1.94-1.72 1.94Z" />
-            </svg>
-          </a>
-          <a class="contact-chip contact-chip--x" href="https://x.com/IyanE_VRC_" rel="noreferrer" aria-label="X"
-            title="X">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M18.9 2H21l-6.87 7.85L22.2 22h-6.31l-4.94-7.45L4.43 22H2.3l7.35-8.39L1.8 2h6.47l4.47 6.82L18.9 2Zm-2.21 18h1.17L7.64 3.9H6.39L16.69 20Z" />
-            </svg>
-          </a>
-        </div>
-
         <a class="scroll-cue" href="#portfolio" aria-label="Go to portfolio section">
           <span data-i18n="home.scrollCue">Portfolio</span>
           <span aria-hidden="true">↓</span>
@@ -134,6 +117,22 @@
           Loading projects...
         </p>
         <div class="product-grid transition-source" id="product-grid" aria-label="Portfolio products"></div>
+        <div class="portfolio-more" id="portfolio-more" hidden>
+          <button class="portfolio-more__button" id="portfolio-toggle" type="button">
+            <span aria-hidden="true">
+              <svg viewBox="0 0 20 20" role="presentation" focusable="false">
+                <path
+                  d="M5.5 7.25 10 11.75l4.5-4.5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.8" />
+              </svg>
+            </span>
+            <span id="portfolio-toggle-label">Show More</span>
+          </button>
+        </div>
       </div>
     </section>
 
@@ -167,6 +166,23 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="contact-links" aria-label="Additional contact links">
+      <a class="contact-chip contact-chip--discord" href="https://discord.gg/sEk64xkY" rel="noreferrer"
+        aria-label="Discord" title="Discord">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M19.54 5.34a16.4 16.4 0 0 0-4.09-1.28.06.06 0 0 0-.07.03c-.18.33-.38.77-.52 1.11a15.2 15.2 0 0 0-5.72 0 11 11 0 0 0-.53-1.11.06.06 0 0 0-.07-.03 16.35 16.35 0 0 0-4.09 1.28.05.05 0 0 0-.03.02C1.84 9.18 1.18 12.9 1.5 16.57a.07.07 0 0 0 .03.05 16.7 16.7 0 0 0 4.91 2.49.06.06 0 0 0 .07-.02c.38-.52.72-1.07 1.01-1.65a.06.06 0 0 0-.03-.08 10.87 10.87 0 0 1-1.55-.74.06.06 0 0 1-.01-.1c.1-.08.2-.15.3-.23a.07.07 0 0 1 .07-.01c3.25 1.48 6.77 1.48 9.98 0a.07.07 0 0 1 .08.01c.1.08.2.16.3.23a.06.06 0 0 1-.01.1c-.49.29-1.01.53-1.56.74a.06.06 0 0 0-.03.08c.29.58.63 1.13 1.01 1.65a.06.06 0 0 0 .07.02 16.65 16.65 0 0 0 4.91-2.49.06.06 0 0 0 .03-.05c.39-4.24-.65-7.93-2.92-11.21a.05.05 0 0 0-.03-.02ZM9.47 14.33c-.95 0-1.72-.87-1.72-1.94s.76-1.94 1.72-1.94c.97 0 1.73.88 1.72 1.94 0 1.07-.76 1.94-1.72 1.94Zm5.06 0c-.95 0-1.72-.87-1.72-1.94s.76-1.94 1.72-1.94c.97 0 1.73.88 1.72 1.94 0 1.07-.75 1.94-1.72 1.94Z" />
+        </svg>
+      </a>
+      <a class="contact-chip contact-chip--x" href="https://x.com/IyanE_VRC_" rel="noreferrer" aria-label="X"
+        title="X">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M18.9 2H21l-6.87 7.85L22.2 22h-6.31l-4.94-7.45L4.43 22H2.3l7.35-8.39L1.8 2h6.47l4.47 6.82L18.9 2Zm-2.21 18h1.17L7.64 3.9H6.39L16.69 20Z" />
+        </svg>
+      </a>
     </div>
 
     <a class="mail-button" href="mailto:yunhyukjeong02@gmail.com" aria-label="Email Yunhyuk Jeong">
