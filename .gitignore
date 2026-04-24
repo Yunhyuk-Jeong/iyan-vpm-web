@@ -37,3 +37,6 @@ desktop.ini
 
 # Package manager metadata
 .pnpm-store/
+
+# Local helper scripts
+run-local-server.bat
