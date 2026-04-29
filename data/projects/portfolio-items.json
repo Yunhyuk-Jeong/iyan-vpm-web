@@ -1,5 +1,20 @@
 ﻿[
 	{
+		"date": "2026-04-28",
+		"address": "https://milktank-booth.booth.pm/items/8245542",
+		"shopName": "Studio Iyan",
+		"productName": "SDF Generator",
+		"tag": "Unity Tool",
+		"platform": "Windows",
+		"category": "Tool",
+		"builtWith": "Python",
+		"description": {
+			"ko": "SDFGenerator는 FBX 메쉬를 불러와 아바타 쉐이딩용 SDF Shadow Map을 생성하는 커스텀 툴입니다. 메쉬와 UV 영역을 선택하고 프리셋, 하이라이트 강도 등을 조정해 원하는 그림자 표현에 맞는 SDF 이미지를 손쉽게 만들 수 있습니다.",
+			"en": "SDFGenerator is a custom tool for generating SDF Shadow Maps from imported FBX meshes. Users can select meshes and UV areas, adjust presets and highlight intensity, and easily create SDF textures tailored for avatar shading.",
+			"ja": "SDFGeneratorは、FBXメッシュを読み込み、アバターのシェーディング用SDF Shadow Mapを生成するカスタムツールです。メッシュやUV領域を選択し、プリセットやハイライト強度を調整して、目的の影表現に合わせたSDF画像を簡単に作成できます。"
+		}
+	},
+	{
 		"date": "2026-04-24",
 		"address": "https://zrpt.booth.pm/items/8252804",
 		"shopName": "029 Shop",
