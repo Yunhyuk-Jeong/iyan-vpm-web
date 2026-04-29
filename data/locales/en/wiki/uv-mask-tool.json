@@ -1,0 +1,148 @@
+{
+  "uvMaskTool": {
+    "eyebrow": "VPM Tools",
+    "title": "Iyan-Kim UV Mask Tool",
+    "copy": "A Unity editor tool for selecting UV islands from a Renderer's Material Slot and exporting the selected region as a PNG mask texture. It lets you build precise UV masks directly inside Unity without repainting UV regions manually in an external tool.",
+    "cards": [
+      {
+        "title": "Best For",
+        "body": "VRChat avatars, outfits, props, and modular meshes with multiple material slots and UV islands that need mask textures."
+      },
+      {
+        "title": "UV Selection Workflow",
+        "body": "Reads only the triangles that belong to the selected Material Slot, lets you select islands or faces, and exports the result directly as a PNG mask."
+      },
+      {
+        "title": "Preview and Export",
+        "body": "Combines UV preview, texture overlay, wireframe, Scene View highlighting, resolution presets, padding, and anti-aliasing in a single workflow."
+      }
+    ],
+    "meta": {
+      "chips": ["UV", "Mask", "VPM"],
+      "body": "Designed for Unity 2022.3+, MeshRenderer or SkinnedMeshRenderer targets, meshes with usable UVs, and renderers that expose one or more Material Slots."
+    },
+    "image": {
+      "src": "./assets/wiki/vpm-tools/uv-mask-tool/en_01.png",
+      "alt": "UV Mask Tool English UI screenshot",
+      "caption": "You can assign a renderer, choose the target Material Slot, preview UVs, configure export settings, and write the selected area to a PNG mask from one window."
+    },
+    "sections": [
+      {
+        "title": "Key Features",
+        "items": [
+          "Detects UV islands from only the submesh triangles used by the selected Material Slot.",
+          "Automatically detects available UV channels for the selected slot.",
+          "Supports UV preview, zoom, panning, wireframe display, and texture overlay preview.",
+          "Supports both island-based selection and individual face selection.",
+          "Can highlight the matching mesh triangles in the Scene View.",
+          "Exports PNG masks with resolution presets, custom resolution, alpha, padding, and anti-aliasing controls.",
+          "Supports Korean, English, and Japanese UI, and stores language settings in EditorPrefs."
+        ]
+      },
+      {
+        "title": "Requirements",
+        "items": [
+          "Unity 2022.3 or newer",
+          "MeshRenderer or SkinnedMeshRenderer",
+          "A mesh with usable UV data",
+          "A renderer with one or more material slots",
+          "Editor-only usage"
+        ]
+      },
+      {
+        "title": "Basic Usage",
+        "ordered": true,
+        "items": [
+          "Open Iyan-Kim > Tools > UV Island Mask Generator.",
+          "Assign a MeshRenderer or SkinnedMeshRenderer in the renderer field.",
+          "Choose the Material Slot that should define the mask source area.",
+          "Select the desired UV islands or individual faces in the preview.",
+          "Configure resolution, alpha, colors, padding, and anti-aliasing.",
+          "Click Export PNG to save the selected UV region as a mask texture."
+        ]
+      },
+      {
+        "title": "Option Details",
+        "entries": [
+          {
+            "title": "Renderer / Material Slot",
+            "body": "Defines the working mesh target and the specific Material Slot whose submesh triangles should be scanned."
+          },
+          {
+            "title": "UV Preview / Preview Texture",
+            "body": "Shows the UV layout for the selected slot and lets you overlay either a manually assigned Texture2D or the current material's main texture."
+          },
+          {
+            "title": "Selection Mode / Select All / Invert / Clear",
+            "body": "Lets you switch between island mode and face mode, then quickly manage selection state with select-all, invert, or clear actions."
+          },
+          {
+            "title": "Scene View Highlight",
+            "body": "Highlights the actual mesh triangles that correspond to the selected UV region directly inside the Scene View."
+          },
+          {
+            "title": "Export Settings",
+            "body": "Supports preset resolutions from 256 to 4096, custom resolution up to 8192, alpha output, background and selection colors, padding, and anti-aliasing options."
+          }
+        ]
+      },
+      {
+        "title": "Tips",
+        "items": [
+          "Choose the Material Slot first so the correct material region is isolated before selecting islands.",
+          "Island mode is fastest on clean UV layouts, while face mode is useful for small or irregular areas.",
+          "Preview Texture makes it much easier to confirm what region is being selected on top of the actual texture.",
+          "High resolutions combined with SSAA 4x can consume a lot of memory, so large exports should be handled carefully.",
+          "This is especially useful for outfit pieces, ornaments, skin zones, or shader masks on VRChat avatars."
+        ]
+      },
+      {
+        "title": "Troubleshooting",
+        "entries": [
+          {
+            "title": "The mesh cannot be found",
+            "body": "For MeshRenderer targets, verify that a MeshFilter exists on the same GameObject and that sharedMesh is assigned. For SkinnedMeshRenderer, make sure sharedMesh is connected correctly."
+          },
+          {
+            "title": "The Material Slot list is empty",
+            "body": "Check that the renderer actually has material slots and that the selected submesh contains valid triangles. Empty submeshes may be skipped."
+          },
+          {
+            "title": "No usable UV channels are detected",
+            "body": "Make sure the mesh contains UV data and that the selected Material Slot triangles have non-zero UV area."
+          },
+          {
+            "title": "UV islands are not generated",
+            "body": "Detection can fail if UVs overlap heavily or if only zero-area triangles exist. Try another Material Slot or review the automatically detected UV channel results."
+          },
+          {
+            "title": "Export PNG is disabled",
+            "body": "Confirm that a renderer and Material Slot are selected, at least one island or face is chosen, and the resolution value stays between 1 and 8192."
+          }
+        ]
+      },
+      {
+        "title": "License",
+        "entries": [
+          {
+            "title": "MIT License",
+            "body": "Iyan-Kim UV Mask Tool is distributed under the MIT License. It can be used in personal and commercial projects, and may be modified or redistributed under the license terms."
+          }
+        ]
+      },
+      {
+        "title": "Release Notes",
+        "entries": [
+          {
+            "title": "1.1.0",
+            "body": "Updated the package version to `1.1.0`.\nStandardized the package display name as `Iyan-Kim UV Mask Tool`.\nOrganized the Material Slot-based UV island selection and PNG mask export workflow.\nAdded renderer selection, Material Slot selection, UV preview, selection info, and export settings UI.\nSupports island and face selection modes.\nSupports Scene View triangle highlighting.\nSupports preset and custom resolutions.\nSupports padding, alpha, colors, and anti-aliasing settings.\nSupports Korean, English, and Japanese UI plus stored language settings."
+          },
+          {
+            "title": "1.0.0",
+            "body": "Initial release.\nAdded the base workflow for selecting UV islands and exporting them as PNG masks in the Unity Editor.\nAdded mesh reading for MeshRenderer and SkinnedMeshRenderer targets.\nAdded submesh triangle reading by Material Slot.\nAdded UV channel detection and UV island generation.\nAdded UV preview and selection tools.\nAdded PNG export.\nAdded the MIT License and VPM package structure."
+          }
+        ]
+      }
+    ]
+  }
+}

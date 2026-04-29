@@ -1,0 +1,21 @@
+{
+  "toolsOverview": {
+    "eyebrow": "Tools",
+    "title": "Paid tools and standalone workflow utilities",
+    "copy": "This section documents the paid tools and standalone workflow utilities provided by Studio Iyan. These entries are separate from the free repository packages and are organized around their own setup flow, usage pattern, and output goals.",
+    "cards": [
+      {
+        "title": "What this section covers",
+        "body": "Use this area for tools that solve a focused task on their own, or for utilities where the individual workflow matters more than package-style distribution. Each document can cover the feature overview, requirements, usage flow, outputs, troubleshooting, and release notes."
+      },
+      {
+        "title": "How it differs from VPM Tools",
+        "body": "If `VPM Tools` is centered on free packages and repetitive workflow automation, `Tools` is centered on separately distributed utilities and more direct task-oriented usage. The goal here is to make each tool understandable as a product and as a workflow."
+      }
+    ],
+    "meta": {
+      "chips": ["Paid", "Standalone", "Workflow"],
+      "body": "If you are new to this group, start with the overview and then move into the specific tab you need. Entries that are not ready yet stay marked as `WIP`, while completed pages gradually expand to include real screenshots, detailed controls, and full release notes."
+    }
+  }
+}

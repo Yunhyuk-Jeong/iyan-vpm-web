@@ -1,0 +1,146 @@
+{
+  "prefabMaterialRemapper": {
+    "eyebrow": "VPM Tools",
+    "title": "Prefab Material Remapper",
+    "copy": "Prefab Asset 内のマテリアルを、現在スロットに入っている Material.name を基準に一括で置き換える Unity エディターツールです。FBX Importer の Material Remapping に近い流れを Prefab Asset に持ち込めます。",
+    "cards": [
+      {
+        "title": "Best For",
+        "body": "複数 Renderer と多数のマテリアルスロットを持つ Prefab、VRChat 衣装 Prefab、同じダミーマテリアル名を繰り返し使うアセットに向いています。"
+      },
+      {
+        "title": "Name-Based Mapping",
+        "body": "現在スロットに入っている Material.name をキーにして、同じ名前のスロットをまとめて置き換えます。"
+      },
+      {
+        "title": "Safe Prefab Editing",
+        "body": "LoadPrefabContents / SaveAsPrefabAsset を使ってオリジナルの Prefab Asset を安全に編集します。"
+      }
+    ],
+    "meta": {
+      "chips": ["Prefab", "Material", "VPM"],
+      "body": "Unity 2022.3 以上で動作し、Project ウィンドウ内の Prefab Asset と、その中にある Renderer / SkinnedMeshRenderer のマテリアルスロットを対象とします。"
+    },
+    "image": {
+      "src": "./assets/wiki/vpm-tools/prefab-material-remapper/ja_01.png",
+      "alt": "Prefab Material Remapper Japanese UI screenshot",
+      "caption": "Prefab Asset を指定し、スロットキーをスキャンしたあと、各キーに実マテリアルを割り当てて一括適用できます。"
+    },
+    "sections": [
+      {
+        "title": "主な機能",
+        "items": [
+          "現在の Material.name をリマップキーとして使い、同名スロットをまとめて処理します。",
+          "FBX スタイルのマテリアルリマップを Prefab Asset に対して実行できます。",
+          "Prefab 内のすべての子 Renderer を自動スキャンします。",
+          "MeshRenderer と SkinnedMeshRenderer の両方に対応します。",
+          "各キーが何個のマテリアルスロットに影響するかを表示します。",
+          "Project ウィンドウからのドラッグ＆ドロップに対応します。",
+          "Editor-only 構造でランタイムには影響しません。"
+        ]
+      },
+      {
+        "title": "要件",
+        "items": [
+          "Unity 2022.3 以上",
+          "Project ウィンドウ内の Prefab Asset",
+          "マテリアルが割り当てられた Renderer または SkinnedMeshRenderer",
+          "Unity Editor 専用",
+          "追加の VPM 依存なし"
+        ]
+      },
+      {
+        "title": "基本的な使い方",
+        "ordered": true,
+        "items": [
+          "Iyan-Kim > Tools > Prefab Material Remapper を開きます。",
+          "Project ウィンドウの Prefab Asset を指定するかドラッグ＆ドロップします。",
+          "Scan Slots を押して現在のマテリアル名からキー一覧を生成します。",
+          "各キーごとに置き換えたい実マテリアルを指定します。",
+          "Apply to Prefab Asset を押して同名スロットを一括置き換えします。"
+        ]
+      },
+      {
+        "title": "オプション説明",
+        "entries": [
+          {
+            "title": "Prefab Asset / Drag and Drop",
+            "body": "対象は Project ウィンドウ内の Prefab Asset です。シーンインスタンスや通常の GameObject は対象外です。"
+          },
+          {
+            "title": "Scan Slots",
+            "body": "Prefab 内容を読み込み、すべての子 Renderer の sharedMaterials を調べて現在のマテリアル名をキー一覧に変換します。"
+          },
+          {
+            "title": "Key / Count / Material Field",
+            "body": "Key は現在の Material.name、Count はそのキーが使われているスロット数、Material Field は置き換え先マテリアルの指定欄です。"
+          },
+          {
+            "title": "Apply to Prefab Asset",
+            "body": "指定したキーとマテリアルの対応を Prefab Asset に保存します。空欄のキーは変更されません。"
+          }
+        ]
+      },
+      {
+        "title": "ヒント",
+        "items": [
+          "後から安定してリマップしたいなら、FBX から来たダミーマテリアル名を維持しておくと便利です。",
+          "`Metal`、`Body`、`Glass`、`UV1` のようなスロット識別名を残しておくと大規模な置き換えが楽になります。",
+          "一度実マテリアルへ置き換えるとキー名も変わることがあるため、元のダミーマテリアル構造は別途保持しておくと安全です。",
+          "Prefab Asset を直接編集するため、大きな置き換え前には Git やバックアップで差分管理するのが無難です。"
+        ]
+      },
+      {
+        "title": "トラブルシューティング",
+        "entries": [
+          {
+            "title": "Prefab Asset 指定時にエラーが出ます",
+            "body": "Project ウィンドウ内の Prefab Asset か確認してください。シーンインスタンスや通常 GameObject は対象外です。"
+          },
+          {
+            "title": "スロットが見つかりません",
+            "body": "Prefab 内に Renderer または SkinnedMeshRenderer があるか、そして実際にマテリアルが割り当てられているか確認してください。"
+          },
+          {
+            "title": "適用する内容がありません",
+            "body": "少なくとも1つのスキャン済みキーに置き換えマテリアルを割り当てる必要があります。すべて空欄なら変更は発生しません。"
+          },
+          {
+            "title": "期待したスロットが置き換わりません",
+            "body": "キーは Material.name 基準です。ファイル名ではなく、現在スロットに入っている実際の名前を確認してください。"
+          },
+          {
+            "title": "シーン内オブジェクトがすぐ変わりません",
+            "body": "このツールは Prefab Asset 自体を編集します。シーンインスタンスに override がある場合や更新が遅い場合は、Prefab を再選択するかシーンを更新してください。"
+          }
+        ]
+      },
+      {
+        "title": "ライセンス",
+        "entries": [
+          {
+            "title": "MIT License",
+            "body": "Prefab Material Remapper は MIT License で配布されます。個人・商用プロジェクトで利用でき、条件に従って改変や再配布も可能です。"
+          }
+        ]
+      },
+      {
+        "title": "リリースノート",
+        "entries": [
+          {
+            "title": "1.0.2",
+            "body": "パッケージ表示名を `Iyan-Kim Prefab Material Remapper` に変更しました。\nVCC / Package Manager でのブランド表示を整理しました。\n機能変更はありません。"
+          },
+          {
+            "title": "1.0.1",
+            "body": "パッケージバージョンを `1.0.1` に更新しました。\n内部コメント表現を整理しました。\n機能変更はありません。"
+          },
+          {
+            "title": "1.0.0",
+            "body": "初回リリースです。\nPrefab Asset 内のマテリアルスロットを `Material.name` 基準でスキャンする機能を追加しました。\n同じ名前のスロットを1つのキーとしてまとめる構成を追加しました。\nキーごとに新しいマテリアルを指定して一括置き換えできるようにしました。\n`LoadPrefabContents` / `SaveAsPrefabAsset` による安全な Prefab 編集を実装しました。\nドラッグ＆ドロップによる Prefab 指定に対応しました。\n韓国語、英語、日本語 UI を追加しました。\nEditor-only asmdef、VPM パッケージ構造、MIT License を追加しました。"
+          }
+        ]
+      }
+    ]
+  }
+}

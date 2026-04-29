@@ -1,0 +1,165 @@
+{
+  "maBlendshapeSyncAutoSetup": {
+    "eyebrow": "VPM Tools",
+    "title": "MA Blendshape Sync Auto Setup",
+    "copy": "A Unity editor tool that automates Modular Avatar Blendshape Sync setup. It compares source and target mesh blendshape names, finds matches automatically, and generates the required Blendshape Sync bindings for one or many targets.",
+    "cards": [
+      {
+        "title": "Best For",
+        "body": "Outfits, body meshes, face parts, and other meshes that need to mirror the same expression blendshapes across multiple targets."
+      },
+      {
+        "title": "Modular Avatar Workflow",
+        "body": "Adds the Modular Avatar Blendshape Sync component to target objects and builds bindings from matching blendshape names."
+      },
+      {
+        "title": "Batch Setup",
+        "body": "You can register multiple targets, preview the detected matches, and apply everything in one pass."
+      }
+    ],
+    "meta": {
+      "chips": ["Modular Avatar", "Automation", "VPM"],
+      "body": "Designed for Unity 2022.3+, Modular Avatar 1.14.3+, and NDMF. Both source and target objects should contain valid SkinnedMeshRenderer components."
+    },
+    "image": {
+      "src": "./assets/wiki/vpm-tools/ma-blendshape-sync-auto-setup/en_01.png",
+      "alt": "MA Blendshape Sync Auto Setup English UI screenshot",
+      "caption": "The tool window lets you assign a source object, collect multiple targets, preview common blendshapes, and apply bindings from one place."
+    },
+    "sections": [
+      {
+        "title": "Key Features",
+        "items": [
+          "Automatically detects matching blendshape names between the source object and target objects.",
+          "Adds Modular Avatar Blendshape Sync components and generates common blendshape bindings automatically.",
+          "Supports multiple target objects in a single setup pass.",
+          "Supports drag and drop, multi-selection, and collecting child SkinnedMeshRenderer objects.",
+          "Provides a preview of detected common blendshapes before applying changes.",
+          "Filters duplicate objects automatically and integrates with Unity Undo."
+        ]
+      },
+      {
+        "title": "Requirements",
+        "items": [
+          "Unity 2022.3 or newer",
+          "Modular Avatar 1.14.3 or newer",
+          "NDMF",
+          "A source object with a SkinnedMeshRenderer",
+          "One or more target objects with SkinnedMeshRenderer components"
+        ]
+      },
+      {
+        "title": "Basic Usage",
+        "ordered": true,
+        "items": [
+          "Open Iyan-Kim > Tools > Modular Avatar Blendshape Sync Auto Setup.",
+          "Assign the source object that provides the reference blendshapes.",
+          "Add one or more target objects through drag and drop or the add-target button.",
+          "Enable child-object collection if you want child SkinnedMeshRenderer objects included automatically.",
+          "Review the detected common blendshapes in the preview area.",
+          "Click the setup button to generate Modular Avatar Blendshape Sync bindings for all valid targets."
+        ]
+      },
+      {
+        "title": "Option Details",
+        "entries": [
+          {
+            "title": "Source Object",
+            "body": "The source object defines the reference blendshape names. The tool compares this SkinnedMeshRenderer with each target."
+          },
+          {
+            "title": "Target Objects",
+            "body": "Targets receive the Modular Avatar Blendshape Sync component. Matching blendshapes are bound automatically."
+          },
+          {
+            "title": "Include Child Objects",
+            "body": "Searches child objects of the dropped targets and automatically adds any child object with a SkinnedMeshRenderer."
+          },
+          {
+            "title": "Detected Common Blendshapes",
+            "body": "Shows the blendshapes that exist on both source and target meshes. Only these entries become actual bindings."
+          },
+          {
+            "title": "Apply Blendshape Sync",
+            "body": "Creates or updates the Modular Avatar Blendshape Sync setup on the target objects using the detected matches."
+          }
+        ]
+      },
+      {
+        "title": "Tips",
+        "items": [
+          "Source and target blendshape names must match exactly for automatic detection to work.",
+          "This is especially useful for outfit or body meshes that share the same facial expression shapes.",
+          "If a target already has a Blendshape Sync component, the tool reuses it and rebuilds the binding list.",
+          "Child-object collection is useful when a single outfit root contains multiple internal SkinnedMeshRenderer objects."
+        ]
+      },
+      {
+        "title": "Troubleshooting",
+        "entries": [
+          {
+            "title": "No common blendshapes are found",
+            "body": "Check that source and target meshes actually use the same blendshape names. Differences in case, spaces, prefixes, or suffixes will prevent matching."
+          },
+          {
+            "title": "The setup button is disabled",
+            "body": "Make sure a source object is assigned, at least one valid target exists, and at least one common blendshape has been detected."
+          },
+          {
+            "title": "The source object shows an error",
+            "body": "Confirm that the source object contains a valid SkinnedMeshRenderer and that its mesh is connected correctly."
+          },
+          {
+            "title": "The result does not work as expected",
+            "body": "Verify that source and target objects live inside the same avatar hierarchy and that Modular Avatar plus NDMF are installed and processed correctly."
+          }
+        ]
+      },
+      {
+        "title": "Release Notes",
+        "entries": [
+          {
+            "title": "1.0.9",
+            "body": "Changed the package display name to `Iyan-Kim MA Blendshape Sync Auto Setup`.\nCleaned up branding visibility in VCC / Package Manager.\nNo functional changes."
+          },
+          {
+            "title": "1.0.8",
+            "body": "Cleaned up package distribution metadata.\nPerformed maintenance updates for VPM publishing stability.\nNo functional changes."
+          },
+          {
+            "title": "1.0.7",
+            "body": "Refined the VPM package distribution structure.\nAdjusted release and repository metadata.\nNo functional changes."
+          },
+          {
+            "title": "1.0.6",
+            "body": "Reorganized package and documentation structure.\nUpdated distribution metadata and README layout.\nNo functional changes."
+          },
+          {
+            "title": "1.0.5",
+            "body": "Updated the README version label to 1.0.5.\nAligned package distribution state with the documented version.\nNo functional changes."
+          },
+          {
+            "title": "1.0.4",
+            "body": "Reorganized editor scripts to match the package structure.\nCleaned up tool files for internal VPM package paths.\nPerformed structural adjustments for more stable package distribution."
+          },
+          {
+            "title": "1.0.3",
+            "body": "Expanded the README and multilingual explanations.\nAdded clearer feature, usage, and troubleshooting sections in Korean, English, and Japanese.\nAdded a changelog section.\nImproved the base documentation for Blendshape Sync Auto Setup."
+          },
+          {
+            "title": "1.0.2",
+            "body": "Changed the default language from English to Korean.\nAligned the language selection UI with other Iyan-Kim editor tools.\nImproved UI text and layout.\nReorganized the localization structure."
+          },
+          {
+            "title": "1.0.1",
+            "body": "Added Korean, English, and Japanese UI support.\nAdded the language selection dropdown.\nMoved UI text management to a localization-dictionary-based structure."
+          },
+          {
+            "title": "1.0.0",
+            "body": "Initial release.\nAdded automatic Modular Avatar Blendshape Sync setup.\nSupports common blendshape detection between source and targets.\nSupports processing multiple target objects in one workflow.\nAdded the base EditorWindow UI and setup flow."
+          }
+        ]
+      }
+    ]
+  }
+}

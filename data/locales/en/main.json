@@ -1,0 +1,42 @@
+{
+  "nav": {
+    "home": "HOME",
+    "portfolio": "PORTFOLIO"
+  },
+  "home": {
+    "kicker": "VRChat Gimmicks & Unity Tools",
+    "role": "Game Developer",
+    "scrollCue": "Portfolio",
+    "addVcc": "Add to VCC",
+    "addAlcom": "Visit Wiki"
+  },
+  "portfolio": {
+    "kicker": "Portfolio",
+    "title": "VRChat Gimmicks & Unity Tools",
+    "copy": "A collection of projects, products, gimmicks, and tools I have worked on.",
+    "showMore": "Show More",
+    "showLess": "Show Less"
+  },
+  "filters": {
+    "all": "All",
+    "vrchat-gimmick": "VRChat Gimmick",
+    "unity-tool": "Unity Tool"
+  },
+  "modal": {
+    "visit": "Visit BOOTH",
+    "close": "Close"
+  },
+  "status": {
+    "loadingProjects": "Loading projects...",
+    "noProjectsYet": "No projects yet.",
+    "failedToLoadData": "Failed to load portfolio data."
+  },
+  "tags": {
+    "VRChat Gimmick": "VRChat Gimmick",
+    "Unity Tool": "Unity Tool"
+  },
+  "categories": {
+    "Gimmick": "Gimmick",
+    "Tool": "Tool"
+  }
+}

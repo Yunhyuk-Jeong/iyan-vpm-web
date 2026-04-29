@@ -1,0 +1,146 @@
+{
+  "prefabMaterialRemapper": {
+    "eyebrow": "VPM Tools",
+    "title": "Prefab Material Remapper",
+    "copy": "A Unity editor tool that remaps materials inside Prefab Assets by using the current Material.name in each slot as the matching key. It brings an FBX-style material remapping workflow to Prefab Assets.",
+    "cards": [
+      {
+        "title": "Best For",
+        "body": "Complex prefabs, VRChat outfit prefabs, and assets with repeated dummy material slot names across many renderers."
+      },
+      {
+        "title": "Name-Based Mapping",
+        "body": "Uses the current Material.name in each slot as the grouping key, so every slot with the same name can be replaced in one pass."
+      },
+      {
+        "title": "Safe Prefab Editing",
+        "body": "Uses LoadPrefabContents / SaveAsPrefabAsset to edit the original Prefab Asset safely instead of touching only a scene instance."
+      }
+    ],
+    "meta": {
+      "chips": ["Prefab", "Material", "VPM"],
+      "body": "Designed for Unity 2022.3+ and Prefab Assets that contain Renderer or SkinnedMeshRenderer material slots inside the Project window."
+    },
+    "image": {
+      "src": "./assets/wiki/vpm-tools/prefab-material-remapper/en_01.png",
+      "alt": "Prefab Material Remapper English UI screenshot",
+      "caption": "Assign a Prefab Asset, scan its slot keys, then map each key to the real material you want to apply."
+    },
+    "sections": [
+      {
+        "title": "Key Features",
+        "items": [
+          "Uses the current Material.name as a remapping key and groups all matching slots together.",
+          "Provides an FBX-style remapping workflow for Prefab Assets.",
+          "Scans every child Renderer inside the Prefab automatically.",
+          "Supports both MeshRenderer and SkinnedMeshRenderer.",
+          "Shows how many material slots each key affects.",
+          "Supports drag and drop from the Project window.",
+          "Editor-only workflow with no runtime impact."
+        ]
+      },
+      {
+        "title": "Requirements",
+        "items": [
+          "Unity 2022.3 or newer",
+          "A Prefab Asset in the Project window",
+          "Renderer or SkinnedMeshRenderer components with assigned materials",
+          "Editor-only usage",
+          "No extra VPM dependency"
+        ]
+      },
+      {
+        "title": "Basic Usage",
+        "ordered": true,
+        "items": [
+          "Open Iyan-Kim > Tools > Prefab Material Remapper.",
+          "Assign a Prefab Asset from the Project window or drag and drop it into the tool.",
+          "Click Scan Slots to build a key list from the current material names.",
+          "Assign the real replacement material next to each key.",
+          "Click Apply to Prefab Asset to replace every slot with the same key name."
+        ]
+      },
+      {
+        "title": "Option Details",
+        "entries": [
+          {
+            "title": "Prefab Asset / Drag and Drop",
+            "body": "You must assign the original Prefab Asset from the Project window. Scene instances and regular GameObjects are not valid targets."
+          },
+          {
+            "title": "Scan Slots",
+            "body": "Loads the Prefab contents, scans all child Renderer sharedMaterials, and builds a key list using the current material names."
+          },
+          {
+            "title": "Key / Count / Material Field",
+            "body": "The key is the current Material.name, the count shows how many slots use that key, and the material field is where you assign the actual replacement material."
+          },
+          {
+            "title": "Apply to Prefab Asset",
+            "body": "Saves the configured material remapping into the Prefab Asset. Any key left empty is ignored during the apply step."
+          }
+        ]
+      },
+      {
+        "title": "Tips",
+        "items": [
+          "It is best to preserve dummy material names from imported FBX assets if you want stable remapping later.",
+          "Names like `Metal`, `Body`, `Glass`, or `UV1` make large remap jobs much easier to manage.",
+          "After replacing a dummy material, the key may change to the new real material name, so keeping a backup of the original dummy-material structure is useful.",
+          "Because this edits the Prefab Asset directly, using Git or a backup before large remaps is a good idea."
+        ]
+      },
+      {
+        "title": "Troubleshooting",
+        "entries": [
+          {
+            "title": "The Prefab Asset shows an error",
+            "body": "Make sure the target is an actual Prefab Asset from the Project window. Scene instances and ordinary GameObjects are not supported."
+          },
+          {
+            "title": "No slots were found",
+            "body": "Check that the Prefab contains Renderer or SkinnedMeshRenderer components and that real materials are assigned to their slots."
+          },
+          {
+            "title": "Nothing to apply",
+            "body": "At least one scanned key must have a replacement material assigned. If every field is empty, there is nothing to write back."
+          },
+          {
+            "title": "A slot was not replaced",
+            "body": "The tool matches against the current Material.name, not the material asset filename. Verify the actual runtime name stored in the slot."
+          },
+          {
+            "title": "The scene instance does not update immediately",
+            "body": "This tool edits the Prefab Asset itself. If scene instances have overrides or delayed refresh, reselect the prefab or refresh the scene."
+          }
+        ]
+      },
+      {
+        "title": "License",
+        "entries": [
+          {
+            "title": "MIT License",
+            "body": "Prefab Material Remapper is distributed under the MIT License. It can be used in personal and commercial projects, and may be modified and redistributed under the license terms."
+          }
+        ]
+      },
+      {
+        "title": "Release Notes",
+        "entries": [
+          {
+            "title": "1.0.2",
+            "body": "Changed the package display name to `Iyan-Kim Prefab Material Remapper`.\nCleaned up branding visibility in VCC / Package Manager.\nNo functional changes."
+          },
+          {
+            "title": "1.0.1",
+            "body": "Updated the package version to `1.0.1`.\nCleaned up some internal comment wording.\nNo functional changes."
+          },
+          {
+            "title": "1.0.0",
+            "body": "Initial release.\nAdded scanning of Prefab Asset material slots based on `Material.name`.\nGrouped same-name slots under a single remap key.\nAdded batch replacement by assigning a new material per key.\nImplemented safe Prefab editing through `LoadPrefabContents` / `SaveAsPrefabAsset`.\nAdded drag and drop Prefab assignment.\nAdded Korean, English, and Japanese UI.\nAdded editor-only asmdef setup, VPM package structure, and MIT License."
+          }
+        ]
+      }
+    ]
+  }
+}

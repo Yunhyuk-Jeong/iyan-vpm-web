@@ -1,0 +1,133 @@
+{
+  "planeFitToCameraTool": {
+    "eyebrow": "VPM Tools",
+    "title": "Plane Fit To Camera Tool",
+    "copy": "1つ以上のPlaneをカメラ画面に合わせて素早く整列できるUnityエディターツールです。背景パネル、フルスクリーンオーバーレイ、スクリーン演出のように、画面を正確に埋めたい作業を簡単に扱えます。",
+    "cards": [
+      {
+        "title": "Best For",
+        "body": "背景カード、オーバーレイ、スクリーンシェーダー、VRChatギミックなど、カメラフレームに正確に合わせたいPlane表現に向いています。"
+      },
+      {
+        "title": "Camera Support",
+        "body": "PerspectiveカメラとOrthographicカメラの両方に対応し、それぞれの計算方式に合わせて画面を埋めます。"
+      },
+      {
+        "title": "Workflow",
+        "body": "複数のPlaneを一度に登録し、距離や回転オプションもまとめて調整できるため、繰り返し作業を減らしやすい構成です。"
+      }
+    ],
+    "meta": {
+      "chips": ["Unity", "Editor Tool", "VPM"],
+      "body": "Unity標準のPlane(XZ, 10×10)に最適化されており、Planeのように扱えるXZベースのメッシュにも適用できます。"
+    },
+    "image": {
+      "src": "./assets/wiki/vpm-tools/plane-fit-to-camera-tool/ja_01.png",
+      "alt": "Plane Fit To Camera Tool Japanese UI screenshot",
+      "caption": "エディターウィンドウではカメラ、Plane一覧、距離、回転オプションを調整してからFit Plane(s)を実行できます。"
+    },
+    "sections": [
+      {
+        "title": "主な機能",
+        "items": [
+          "カメラ画面に合わせてPlaneのスケール、位置、回転を自動で整列します。",
+          "Perspectiveカメラ(FOV基準)とOrthographicカメラ(orthographicSize基準)の両方に対応します。",
+          "複数のPlaneオブジェクトを一度に登録し、同時に整列できます。",
+          "現在距離の利用と手動距離入力の両方をサポートします。",
+          "Keep Squareと0° / 90° / 180° / 270°回転に対応します。",
+          "韓国語、英語、日本語UIとUnity Undoシステムをサポートします。"
+        ]
+      },
+      {
+        "title": "要件",
+        "items": [
+          "Unity 2022.3.22f1 以上",
+          "任意のレンダーパイプライン (Built-in / URP / HDRP)",
+          "Unity Plane またはPlaneに近いXZメッシュ"
+        ]
+      },
+      {
+        "title": "基本的な使い方",
+        "ordered": true,
+        "items": [
+          "Iyan-Kim > Tools > Plane Fit To Camera を開きます。",
+          "Cameraスロットに対象カメラを指定します。",
+          "Planeリストに1つ以上のPlaneオブジェクトを追加します。",
+          "距離、回転、整列オプションを設定します。",
+          "Fit Plane(s) を押してカメラ画面に合わせます。"
+        ]
+      },
+      {
+        "title": "オプション説明",
+        "entries": [
+          {
+            "title": "Align Position",
+            "body": "Planeを camera.position + camera.forward * distance の位置へ移動し、指定した奥行きで画面を埋めるように配置します。"
+          },
+          {
+            "title": "Align Rotation",
+            "body": "Plane(XZ)の向きがカメラを向くように回転させ、画面全体を埋める方向に補正します。"
+          },
+          {
+            "title": "Use Current Distance / Manual Distance",
+            "body": "現在位置から距離を取得するか、手動距離を直接使うかを選べます。"
+          },
+          {
+            "title": "Keep Square / Image Rotation",
+            "body": "Keep Squareは正方形結果を維持し、Image Rotationはカメラ正面軸を基準にPlaneを回転させます。"
+          }
+        ]
+      },
+      {
+        "title": "活用のヒント",
+        "items": [
+          "固定背景を作る場合はPlaneをカメラの子にしてから一度Fit Plane(s)を実行すると扱いやすくなります。",
+          "カスタムメッシュを使う場合も基本的にはXZ平面として扱われ、必要ならFit後に手動でスケール調整できます。",
+          "単色背景、グラデーションパネル、スクリーンシェーダー用オブジェクト、カットシーン用パネル、VRChatのスクリーン演出などに向いています。"
+        ]
+      },
+      {
+        "title": "トラブルシューティング",
+        "entries": [
+          {
+            "title": "Planeが画面を完全に埋めません",
+            "body": "Gameビューで使っているカメラとツールに指定したカメラが同じか確認し、FOVやAspect Ratioを変えた場合はFit Plane(s)を再実行してください。"
+          },
+          {
+            "title": "テクスチャが上下逆または横向きに見えます",
+            "body": "Image Rotationを先に試し、それでも直らない場合はメッシュのUV方向も確認してください。"
+          },
+          {
+            "title": "Planeが他のオブジェクトの後ろに隠れます",
+            "body": "Manual Distanceを大きくして前方へ移動し、必要ならRender QueueやZWrite設定も確認してください。"
+          },
+          {
+            "title": "Fit Plane(s) を押しても変化がありません",
+            "body": "Cameraと少なくとも1つのPlaneスロットが正しく設定されているか確認し、Console警告も確認してください。"
+          }
+        ]
+      },
+      {
+        "title": "リリース要約",
+        "entries": [
+          {
+            "title": "1.0.10",
+            "body": "パッケージ表示名を整理し、VCC / Package Managerでのブランド表記をより明確にしました。"
+          },
+          {
+            "title": "1.0.9 - 1.0.5",
+            "body": "名前空間整理、メタデータ調整、VPM / VCC互換性まわりの保守更新が続きました。"
+          },
+          {
+            "title": "1.0.4 - 1.0.2",
+            "body": "複数Plane対応、スケール補正改善、Orthographic Camera対応が追加されました。"
+          },
+          {
+            "title": "1.0.1 - 1.0.0",
+            "body": "多言語UI、言語選択構造、基本整列機能とVPMパッケージ構造を含む初期バージョンです。"
+          }
+        ]
+      }
+    ]
+  }
+}

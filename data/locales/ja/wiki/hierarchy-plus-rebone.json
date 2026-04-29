@@ -1,0 +1,170 @@
+{
+  "hierarchyPlusRebone": {
+    "eyebrow": "VPM Tools",
+    "title": "Hierarchy Plus Rebone",
+    "copy": "Unity Hierarchy をより見やすく扱いやすくするためのエディターツールです。行色、ガイドライン、コンポーネントアイコン、Tag / Layer ラベルを追加し、複雑なアバター階層やシーン構造を素早く把握しやすくします。",
+    "cards": [
+      {
+        "title": "Best For",
+        "body": "複雑な VRChat アバター階層、大規模シーン、コンポーネント状態やラベルを頻繁に確認する作業に向いています。"
+      },
+      {
+        "title": "Hierarchy Visibility",
+        "body": "行背景、ガイドライン、アイコン、Tag / Layer ラベルによって、階層の深さと状態をより素早く読めます。"
+      },
+      {
+        "title": "Reworked Fork",
+        "body": "保守が止まった元の HierarchyPlus をベースに、ライセンスを守りつつ現代の Unity と VPM / VCC 配布構造へ合わせて再構成したバージョンです。"
+      }
+    ],
+    "meta": {
+      "chips": ["Hierarchy", "Rebone", "VPM"],
+      "body": "Editor-only 拡張であり、ランタイムビルドには影響しません。Unity 2022.3 以上と VPM / VCC 管理環境を前提に整理されています。"
+    },
+    "sections": [
+      {
+        "title": "主な機能",
+        "items": [
+          "行色、背景、ガイドラインを追加して Hierarchy の構造を読みやすくします。",
+          "親子関係をインデントとガイドラインでより明確に確認できます。",
+          "GameObject とコンポーネントアイコンを Hierarchy 右側に表示します。",
+          "アイコンクリックやドラッグトグルで GameObject や一部コンポーネントの状態を素早く切り替えられます。",
+          "Tag / Layer ラベルを表示し、コンテキスト操作で素早く変更できます。",
+          "Hidden Types により表示したくないアイコンタイプを隠せます。",
+          "色、背景、ガイドライン、アイコン tint などの設定を保存して再利用できます。"
+        ]
+      },
+      {
+        "title": "要件",
+        "items": [
+          "Unity 2022.3 以上",
+          "VCC または VPM パッケージ管理環境",
+          "Unity Editor 専用",
+          "ランタイム依存なし"
+        ]
+      },
+      {
+        "title": "基本的な使い方",
+        "ordered": true,
+        "items": [
+          "VCC または VPM でパッケージを導入します。",
+          "Iyan-Kim > Tools > Hierarchy Plus Rebone を開きます。",
+          "HierarchyPlus Enabled を有効にします。",
+          "Colors、Components、Labels セクションで必要な設定を行います。",
+          "変更内容は Hierarchy に即時反映されます。",
+          "アイコンが更新されない場合は Refresh Icons を押してキャッシュを再読み込みします。"
+        ]
+      },
+      {
+        "title": "オプション説明",
+        "entries": [
+          {
+            "title": "HierarchyPlus Enabled / Colors",
+            "body": "機能全体の有効・無効を切り替え、行背景色、ガイドライン、アイコン背景、アクティブ / 非アクティブ tint などを設定できます。"
+          },
+          {
+            "title": "Guide Lines / Row Coloring",
+            "body": "親子構造をガイドラインで表示し、行背景色を交互に分けて長い階層一覧の可読性を高めます。"
+          },
+          {
+            "title": "Components / Drag-Toggle",
+            "body": "Hierarchy に GameObject とコンポーネントアイコンを表示し、コンテキストメニューやドラッグトグルで状態を素早く変更できます。"
+          },
+          {
+            "title": "Labels / Context Click",
+            "body": "Tag / Layer ラベルを表示し、ラベルのコンテキスト操作で値をすばやく変更できます。"
+          },
+          {
+            "title": "Hidden Types / Refresh Icons",
+            "body": "特定タイプのアイコンを隠したり、表示が崩れたときにアイコンキャッシュを再初期化したりできます。"
+          }
+        ]
+      },
+      {
+        "title": "ヒント",
+        "items": [
+          "VRChat アバター作業では Guide Lines と Row Coloring を同時に有効にすると階層の把握が楽になります。",
+          "コンポーネント数の多いオブジェクトをよく見るなら Components を有効にすると Hierarchy が状態ダッシュボードになります。",
+          "Tag / Layer をよく変更するなら Labels と context click を一緒に使うと効率的です。",
+          "アイコンが多すぎて見づらい場合は Hidden Types で不要なタイプを隠すと整理しやすくなります。",
+          "元の HierarchyPlus と同時使用すると表示が重複する場合があるため、併用は避けるのが無難です。"
+        ]
+      },
+      {
+        "title": "トラブルシューティング",
+        "entries": [
+          {
+            "title": "Hierarchy に変化がありません",
+            "body": "HierarchyPlus Enabled が有効か確認し、Hierarchy ウィンドウを再クリックしてみてください。必要なら Refresh Icons を押します。"
+          },
+          {
+            "title": "コンポーネントアイコンが表示されません",
+            "body": "Components、Show GameObject Icon、Show Transform Icon、Show Non-Toggleable Icons を確認し、Hidden Types で除外されていないかも確認してください。"
+          },
+          {
+            "title": "Tag または Layer ラベルが表示されません",
+            "body": "Labels、Show Layer Label、Show Tag Label が有効か確認し、既定 Layer / Untagged を隠す設定も確認してください。"
+          },
+          {
+            "title": "アイコンや色が重なって見えます",
+            "body": "Icons X Offset を調整し、Always Render Icons や背景オプションを見直してください。必要なら Hierarchy ウィンドウ幅も広げます。"
+          },
+          {
+            "title": "元の HierarchyPlus と競合します",
+            "body": "この版は namespace と menu path を変えて衝突を減らしていますが、2つの Hierarchy 拡張を同時実行すると重複表示が起こる場合があります。"
+          }
+        ]
+      },
+      {
+        "title": "ライセンスと原典",
+        "entries": [
+          {
+            "title": "ベースプロジェクト",
+            "body": "Hierarchy Plus Rebone は元の HierarchyPlus をベースに修正・再構成したプロジェクトです。原作者は DreadScripts、再構成は Iyan-Kim が担当しています。"
+          },
+          {
+            "title": "ライセンス",
+            "body": "原典の GNU General Public License v3.0 or later を維持します。再配布時には同じライセンス条件と告知義務を守る必要があります。"
+          },
+          {
+            "title": "パッケージ方針",
+            "body": "元ライセンスを保持しつつ改変版であることを明記し、VPM / VCC 配布向けにパッケージ構造、namespace、menu path、asmdef 構成、Unity 2022.3+ 対応を整理した版です。"
+          }
+        ]
+      },
+      {
+        "title": "リリースノート",
+        "entries": [
+          {
+            "title": "1.0.6",
+            "body": "パッケージ表示名を `Iyan-Kim Hierarchy Plus Rebone` に整理しました。\nパッケージ説明とメタデータを現在の配布形式に合わせました。\nライセンス表記を `GPL-3.0-or-later` として明示しました。\nVPM / VCC パッケージ構成を整理しました。"
+          },
+          {
+            "title": "1.0.5",
+            "body": "配布用メタデータを整理しました。\nVPM repository 登録と配布安定性のための保守作業を行いました。\n機能変更はありません。"
+          },
+          {
+            "title": "1.0.4",
+            "body": "Unity 2022.3+ 向けにパッケージ構造を整理しました。\nEditor-only asmdef 構成を強化しました。\n元の HierarchyPlus との衝突を減らすため namespace を整理しました。"
+          },
+          {
+            "title": "1.0.3",
+            "body": "メニュー経路を Iyan-Kim ツール構造に合わせました。\n設定ウィンドウ名と PRODUCT_NAME を `Hierarchy Plus Rebone` 基準へ更新しました。\nVPM 配布向けの内部ファイル構成を整理しました。"
+          },
+          {
+            "title": "1.0.2",
+            "body": "元の HierarchyPlus コードを現代的な Unity パッケージ構造に合わせてリファクタリングしました。\n保存設定、スタイル、コンテンツ、インデント、色処理関連クラスをパッケージ内へ整理しました。\nEditor 専用コードとして分離しました。"
+          },
+          {
+            "title": "1.0.1",
+            "body": "元の HierarchyPlus 機能を Rebone プロジェクト構造へ移しました。\nnamespace とファイル構成を整理しました。\nVPM 配布向け初期パッケージ構成を追加しました。"
+          },
+          {
+            "title": "1.0.0",
+            "body": "初回リリースです。\n元の HierarchyPlus を基に Hierarchy Plus Rebone プロジェクトを開始しました。\n行色、ガイドライン、コンポーネントアイコン、Tag / Layer ラベル表示機能を含みます。\nGPL-3.0 を維持したまま改変・再配布できる構造を整えました。"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "prefabMaterialRemapper": {
+    "eyebrow": "VPM Tools",
+    "title": "Prefab Material Remapper",
+    "copy": "Prefab Asset 내부의 머티리얼을 현재 슬롯에 들어있는 Material.name 기준으로 일괄 치환해주는 Unity 에디터 툴입니다. FBX Importer의 Material Remapping과 비슷한 흐름을 Prefab Asset에도 적용할 수 있도록 만든 도구입니다.",
+    "cards": [
+      {
+        "title": "Best For",
+        "body": "여러 Renderer와 머티리얼 슬롯을 가진 프리팹, VRChat 아바타 의상 프리팹, 반복되는 더미 머티리얼 구조를 가진 에셋에 적합합니다."
+      },
+      {
+        "title": "Name-Based Mapping",
+        "body": "현재 슬롯에 들어있는 Material.name을 키로 사용해 같은 이름을 가진 모든 슬롯을 한 번에 묶어 처리합니다."
+      },
+      {
+        "title": "Safe Prefab Editing",
+        "body": "LoadPrefabContents / SaveAsPrefabAsset 흐름으로 Prefab Asset을 직접 불러오고 저장하므로 씬 인스턴스가 아니라 원본 에셋을 안전하게 수정합니다."
+      }
+    ],
+    "meta": {
+      "chips": ["Prefab", "Material", "VPM"],
+      "body": "Unity 2022.3 이상에서 동작하며, Project 창에 존재하는 Prefab Asset과 머티리얼이 할당된 Renderer 또는 SkinnedMeshRenderer를 대상으로 사용합니다."
+    },
+    "image": {
+      "src": "./assets/wiki/vpm-tools/prefab-material-remapper/ko_01.png",
+      "alt": "Prefab Material Remapper Korean UI screenshot",
+      "caption": "Prefab Asset을 지정하고 슬롯 스캔을 실행한 뒤, 키별로 교체할 실제 머티리얼을 입력해 한 번에 적용할 수 있습니다."
+    },
+    "sections": [
+      {
+        "title": "주요 기능",
+        "items": [
+          "현재 슬롯의 Material.name을 기준으로 머티리얼 키를 만들고 같은 이름의 슬롯을 한 번에 묶어 처리합니다.",
+          "FBX Material Remapping과 비슷한 흐름을 Prefab Asset 직접 수정 방식으로 제공합니다.",
+          "Prefab 내부의 모든 하위 Renderer를 자동 스캔합니다.",
+          "MeshRenderer와 SkinnedMeshRenderer를 모두 지원합니다.",
+          "각 키가 몇 개의 슬롯에 영향을 주는지 개수로 표시합니다.",
+          "Project 창의 Prefab Asset을 드래그 앤 드롭으로 바로 지정할 수 있습니다.",
+          "Editor-only 구조이며 런타임 빌드에는 영향을 주지 않습니다."
+        ]
+      },
+      {
+        "title": "요구 사항",
+        "items": [
+          "Unity 2022.3 이상",
+          "Project 창에 존재하는 Prefab Asset",
+          "머티리얼이 할당된 Renderer 또는 SkinnedMeshRenderer",
+          "Unity Editor 전용 사용",
+          "별도 VPM 의존성 없음"
+        ]
+      },
+      {
+        "title": "기본 사용 방법",
+        "ordered": true,
+        "items": [
+          "Iyan-Kim > Tools > Prefab Material Remapper 메뉴를 엽니다.",
+          "Prefab Asset 필드에 Project 창의 Prefab Asset을 지정하거나 드래그 앤 드롭합니다.",
+          "슬롯 스캔 버튼을 눌러 현재 머티리얼 슬롯 이름을 키 목록으로 불러옵니다.",
+          "각 키 옆의 머티리얼 필드에 실제로 적용할 머티리얼을 지정합니다.",
+          "프리펩 에셋에 적용 버튼을 눌러 지정한 키와 이름이 같은 모든 슬롯을 일괄 교체합니다."
+        ]
+      },
+      {
+        "title": "옵션 설명",
+        "entries": [
+          {
+            "title": "프리펩 에셋 / 드래그 앤 드롭",
+            "body": "씬 인스턴스가 아니라 Project 창의 Prefab Asset을 지정해야 합니다. 프리팹이 아닌 일반 GameObject는 처리 대상이 아닙니다."
+          },
+          {
+            "title": "슬롯 스캔",
+            "body": "Prefab Asset 내부의 모든 하위 Renderer의 sharedMaterials를 검사하고 현재 머티리얼 이름을 기준으로 키 목록을 만듭니다."
+          },
+          {
+            "title": "키 / 개수 / 머티리얼 필드",
+            "body": "키는 현재 슬롯에 들어있는 Material.name이고, 개수는 Prefab 내부에서 같은 키가 몇 개의 슬롯에 쓰이고 있는지를 보여줍니다. 머티리얼 필드에는 새로 적용할 실제 머티리얼을 지정합니다."
+          },
+          {
+            "title": "프리펩 에셋에 적용",
+            "body": "지정된 키-머티리얼 매핑을 Prefab Asset에 저장합니다. 비워 둔 키는 변경되지 않습니다."
+          }
+        ]
+      },
+      {
+        "title": "활용 팁",
+        "items": [
+          "안정적인 리매핑을 위해 FBX에서 가져온 더미 머티리얼 이름을 유지하는 것이 좋습니다.",
+          "`Metal`, `Body`, `Glass`, `UV1`처럼 슬롯 구분용 이름을 유지해두면 나중에 한 번에 교체하기 쉽습니다.",
+          "한 번 실제 머티리얼로 교체하면 키가 새 머티리얼 이름으로 바뀔 수 있으므로, 원본 더미 머티리얼 구조를 백업해두는 것이 안전합니다.",
+          "씬 인스턴스가 아니라 Prefab Asset을 직접 수정하므로 Git이나 백업으로 변경 이력을 관리하는 편이 좋습니다."
+        ]
+      },
+      {
+        "title": "문제 해결",
+        "entries": [
+          {
+            "title": "Prefab Asset 지정 시 오류가 납니다",
+            "body": "Project 창의 Prefab Asset을 선택했는지 확인하세요. 씬에 배치된 프리팹 인스턴스나 일반 GameObject는 대상이 아닙니다."
+          },
+          {
+            "title": "슬롯을 찾지 못했습니다",
+            "body": "Prefab 내부에 Renderer 또는 SkinnedMeshRenderer가 있는지, 그리고 머티리얼 슬롯에 실제 머티리얼이 할당되어 있는지 확인하세요."
+          },
+          {
+            "title": "적용할 내용이 없다고 표시됩니다",
+            "body": "스캔된 키 목록에서 교체할 머티리얼을 하나 이상 지정했는지 확인하세요. 모든 필드가 비어 있으면 적용할 변경 사항이 없습니다."
+          },
+          {
+            "title": "원하는 슬롯이 교체되지 않습니다",
+            "body": "키는 현재 슬롯의 Material.name 기준으로 생성됩니다. 파일 이름이 아니라 실제 Material.name이 무엇인지 확인해야 합니다."
+          },
+          {
+            "title": "씬의 오브젝트가 바로 바뀌지 않습니다",
+            "body": "이 툴은 Prefab Asset을 수정합니다. 씬 인스턴스에 override가 있거나 갱신이 늦는 경우, 프리팹을 다시 선택하거나 씬을 새로고침해 확인하세요."
+          }
+        ]
+      },
+      {
+        "title": "라이선스",
+        "entries": [
+          {
+            "title": "MIT License",
+            "body": "Prefab Material Remapper는 MIT License로 배포됩니다. 개인 및 상업 프로젝트에서 사용할 수 있으며, 라이선스 조건에 따라 수정 및 재배포할 수 있습니다."
+          }
+        ]
+      },
+      {
+        "title": "릴리즈 노트",
+        "entries": [
+          {
+            "title": "1.0.2",
+            "body": "패키지 표시 이름을 `Iyan-Kim Prefab Material Remapper`로 변경했습니다.\nVCC / Package Manager에서 제작자 브랜드가 더 명확하게 보이도록 정리했습니다.\n기능 변경은 없습니다."
+          },
+          {
+            "title": "1.0.1",
+            "body": "패키지 버전을 `1.0.1`로 갱신했습니다.\n내부 주석의 표현을 정리했습니다.\n기능 변경은 없습니다."
+          },
+          {
+            "title": "1.0.0",
+            "body": "최초 릴리즈입니다.\nPrefab Asset 내부 머티리얼 슬롯을 `Material.name` 기준으로 스캔하는 기능을 추가했습니다.\n동일한 머티리얼 이름을 가진 슬롯을 하나의 키로 묶어 표시하도록 구성했습니다.\n키별로 새 머티리얼을 지정해 일괄 치환하는 기능을 추가했습니다.\nPrefab Asset을 `LoadPrefabContents` / `SaveAsPrefabAsset` 방식으로 안전하게 수정하도록 구현했습니다.\n드래그 앤 드롭으로 Prefab Asset을 지정할 수 있도록 했습니다.\n한국어, 영어, 일본어 UI를 추가했습니다.\nEditor-only asmdef와 VPM 패키지 구조를 추가했습니다.\nMIT License를 추가했습니다."
+          }
+        ]
+      }
+    ]
+  }
+}

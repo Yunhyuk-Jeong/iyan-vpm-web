@@ -1,0 +1,21 @@
+{
+  "overview": {
+    "eyebrow": "Overview",
+    "title": "Studio Iyan Wiki",
+    "copy": "This is the documentation space for Studio Iyan VPM packages, utility tools, and workflow references. You can review the purpose, usage flow, components, and release information for each item in one place.",
+    "cards": [
+      {
+        "title": "What you can find here",
+        "body": "This wiki is not just a download list. It is a reference set that explains what each tool or package is built for, when it is useful, and how it fits into an actual production workflow."
+      },
+      {
+        "title": "How it is organized",
+        "body": "VPM Tools covers the free packages and workflow tools distributed through the repository, while Tools covers separately provided paid tools. Each tab is structured to show the feature overview, requirements, usage flow, detailed options, practical tips, and release notes in order."
+      }
+    ],
+    "meta": {
+      "chips": ["Overview", "Documentation", "Workflow"],
+      "body": "If you are new to a section, start with that group's Overview and then move into the lower tabs when you need a specific feature. This page is meant to give you the map first and then point you to the right document quickly."
+    }
+  }
+}

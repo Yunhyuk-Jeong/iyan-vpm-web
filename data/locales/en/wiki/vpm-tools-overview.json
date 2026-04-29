@@ -1,0 +1,17 @@
+{
+  "vpmToolsOverview": {
+    "eyebrow": "VPM Tools",
+    "title": "Free tools distributed through VPM",
+    "copy": "This section collects the free tools distributed through the Studio Iyan VPM repository. They are built to reduce repetitive setup and editor work while making common VRChat and Unity workflows faster to manage.",
+    "meta": {
+      "chips": ["Free", "VPM", "Workflow Tools"],
+      "body": "These tools are organized around recurring problems in VRChat avatar work and Unity-based editing.\n\nThey are intended to simplify tasks such as camera-based placement, blendshape synchronization, hierarchy adjustment, material remapping, and mask generation.\n\nEach package focuses on one practical workflow step so it can be installed quickly and used immediately.\n\nThe tabs below explain what each tool is for, when it is useful, and how it is expected to be used."
+    },
+    "action": {
+      "title": "Add the full VPM repository",
+      "body": "Use this button to add the Studio Iyan VPM repository to VCC. Once added, every tool in this VPM Tools section becomes available through the same repository.",
+      "href": "vcc://vpm/addRepo?url=https://raw.githubusercontent.com/Yunhyuk-Jeong/iyan-vpm/main/vpm.json",
+      "label": "Add to VCC"
+    }
+  }
+}

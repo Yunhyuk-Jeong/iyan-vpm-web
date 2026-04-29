@@ -1,0 +1,21 @@
+{
+  "vsfAvatarConverter": {
+    "eyebrow": "Tools",
+    "title": "VSF Avatar Converter",
+    "copy": "This page is still being prepared. The section structure is in place, but the actual workflow notes, option breakdowns, output examples, and release history will be added later.",
+    "cards": [
+      {
+        "title": "Current status",
+        "body": "This entry stays in `WIP` state for now. The documentation slot and navigation are ready, but the real feature breakdown and screenshots have not been published yet."
+      },
+      {
+        "title": "What will be added",
+        "body": "Once the page is ready, it should cover supported conversion scope, input types, setup flow, cautions, version-specific differences, and example results from the actual tool."
+      }
+    ],
+    "meta": {
+      "chips": ["WIP", "Unity Tool", "Conversion"],
+      "body": "At the moment this page only reserves the space for future documentation. When the tool page is filled in, the most useful structure will focus on `input targets`, `output results`, `compatibility scope`, and `migration cautions`."
+    }
+  }
+}

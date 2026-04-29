@@ -1,0 +1,165 @@
+{
+  "maBlendshapeSyncAutoSetup": {
+    "eyebrow": "VPM Tools",
+    "title": "MA Blendshape Sync Auto Setup",
+    "copy": "Modular Avatar の Blendshape Sync 設定を自動化する Unity エディターツールです。ソースとターゲットのブレンドシェイプ名を比較し、共通項目を見つけて必要なバインディングをまとめて生成できます。",
+    "cards": [
+      {
+        "title": "Best For",
+        "body": "衣装、ボディ、顔パーツのように、同じ表情用ブレンドシェイプを複数メッシュへ同期したい作業に向いています。"
+      },
+      {
+        "title": "Modular Avatar Workflow",
+        "body": "ターゲットオブジェクトへ Modular Avatar Blendshape Sync コンポーネントを追加し、共通ブレンドシェイプのバインディングを自動生成します。"
+      },
+      {
+        "title": "Batch Setup",
+        "body": "複数ターゲットを登録し、プレビューで確認した後に一括適用できるため、繰り返し作業を大きく減らせます。"
+      }
+    ],
+    "meta": {
+      "chips": ["Modular Avatar", "Automation", "VPM"],
+      "body": "Unity 2022.3 以上、Modular Avatar 1.14.3 以上、NDMF 環境を前提としています。ソースとターゲットの両方に有効な SkinnedMeshRenderer が必要です。"
+    },
+    "image": {
+      "src": "./assets/wiki/vpm-tools/ma-blendshape-sync-auto-setup/ja_01.png",
+      "alt": "MA Blendshape Sync Auto Setup Japanese UI screenshot",
+      "caption": "ソースオブジェクト、複数ターゲット、共通ブレンドシェイプのプレビューを1つの画面で確認し、そのまま適用できます。"
+    },
+    "sections": [
+      {
+        "title": "主な機能",
+        "items": [
+          "ソースとターゲットの SkinnedMeshRenderer を比較し、同名のブレンドシェイプを自動で検出します。",
+          "ターゲットに Modular Avatar Blendshape Sync コンポーネントを追加し、共通ブレンドシェイプのバインディングを作成します。",
+          "複数ターゲットを一度に登録し、一括設定できます。",
+          "ドラッグ＆ドロップ、複数選択、子オブジェクトの SkinnedMeshRenderer 収集に対応します。",
+          "適用前に共通ブレンドシェイプのプレビューを確認できます。",
+          "重複オブジェクトは自動で除外され、Unity Undo にも対応します。"
+        ]
+      },
+      {
+        "title": "要件",
+        "items": [
+          "Unity 2022.3 以上",
+          "Modular Avatar 1.14.3 以上",
+          "NDMF",
+          "SkinnedMeshRenderer を持つソースオブジェクト",
+          "SkinnedMeshRenderer を持つ1つ以上のターゲットオブジェクト"
+        ]
+      },
+      {
+        "title": "基本的な使い方",
+        "ordered": true,
+        "items": [
+          "Iyan-Kim > Tools > Modular Avatar Blendshape Sync Auto Setup を開きます。",
+          "基準になるソースオブジェクトを指定します。",
+          "ドラッグ＆ドロップまたは追加ボタンでターゲットを登録します。",
+          "必要なら子オブジェクト収集を有効にして子 SkinnedMeshRenderer も取り込みます。",
+          "共通ブレンドシェイプのプレビューを確認します。",
+          "設定ボタンを押して有効なターゲットにバインディングを作成します。"
+        ]
+      },
+      {
+        "title": "オプション説明",
+        "entries": [
+          {
+            "title": "Source Object",
+            "body": "基準となるブレンドシェイプ名を持つオブジェクトです。この SkinnedMeshRenderer を元に各ターゲットと比較します。"
+          },
+          {
+            "title": "Target Objects",
+            "body": "Modular Avatar Blendshape Sync コンポーネントが追加される対象です。ソースと同名のブレンドシェイプが自動でバインドされます。"
+          },
+          {
+            "title": "Include Child Objects",
+            "body": "ドラッグしたオブジェクトの子も検索し、SkinnedMeshRenderer を持つ子オブジェクトを自動でターゲット一覧へ追加します。"
+          },
+          {
+            "title": "Detected Common Blendshapes",
+            "body": "ソースとターゲットの両方に存在するブレンドシェイプを表示します。この一覧にあるものだけが実際のバインディングになります。"
+          },
+          {
+            "title": "Apply Blendshape Sync",
+            "body": "検出された一致項目を使って、ターゲットオブジェクトへ Modular Avatar Blendshape Sync 設定を生成または更新します。"
+          }
+        ]
+      },
+      {
+        "title": "ヒント",
+        "items": [
+          "自動検出にはソースとターゲットのブレンドシェイプ名が完全一致している必要があります。",
+          "衣装やボディメッシュのように、同じ表情用ブレンドシェイプを共有するオブジェクトで特に便利です。",
+          "既に Blendshape Sync コンポーネントがある場合も再利用し、バインディング一覧を再構築できます。",
+          "子オブジェクト収集を有効にすると、衣装ルート1つをドラッグするだけで内部の SkinnedMeshRenderer をまとめて登録できます。"
+        ]
+      },
+      {
+        "title": "トラブルシューティング",
+        "entries": [
+          {
+            "title": "共通ブレンドシェイプが見つかりません",
+            "body": "ソースとターゲットに同じ名前のブレンドシェイプがあるか確認してください。大文字小文字、空白、接頭辞や接尾辞の違いでも別項目として扱われます。"
+          },
+          {
+            "title": "設定ボタンが無効です",
+            "body": "ソースオブジェクトが指定されているか、有効なターゲットが1つ以上あるか、共通ブレンドシェイプが1つ以上検出されているかを確認してください。"
+          },
+          {
+            "title": "ソースオブジェクトにエラーが出ます",
+            "body": "ソースオブジェクトに有効な SkinnedMeshRenderer があるか、Mesh が正しく接続されているかを確認してください。"
+          },
+          {
+            "title": "結果が期待通りに動きません",
+            "body": "ソースとターゲットが同じアバター階層にあるか、Modular Avatar と NDMF が正しく導入されているかを確認してください。"
+          }
+        ]
+      },
+      {
+        "title": "リリースノート",
+        "entries": [
+          {
+            "title": "1.0.9",
+            "body": "パッケージ表示名を `Iyan-Kim MA Blendshape Sync Auto Setup` に変更しました。\nVCC / Package Manager でのブランド表示を整理しました。\n機能変更はありません。"
+          },
+          {
+            "title": "1.0.8",
+            "body": "配布用メタデータを整理しました。\nVPM 配布安定性のための保守更新を行いました。\n機能変更はありません。"
+          },
+          {
+            "title": "1.0.7",
+            "body": "VPM パッケージ配布構成を整理しました。\nリリースとリポジトリ用メタデータを調整しました。\n機能変更はありません。"
+          },
+          {
+            "title": "1.0.6",
+            "body": "パッケージとドキュメント構成を整理しました。\n配布用メタデータと README 構成を更新しました。\n機能変更はありません。"
+          },
+          {
+            "title": "1.0.5",
+            "body": "README のバージョン表記を 1.0.5 に更新しました。\n配布状態とドキュメントのバージョンを揃えました。\n機能変更はありません。"
+          },
+          {
+            "title": "1.0.4",
+            "body": "Editor スクリプト構成をパッケージ構造に合わせて整理しました。\nVPM パッケージ内部パスに沿ってツールファイルを再配置しました。\n配布安定性のための構造調整を行いました。"
+          },
+          {
+            "title": "1.0.3",
+            "body": "README を整理し、多言語説明を追加しました。\n韓国語・英語・日本語の機能説明、使い方、トラブルシューティングを整備しました。\n変更ログセクションを追加しました。\n基本説明も補強しました。"
+          },
+          {
+            "title": "1.0.2",
+            "body": "既定言語を英語から韓国語へ変更しました。\n言語選択 UI を他の Iyan-Kim ツールに近い形式へ整理しました。\nUI 文言とレイアウトを一部改善しました。\nローカライズ構造を整理しました。"
+          },
+          {
+            "title": "1.0.1",
+            "body": "韓国語、英語、日本語 UI を追加しました。\n言語選択ドロップダウンを追加しました。\nUI テキスト管理をローカライズ辞書ベースへ変更しました。"
+          },
+          {
+            "title": "1.0.0",
+            "body": "初回リリースです。\nModular Avatar Blendshape Sync 自動設定機能を追加しました。\nソースとターゲット間の共通ブレンドシェイプ自動検出に対応します。\n複数ターゲットを一度に処理できる構成を追加しました。\n基本 EditorWindow UI と設定フローを追加しました。"
+          }
+        ]
+      }
+    ]
+  }
+}

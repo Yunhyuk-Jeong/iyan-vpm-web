@@ -1,0 +1,167 @@
+{
+  "planeFitToCameraTool": {
+    "eyebrow": "VPM Tools",
+    "title": "Plane Fit To Camera Tool",
+    "copy": "A Unity editor tool for aligning one or more Plane objects to the camera view. It is useful when you need a full-screen panel, background layer, overlay surface, or screen-space effect without switching to a Canvas workflow.",
+    "cards": [
+      {
+        "title": "Best For",
+        "body": "Background cards, full-screen overlays, screen shaders, and VRChat gimmick setups that need a plane to match the camera frame precisely."
+      },
+      {
+        "title": "Camera Support",
+        "body": "Works with both perspective and orthographic cameras, using the correct sizing logic for each camera mode."
+      },
+      {
+        "title": "Workflow",
+        "body": "You can register multiple Plane objects, control distance and rotation options, and fit them in one pass to reduce repetitive setup work."
+      }
+    ],
+    "meta": {
+      "chips": ["Unity", "Editor Tool", "VPM"],
+      "body": "The tool is optimized for the default Unity Plane (XZ, 10×10) and also works with XZ-based meshes that behave like planes."
+    },
+    "image": {
+      "src": "./assets/wiki/vpm-tools/plane-fit-to-camera-tool/en_01.png",
+      "alt": "Plane Fit To Camera Tool English UI screenshot",
+      "caption": "The editor window lets you assign a camera, manage multiple planes, and apply distance and rotation options before running Fit Plane(s)."
+    },
+    "sections": [
+      {
+        "title": "Key Features",
+        "items": [
+          "Automatically aligns Plane scale, position, and rotation to the active camera frame.",
+          "Supports both perspective cameras (FOV-based) and orthographic cameras (orthographicSize-based).",
+          "Allows multiple Plane objects to be registered and fitted in one operation.",
+          "Optimized for the default Unity Plane (XZ, 10×10), while still supporting similar XZ-based meshes.",
+          "Supports both current-distance usage and manual distance input.",
+          "Includes a square mode for forcing width and height to match.",
+          "Supports 0° / 90° / 180° / 270° view-based rotation.",
+          "Includes Korean, English, and Japanese UI plus full Unity Undo support."
+        ]
+      },
+      {
+        "title": "Requirements",
+        "items": [
+          "Unity 2022.3.22f1 or newer",
+          "Any render pipeline (Built-in / URP / HDRP)",
+          "A Unity Plane or a comparable XZ-oriented mesh"
+        ]
+      },
+      {
+        "title": "Basic Usage",
+        "ordered": true,
+        "items": [
+          "Open Iyan-Kim > Tools > Plane Fit To Camera from the Unity menu.",
+          "Assign the target camera in the Camera field.",
+          "Add one or more Plane objects to the plane list.",
+          "Configure Align Position, Align Rotation, Distance, Keep Square, and Image Rotation as needed.",
+          "Click Fit Plane(s) to align the registered planes to the camera view."
+        ]
+      },
+      {
+        "title": "Option Details",
+        "entries": [
+          {
+            "title": "Align Position",
+            "body": "Moves the Plane to camera.position + camera.forward * distance so it sits at the target depth in front of the camera."
+          },
+          {
+            "title": "Align Rotation",
+            "body": "Rotates the Plane so its facing direction matches the camera, then applies the extra orientation needed to fill the screen correctly."
+          },
+          {
+            "title": "Use Current Distance / Manual Distance",
+            "body": "You can project the current object position onto the camera forward axis, or override it with a manual distance value. If the object is behind the camera, the tool falls back to the manual distance."
+          },
+          {
+            "title": "Keep Square (Width = Height)",
+            "body": "Uses the larger of the computed width or height and applies it to both axes to create a square result."
+          },
+          {
+            "title": "Image Rotation / Language",
+            "body": "Image Rotation spins the Plane around the camera-facing axis using 0° / 90° / 180° / 270° steps. The window also lets you switch the UI language between Korean, English, and Japanese."
+          }
+        ]
+      },
+      {
+        "title": "Tips and Use Cases",
+        "items": [
+          "For a fixed background, parent the Plane to the camera, then run Fit Plane(s) once before final placement.",
+          "If you use a custom mesh, it will still be treated like an XZ plane by default and can be adjusted manually afterward if needed.",
+          "Good use cases include flat color backgrounds, gradient panels, screen-shader surfaces, cutscene panels, and VRChat screen effects."
+        ]
+      },
+      {
+        "title": "Troubleshooting",
+        "entries": [
+          {
+            "title": "The Plane does not fully fill the screen",
+            "body": "Make sure the camera used in the Game view matches the camera assigned in the tool. If you changed the FOV or aspect ratio, run Fit Plane(s) again."
+          },
+          {
+            "title": "The texture looks upside down or sideways",
+            "body": "Try the Image Rotation options first. If the issue remains, verify the UV orientation of the mesh itself."
+          },
+          {
+            "title": "The Plane appears behind other objects",
+            "body": "Increase Manual Distance to move it farther forward, and check Render Queue, ZWrite, or ZTest settings if the material still renders behind something else."
+          },
+          {
+            "title": "Nothing happens when Fit Plane(s) is clicked",
+            "body": "Confirm that both a Camera and at least one Plane entry are assigned. It is also worth checking the Console for warnings such as missing MeshFilter or sharedMesh references."
+          }
+        ]
+      },
+      {
+        "title": "Release Notes",
+        "entries": [
+          {
+            "title": "1.0.10",
+            "body": "Changed the package display name to Iyan-Kim Plane Fit To Camera Tool and cleaned up the branding shown in VCC / Package Manager."
+          },
+          {
+            "title": "1.0.9",
+            "body": "Moved the editor tool classes into the IyanKim.EditorTools namespace to reduce naming conflicts with other Unity editor packages."
+          },
+          {
+            "title": "1.0.8",
+            "body": "Updated package distribution metadata and maintenance details for more stable VPM publishing."
+          },
+          {
+            "title": "1.0.7",
+            "body": "Refined the VPM distribution structure and adjusted release / repository metadata."
+          },
+          {
+            "title": "1.0.6",
+            "body": "Cleaned up code comments and internal documentation, removing older or potentially confusing explanations."
+          },
+          {
+            "title": "1.0.5",
+            "body": "Adjusted package metadata for VPM / VCC compatibility, including the author structure in package.json."
+          },
+          {
+            "title": "1.0.4",
+            "body": "Added multi-plane support, plane slot management UI, and the expanded Fit Plane(s) workflow."
+          },
+          {
+            "title": "1.0.3",
+            "body": "Improved parent-scale compensation, including better handling of lossyScale and negative scale cases."
+          },
+          {
+            "title": "1.0.2",
+            "body": "Added orthographic camera support alongside the existing perspective camera fitting logic."
+          },
+          {
+            "title": "1.0.1",
+            "body": "Added Korean, English, and Japanese UI support and reorganized the language selector and multilingual labels."
+          },
+          {
+            "title": "1.0.0",
+            "body": "Initial release with automatic Plane / Quad fitting, transform alignment, distance controls, square mode, image rotation, Undo support, and the base VPM package structure."
+          }
+        ]
+      }
+    ]
+  }
+}

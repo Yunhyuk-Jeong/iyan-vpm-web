@@ -1,0 +1,168 @@
+{
+  "planeFitToCameraTool": {
+    "eyebrow": "VPM Tools",
+    "title": "Plane Fit To Camera Tool",
+    "copy": "카메라 화면에 맞춰 하나 이상의 Plane을 빠르게 정렬할 수 있는 Unity 에디터 툴입니다. 배경 패널, 풀스크린 오버레이, 스크린 효과처럼 화면을 정확히 채워야 하는 작업을 더 간단하게 처리할 수 있습니다.",
+    "cards": [
+      {
+        "title": "Best For",
+        "body": "배경 카드, 풀스크린 오버레이, 스크린 셰이더, VRChat 기믹처럼 카메라 프레임에 정확히 맞는 Plane이 필요한 작업에 적합합니다."
+      },
+      {
+        "title": "Camera Support",
+        "body": "원근 카메라(FOV 기반)와 직교 카메라(orthographicSize 기반)를 모두 지원하며, 각각의 계산 방식에 맞춰 화면을 채우도록 정렬합니다."
+      },
+      {
+        "title": "Workflow",
+        "body": "여러 Plane을 한 번에 등록하고, 거리와 회전 옵션까지 함께 조정할 수 있어 반복 작업을 줄이기 좋습니다. Canvas 없이 메쉬 기반으로 화면 연출을 구성하고 싶을 때 특히 유용합니다."
+      }
+    ],
+    "meta": {
+      "chips": ["Unity", "Editor Tool", "VPM"],
+      "body": "Unity 기본 Plane(XZ, 10×10)에 최적화되어 있으며, Plane과 유사한 XZ 메쉬에도 같은 방식으로 적용할 수 있습니다."
+    },
+    "image": {
+      "src": "./assets/wiki/vpm-tools/plane-fit-to-camera-tool/ko_01.png",
+      "alt": "Plane Fit To Camera Tool Korean UI screenshot",
+      "caption": "툴 창에서 카메라, Plane 목록, 거리, 회전 옵션을 조정한 뒤 바로 Fit Plane(s)을 실행할 수 있습니다."
+    },
+    "sections": [
+      {
+        "title": "주요 기능",
+        "items": [
+          "카메라 화면에 맞춰 Plane의 스케일, 위치, 회전을 자동으로 정렬합니다.",
+          "원근 카메라(FOV 기반)와 직교 카메라(orthographicSize 기반)를 모두 지원합니다.",
+          "여러 개의 Plane 오브젝트를 한 번에 등록하고 동시에 정렬할 수 있습니다.",
+          "Unity 기본 Plane(XZ, 10×10)에 최적화되어 있으며, Plane과 유사한 XZ 메쉬에도 적용할 수 있습니다.",
+          "현재 거리 사용과 수동 거리 입력을 모두 지원해 배치 제어가 유연합니다.",
+          "Keep Square 옵션으로 화면 비율과 무관하게 정사각형 결과를 만들 수 있습니다.",
+          "0° / 90° / 180° / 270° 회전을 지원해 텍스처 방향과 연출 방향을 빠르게 맞출 수 있습니다.",
+          "한국어, 영어, 일본어 UI와 Unity Undo 시스템을 지원합니다."
+        ]
+      },
+      {
+        "title": "요구 사항",
+        "items": [
+          "Unity 2022.3.22f1 이상",
+          "렌더 파이프라인 무관 (Built-in / URP / HDRP)",
+          "Unity Plane 또는 Plane과 유사한 XZ 메쉬"
+        ]
+      },
+      {
+        "title": "기본 사용 방법",
+        "ordered": true,
+        "items": [
+          "Iyan-Kim > Tools > Plane Fit To Camera 메뉴를 엽니다.",
+          "Camera 슬롯에 사용할 카메라를 지정합니다.",
+          "Plane 슬롯에 하나 이상의 Plane 오브젝트를 추가합니다.",
+          "Align Position, Align Rotation, Use Current Distance, Keep Square, Image Rotation 옵션을 설정합니다.",
+          "Fit Plane(s) 버튼을 눌러 등록된 모든 Plane을 화면에 맞게 정렬합니다."
+        ]
+      },
+      {
+        "title": "옵션 설명",
+        "entries": [
+          {
+            "title": "Align Position",
+            "body": "Plane을 camera.position + camera.forward * distance 위치로 이동시켜 지정한 거리에서 화면을 채우도록 맞춥니다."
+          },
+          {
+            "title": "Align Rotation",
+            "body": "Plane(XZ)의 법선이 카메라를 향하도록 회전한 뒤, 화면을 채우는 방향으로 보정합니다. 텍스처 방향을 맞추기 위한 회전 보정도 함께 적용됩니다."
+          },
+          {
+            "title": "Use Current Distance / Manual Distance",
+            "body": "현재 오브젝트 위치를 카메라 forward 축에 투영한 거리로 계산하거나, 직접 입력한 수동 거리 값을 사용할 수 있습니다. 오브젝트가 카메라 뒤에 있으면 Manual Distance 값으로 대체됩니다."
+          },
+          {
+            "title": "Keep Square / Image Rotation",
+            "body": "Keep Square는 계산된 가로/세로 중 큰 값을 기준으로 양쪽을 동일하게 맞춰 정사각형 결과를 유지합니다. Image Rotation은 카메라 정면 축 기준으로 Plane을 0° / 90° / 180° / 270° 회전시켜 텍스처 방향을 쉽게 조정할 수 있게 해줍니다."
+          },
+          {
+            "title": "Language / 언어 / 言語",
+            "body": "툴 창 하단에서 한국어, English, 日本語 UI를 전환할 수 있습니다. 기본 언어는 한국어입니다."
+          }
+        ]
+      },
+      {
+        "title": "활용 팁",
+        "items": [
+          "고정 배경을 만들 때는 Plane을 카메라의 자식으로 둔 뒤 Fit Plane(s)을 한 번 실행하면 편합니다.",
+          "Unity 기본 Plane은 XZ 기준 10×10 유닛이므로, 툴도 이 레이아웃을 기준으로 스케일을 계산합니다.",
+          "커스텀 메쉬를 사용할 경우에도 기본적으로 XZ 기준 Plane처럼 취급되며, Fit 이후 수동으로 스케일을 미세 조정해도 됩니다.",
+          "단색 배경, 그라디언트 패널, 스크린 셰이더용 오브젝트, 컷씬 패널, VRChat 아바타 연출용 스크린에 활용하기 좋습니다."
+        ]
+      },
+      {
+        "title": "문제 해결",
+        "entries": [
+          {
+            "title": "Plane이 화면을 완전히 채우지 않습니다",
+            "body": "Game 뷰에서 사용하는 카메라와 툴에 지정한 카메라가 같은지 확인하고, FOV 또는 Aspect Ratio를 바꿨다면 다시 Fit Plane(s)을 실행하세요."
+          },
+          {
+            "title": "텍스처가 뒤집히거나 옆으로 보입니다",
+            "body": "Image Rotation 옵션을 먼저 확인하고, 계속 이상하면 메쉬의 UV 방향도 함께 점검하세요."
+          },
+          {
+            "title": "오브젝트가 다른 오브젝트 뒤에 가려집니다",
+            "body": "Manual Distance 값을 키워 Plane을 더 앞쪽으로 이동시키고, 필요하면 Render Queue, ZWrite, ZTest 설정도 함께 확인하세요."
+          },
+          {
+            "title": "Fit Plane(s)을 눌러도 변화가 없습니다",
+            "body": "Camera와 최소 하나의 Plane 슬롯이 올바르게 지정되어 있는지 확인하고, MeshFilter 또는 sharedMesh 관련 Console 경고도 함께 확인하세요."
+          }
+        ]
+      },
+      {
+        "title": "릴리즈 노트",
+        "entries": [
+          {
+            "title": "1.0.10",
+            "body": "패키지 표시 이름을 `Iyan-Kim Plane Fit To Camera Tool`로 변경했습니다.\nVCC / Package Manager에서 제작자 브랜드가 더 명확하게 보이도록 정리했습니다.\n기능 변경은 없습니다."
+          },
+          {
+            "title": "1.0.9",
+            "body": "에디터 툴 클래스를 `IyanKim.EditorTools` 네임스페이스로 이동했습니다.\n다른 Unity Editor 툴이나 패키지와 클래스명이 충돌할 가능성을 줄였습니다.\n여러 Iyan-Kim 툴을 함께 사용할 때 더 안전한 구조로 정리했습니다."
+          },
+          {
+            "title": "1.0.8",
+            "body": "패키지 배포 관련 메타데이터를 정리했습니다.\nVPM 배포 안정성을 위한 유지보수 업데이트를 진행했습니다.\n기능 변경은 없습니다."
+          },
+          {
+            "title": "1.0.7",
+            "body": "VPM 패키지 배포 구성을 정리했습니다.\n릴리즈 및 저장소 관리용 메타데이터를 보정했습니다.\n기능 변경은 없습니다."
+          },
+          {
+            "title": "1.0.6",
+            "body": "코드 주석과 내부 설명을 정리했습니다.\n오래되었거나 혼동될 수 있는 설명을 제거했습니다.\n유지보수와 개발 중 가독성을 높이기 위한 문서화 작업을 진행했습니다."
+          },
+          {
+            "title": "1.0.5",
+            "body": "VPM / VCC 호환성을 위해 패키지 메타데이터를 수정했습니다.\n`package.json`의 author 정보를 VPM 사양에 맞는 object 형식으로 정리했습니다.\n일부 환경에서 패키지 정보가 정상적으로 읽히지 않을 수 있는 문제를 개선했습니다."
+          },
+          {
+            "title": "1.0.4",
+            "body": "여러 개의 Plane을 한 번에 카메라 화면에 맞출 수 있도록 다중 Plane 지원을 추가했습니다.\nPlane 슬롯 추가, 제거, 전체 초기화 UI를 추가했습니다.\n기존 단일 Plane/Quad 중심 구조를 Unity 기본 Plane 중심 구조로 정리했습니다.\n`Fit Plane` 동작을 여러 Plane에 대응하는 `Fit Plane(s)` 방식으로 확장했습니다.\nREADME 설명을 다중 Plane 지원 기준으로 갱신했습니다."
+          },
+          {
+            "title": "1.0.3",
+            "body": "부모 오브젝트의 스케일을 고려하도록 보정 로직을 추가했습니다.\nPlane이 스케일이 적용된 부모 아래에 있을 때 화면 크기가 맞지 않던 문제를 수정했습니다.\n부모의 `lossyScale`을 반영해 월드 공간 기준으로 더 정확하게 맞춰지도록 개선했습니다.\n음수 스케일이 적용된 Plane의 방향이 깨지지 않도록 localScale 부호를 보존했습니다.\nREADME에 변경 로그 섹션을 추가했습니다."
+          },
+          {
+            "title": "1.0.2",
+            "body": "Orthographic Camera 지원을 추가했습니다.\nPerspective Camera는 기존처럼 FOV와 거리 기반으로 크기를 계산합니다.\nOrthographic Camera는 `orthographicSize` 기반으로 화면 크기를 계산합니다.\nREADME와 패키지 설명에 직교 카메라 지원 내용을 추가했습니다."
+          },
+          {
+            "title": "1.0.1",
+            "body": "한국어, 영어, 일본어 UI를 추가했습니다.\n기본 언어를 한국어로 변경했습니다.\n언어 선택 UI를 `Language / 언어 / 言語` 형식으로 정리했습니다.\n이미지 회전 옵션의 다국어 라벨을 추가했습니다.\n안내 문구, 경고 문구, 로그 메시지를 다국어 기준으로 정리했습니다."
+          },
+          {
+            "title": "1.0.0",
+            "body": "최초 릴리즈입니다.\nUnity Editor에서 Plane 또는 Quad를 카메라 화면에 맞게 자동 정렬하는 기능을 추가했습니다.\n위치, 회전, 스케일 자동 맞춤을 지원합니다.\nUnity 기본 Plane(XZ, 10x10)과 Quad(XY, 1x1)를 자동 판별합니다.\n현재 거리 사용 / 수동 거리 지정 옵션을 추가했습니다.\n정사각형 유지 옵션을 추가했습니다.\n이미지 회전 옵션을 추가했습니다.\nUnity Undo 시스템을 지원합니다.\nVPM 패키지 기본 구조를 추가했습니다."
+          }
+        ]
+      }
+    ]
+  }
+}

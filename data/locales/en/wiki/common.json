@@ -1,0 +1,22 @@
+{
+  "brand": {
+    "eyebrow": "Studio Iyan",
+    "title": "Wiki",
+    "copy": "A compact reference area for VPM tools, utility tools, and project notes.",
+    "homeLink": "Back to Home"
+  },
+  "nav": {
+    "label": "Contents",
+    "overview": "Overview",
+    "vpmTools": "VPM Tools",
+    "tools": "Tools",
+    "planeFitToCameraTool": "Plane Fit To Camera Tool",
+    "maBlendshapeSyncAutoSetup": "MA Blendshape Sync Auto Setup",
+    "hierarchyPlusRebone": "Hierarchy Plus Rebone",
+    "prefabMaterialRemapper": "Prefab Material Remapper",
+    "uvMaskTool": "UV Mask Tool",
+    "vsfAvatarConverter": "VSF Avatar Converter",
+    "sdfGenerator": "SDF Generator",
+    "notes": "Notes"
+  }
+}

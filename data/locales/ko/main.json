@@ -1,0 +1,42 @@
+{
+  "nav": {
+    "home": "HOME",
+    "portfolio": "PORTFOLIO"
+  },
+  "home": {
+    "kicker": "VRChat Gimmicks & Unity Tools",
+    "role": "Game Developer",
+    "scrollCue": "Portfolio",
+    "addVcc": "VCC에 추가",
+    "addAlcom": "위키 방문"
+  },
+  "portfolio": {
+    "kicker": "Portfolio",
+    "title": "VRChat Gimmicks & Unity Tools",
+    "copy": "지금까지 작업한 프로젝트, 상품, 기믹, 툴을 모아둔 공간입니다.",
+    "showMore": "더 보기",
+    "showLess": "접기"
+  },
+  "filters": {
+    "all": "전체",
+    "vrchat-gimmick": "VRChat 기믹",
+    "unity-tool": "Unity 툴"
+  },
+  "modal": {
+    "visit": "BOOTH 방문",
+    "close": "닫기"
+  },
+  "status": {
+    "loadingProjects": "프로젝트를 불러오는 중...",
+    "noProjectsYet": "아직 등록된 프로젝트가 없습니다.",
+    "failedToLoadData": "포트폴리오 데이터를 불러오지 못했습니다."
+  },
+  "tags": {
+    "VRChat Gimmick": "VRChat 기믹",
+    "Unity Tool": "Unity 툴"
+  },
+  "categories": {
+    "Gimmick": "기믹",
+    "Tool": "툴"
+  }
+}

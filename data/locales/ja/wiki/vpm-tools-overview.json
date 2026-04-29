@@ -1,0 +1,17 @@
+{
+  "vpmToolsOverview": {
+    "eyebrow": "VPM Tools",
+    "title": "VPMで無料配布しているツール",
+    "copy": "このセクションは、Studio Iyan のVPMリポジトリを通して無料配布しているツールをまとめた場所です。繰り返し発生するセットアップ作業やエディター作業を減らし、VRChatとUnityのワークフローをより速く安定して扱えるようにすることを目的としています。",
+    "meta": {
+      "chips": ["Free", "VPM", "Workflow Tools"],
+      "body": "ここで扱うツールは、VRChatアバター制作やUnityベースの編集作業でよく発生する問題を基準に整理されています。\n\nカメラ基準の配置、ブレンドシェイプ同期、階層補正、マテリアル再マッピング、マスク生成のような工程を、より簡単に扱えるようにすることが中心です。\n\n各ツールは1つの実用的な作業ステップに集中しており、導入後すぐにワークフローへ組み込みやすい構成になっています。\n\n下のタブでは、それぞれのツールが何のために作られたのか、どんな場面で役立つのか、そしてどのように使うのかを個別にまとめています。"
+    },
+    "action": {
+      "title": "VPMリポジトリをまとめて追加",
+      "body": "このボタンを押すと、Studio Iyan のVPMリポジトリがVCCに追加されます。追加後は、この VPM Tools セクションにあるすべてのツールを同じリポジトリから利用できます。",
+      "href": "vcc://vpm/addRepo?url=https://raw.githubusercontent.com/Yunhyuk-Jeong/iyan-vpm/main/vpm.json",
+      "label": "Add to VCC"
+    }
+  }
+}

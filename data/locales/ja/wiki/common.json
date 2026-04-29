@@ -1,0 +1,22 @@
+{
+  "brand": {
+    "eyebrow": "Studio Iyan",
+    "title": "Wiki",
+    "copy": "パッケージの導入、利用フロー、プロジェクトメモを整理するためのコンパクトな参照ページです。",
+    "homeLink": "ホームへ戻る"
+  },
+  "nav": {
+    "label": "Contents",
+    "overview": "Overview",
+    "vpmTools": "VPM Tools",
+    "tools": "Tools",
+    "planeFitToCameraTool": "Plane Fit To Camera Tool",
+    "maBlendshapeSyncAutoSetup": "MA Blendshape Sync Auto Setup",
+    "hierarchyPlusRebone": "Hierarchy Plus Rebone",
+    "prefabMaterialRemapper": "Prefab Material Remapper",
+    "uvMaskTool": "UV Mask Tool",
+    "vsfAvatarConverter": "VSF Avatar Converter",
+    "sdfGenerator": "SDF Generator",
+    "notes": "Notes"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "notes": {
+    "eyebrow": "Notes",
+    "title": "Changelog, tips, and support notes",
+    "copy": "Use this area for operational notes that do not fit the product cards: changelog highlights, quick tips, compatibility notes, and common fixes.",
+    "listCard": {
+      "title": "Good candidates for this section",
+      "items": [
+        "Version-specific behavior changes",
+        "Small workflow tips that users miss often",
+        "Known issues and temporary workarounds",
+        "Links out to BOOTH, GitHub, or support pages"
+      ]
+    }
+  }
+}

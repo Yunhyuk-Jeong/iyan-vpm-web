@@ -1,134 +1,14 @@
-import { createProjectCard, loadProjects } from './scripts/portfolio-data.js';
+import { createProjectCard, loadProjects } from './portfolio-data.js';
+import {
+	applyTranslations,
+	getCurrentLanguage,
+	getInitialLanguage,
+	getText,
+	setLanguage,
+	updateLanguageButtons,
+} from './i18n.js';
 
 document.documentElement.classList.add('js');
-
-const SUPPORTED_LANGUAGES = ['ko', 'en', 'ja'];
-const LANGUAGE_STORAGE_KEY = 'site-language';
-
-const UI_TEXT = {
-	ko: {
-		nav: {
-			home: 'HOME',
-			portfolio: 'PORTFOLIO',
-		},
-		home: {
-			kicker: 'VRChat Gimmicks & Unity Tools',
-			role: 'Game Developer',
-			scrollCue: 'Portfolio',
-			addVcc: 'VCC에 추가',
-			addAlcom: 'ALCOM에 추가',
-		},
-		portfolio: {
-			kicker: 'Portfolio',
-			title: 'VRChat Gimmicks & Unity Tools',
-			copy: '지금까지 작업한 프로젝트, 상품, 기믹, 툴을 모아둔 공간입니다.',
-		},
-		filters: {
-			all: 'All',
-			'vrchat-gimmick': 'VRChat Gimmick',
-			'unity-tool': 'Unity Tool',
-		},
-		modal: {
-			visit: 'BOOTH 방문',
-			close: '닫기',
-		},
-		status: {
-			loadingProjects: '프로젝트를 불러오는 중...',
-			noProjectsYet: '아직 등록된 프로젝트가 없습니다.',
-			failedToLoadData: '포트폴리오 데이터를 불러오지 못했습니다.',
-		},
-	},
-	en: {
-		nav: {
-			home: 'HOME',
-			portfolio: 'PORTFOLIO',
-		},
-		home: {
-			kicker: 'VRChat Gimmicks & Unity Tools',
-			role: 'Game Developer',
-			scrollCue: 'Portfolio',
-			addVcc: 'Add to VCC',
-			addAlcom: 'Add to ALCOM',
-		},
-		portfolio: {
-			kicker: 'Portfolio',
-			title: 'VRChat Gimmicks & Unity Tools',
-			copy: 'A collection of projects, products, gimmicks, and tools I have worked on.',
-		},
-		filters: {
-			all: 'All',
-			'vrchat-gimmick': 'VRChat Gimmick',
-			'unity-tool': 'Unity Tool',
-		},
-		modal: {
-			visit: 'Visit BOOTH',
-			close: 'Close',
-		},
-		status: {
-			loadingProjects: 'Loading projects...',
-			noProjectsYet: 'No projects yet.',
-			failedToLoadData: 'Failed to load portfolio data.',
-		},
-	},
-	ja: {
-		nav: {
-			home: 'HOME',
-			portfolio: 'PORTFOLIO',
-		},
-		home: {
-			kicker: 'VRChat Gimmicks & Unity Tools',
-			role: 'Game Developer',
-			scrollCue: 'Portfolio',
-			addVcc: 'VCCに追加',
-			addAlcom: 'ALCOMに追加',
-		},
-		portfolio: {
-			kicker: 'Portfolio',
-			title: 'VRChat Gimmicks & Unity Tools',
-			copy: 'これまで制作したプロジェクト、商品、ギミック、ツールをまとめたページです。',
-		},
-		filters: {
-			all: 'All',
-			'vrchat-gimmick': 'VRChat Gimmick',
-			'unity-tool': 'Unity Tool',
-		},
-		modal: {
-			visit: 'BOOTHを見る',
-			close: '閉じる',
-		},
-		status: {
-			loadingProjects: 'プロジェクトを読み込み中...',
-			noProjectsYet: 'まだプロジェクトがありません。',
-			failedToLoadData: 'ポートフォリオデータを読み込めませんでした。',
-		},
-	},
-};
-
-const TAG_TEXT = {
-	'VRChat Gimmick': {
-		ko: 'VRChat Gimmick',
-		en: 'VRChat Gimmick',
-		ja: 'VRChat Gimmick',
-	},
-	'Unity Tool': {
-		ko: 'Unity Tool',
-		en: 'Unity Tool',
-		ja: 'Unity Tool',
-	},
-};
-
-const CATEGORY_TEXT = {
-	Gimmick: {
-		ko: 'Gimmick',
-		en: 'Gimmick',
-		ja: 'Gimmick',
-	},
-	Tool: {
-		ko: 'Tool',
-		en: 'Tool',
-		ja: 'Tool',
-	},
-};
 
 const topTabs = document.querySelector('.top-tabs');
 const sectionLinks = [...document.querySelectorAll('[data-section-link]')];
@@ -150,34 +30,25 @@ const projectModalCategory = document.getElementById('project-modal-category');
 const projectModalBuiltWith = document.getElementById('project-modal-built-with');
 const projectModalSummary = document.getElementById('project-modal-summary');
 const projectModalLink = document.getElementById('project-modal-link');
+const LOCALE_BUNDLES = ['main'];
 
 let activeFilter = 'all';
 let visiblePortfolioCount = 12;
-let currentLanguage = 'en';
 let currentStatusKey = 'loadingProjects';
 let currentStatusError = false;
 let lastFocusedCard = null;
 let activeModalProject = null;
 let modalCloseTimer = null;
 let projectById = new Map();
+
 const filterHideTimers = new WeakMap();
 const INITIAL_PORTFOLIO_VISIBLE_COUNT = 12;
 
 const getProjectCards = () => [...document.querySelectorAll('.product-card')];
+const getFilteredCards = () => getProjectCards().filter((card) => card.dataset.matchesFilter === 'true');
 
-const getInitialLanguage = () => {
-	const storedLanguage = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
-	if (SUPPORTED_LANGUAGES.includes(storedLanguage)) {
-		return storedLanguage;
-	}
-	return 'en';
-};
-
-const getText = (path, language = currentLanguage) => path.split('.').reduce((value, key) => (value && typeof value === 'object' ? value[key] : undefined), UI_TEXT[language]);
-
-const translateTag = (tag, language = currentLanguage) => TAG_TEXT[tag]?.[language] || tag;
-
-const translateCategory = (category, language = currentLanguage) => CATEGORY_TEXT[category]?.[language] || category;
+const translateTag = (tag) => getText(`tags.${tag}`, tag);
+const translateCategory = (category) => getText(`categories.${category}`, category);
 
 const formatProjectDate = (date) => {
 	if (!date) {
@@ -195,7 +66,7 @@ const formatProjectDate = (date) => {
 		ja: 'ja-JP',
 	};
 
-	return new Intl.DateTimeFormat(localeMap[currentLanguage], {
+	return new Intl.DateTimeFormat(localeMap[getCurrentLanguage()], {
 		year: 'numeric',
 		month: 'short',
 		day: 'numeric',
@@ -252,7 +123,7 @@ const setStatus = (statusKey, isError = false) => {
 	}
 
 	portfolioStatus.hidden = false;
-	portfolioStatus.textContent = getText(`status.${statusKey}`) || '';
+	portfolioStatus.textContent = getText(`status.${statusKey}`);
 	portfolioStatus.classList.toggle('portfolio-status--error', isError);
 };
 
@@ -265,8 +136,6 @@ const clearStatus = () => {
 	portfolioStatus.textContent = '';
 	portfolioStatus.classList.remove('portfolio-status--error');
 };
-
-const getFilteredCards = () => getProjectCards().filter((card) => card.dataset.matchesFilter === 'true');
 
 const showCard = (card) => {
 	const hideTimer = filterHideTimers.get(card);
@@ -320,18 +189,6 @@ const hideCard = (card) => {
 	filterHideTimers.set(card, timer);
 };
 
-const getPortfolioToggleText = () => {
-	const fallbackText = {
-		showMore: 'Show More',
-		showLess: 'Show Less',
-	};
-
-	return {
-		showMore: getText('portfolio.showMore') || fallbackText.showMore,
-		showLess: getText('portfolio.showLess') || fallbackText.showLess,
-	};
-};
-
 const updatePortfolioToggle = () => {
 	if (!portfolioMore || !portfolioToggleButton || !portfolioToggleLabel) {
 		return;
@@ -340,11 +197,10 @@ const updatePortfolioToggle = () => {
 	const filteredCards = getFilteredCards();
 	const shouldShowToggle = filteredCards.length > INITIAL_PORTFOLIO_VISIBLE_COUNT;
 	const isExpanded = visiblePortfolioCount >= filteredCards.length;
-	const toggleText = getPortfolioToggleText();
 
 	portfolioMore.hidden = !shouldShowToggle;
 	portfolioToggleButton.setAttribute('aria-expanded', String(isExpanded));
-	portfolioToggleLabel.textContent = isExpanded ? toggleText.showLess : toggleText.showMore;
+	portfolioToggleLabel.textContent = isExpanded ? getText('portfolio.showLess') : getText('portfolio.showMore');
 };
 
 const updateVisibleCards = () => {
@@ -381,7 +237,10 @@ const applyFilter = (filterValue) => {
 
 	getProjectCards().forEach((card) => {
 		const cardType = card.dataset.type;
-		const matchesFilter = filterValue === 'all' || (filterValue === 'unity-tool' && cardType === 'unity-tool') || (filterValue === 'vrchat-gimmick' && cardType === 'vrchat-gimmick');
+		const matchesFilter =
+			filterValue === 'all' ||
+			(filterValue === 'unity-tool' && cardType === 'unity-tool') ||
+			(filterValue === 'vrchat-gimmick' && cardType === 'vrchat-gimmick');
 		card.dataset.matchesFilter = String(matchesFilter);
 	});
 
@@ -399,26 +258,20 @@ const updateLocalizedCardLabels = () => {
 	});
 };
 
-const updateLocalizedStaticText = () => {
-	document.documentElement.lang = currentLanguage;
-	document.querySelectorAll('[data-i18n]').forEach((element) => {
-		const text = getText(element.dataset.i18n);
-		if (typeof text === 'string') {
-			element.textContent = text;
-		}
-	});
-
-	languageButtons.forEach((button) => {
-		const isActive = button.dataset.language === currentLanguage;
-		button.classList.toggle('language-switcher__button--active', isActive);
-		button.setAttribute('aria-pressed', String(isActive));
-	});
+const refreshTranslations = () => {
+	applyTranslations(document);
+	updateLanguageButtons(languageButtons);
+	updateLocalizedCardLabels();
 
 	if (!portfolioStatus?.hidden) {
 		setStatus(currentStatusKey, currentStatusError);
 	}
 
 	updatePortfolioToggle();
+
+	if (activeModalProject) {
+		updateModalContent(activeModalProject);
+	}
 };
 
 const updateModalContent = (project) => {
@@ -426,6 +279,7 @@ const updateModalContent = (project) => {
 		return;
 	}
 
+	const activeLanguage = getCurrentLanguage();
 	activeModalProject = project;
 
 	if (projectModalImage) {
@@ -460,23 +314,16 @@ const updateModalContent = (project) => {
 	}
 
 	if (projectModalSummary) {
-		projectModalSummary.textContent = project.description[currentLanguage] || project.description.en || project.description.ko || project.description.ja || '';
+		projectModalSummary.textContent =
+			project.description[activeLanguage] ||
+			project.description.en ||
+			project.description.ko ||
+			project.description.ja ||
+			'';
 	}
 
 	if (projectModalLink) {
 		projectModalLink.href = project.address;
-	}
-};
-
-const applyLanguage = (language) => {
-	currentLanguage = SUPPORTED_LANGUAGES.includes(language) ? language : 'en';
-	window.localStorage.setItem(LANGUAGE_STORAGE_KEY, currentLanguage);
-
-	updateLocalizedStaticText();
-	updateLocalizedCardLabels();
-
-	if (activeModalProject) {
-		updateModalContent(activeModalProject);
 	}
 };
 
@@ -605,8 +452,9 @@ portfolioToggleButton?.addEventListener('click', () => {
 });
 
 languageButtons.forEach((button) => {
-	button.addEventListener('click', () => {
-		applyLanguage(button.dataset.language || 'en');
+	button.addEventListener('click', async () => {
+		await setLanguage(button.dataset.language || 'en', { bundles: LOCALE_BUNDLES });
+		refreshTranslations();
 	});
 });
 
@@ -657,27 +505,33 @@ window.addEventListener('resize', () => {
 	updateTabIndicator(document.querySelector('.top-tab--active'));
 });
 
-currentLanguage = getInitialLanguage();
-applyLanguage(currentLanguage);
-updateActiveSectionFromScroll();
+const initialize = async () => {
+	await setLanguage(getInitialLanguage(), { bundles: LOCALE_BUNDLES });
+	refreshTranslations();
+	updateActiveSectionFromScroll();
 
-if (portfolioSection) {
-	const portfolioRevealObserver = new IntersectionObserver(
-		([entry]) => {
-			if (!entry.isIntersecting) {
-				return;
-			}
+	if (portfolioSection) {
+		const portfolioRevealObserver = new IntersectionObserver(
+			([entry]) => {
+				if (!entry.isIntersecting) {
+					return;
+				}
 
-			portfolioSection.classList.add('is-visible');
-			portfolioRevealObserver.unobserve(portfolioSection);
-		},
-		{
-			rootMargin: '-12% 0px -18% 0px',
-			threshold: 0.18,
-		},
-	);
+				portfolioSection.classList.add('is-visible');
+				portfolioRevealObserver.unobserve(portfolioSection);
+			},
+			{
+				rootMargin: '-12% 0px -18% 0px',
+				threshold: 0.18,
+			},
+		);
 
-	portfolioRevealObserver.observe(portfolioSection);
-}
+		portfolioRevealObserver.observe(portfolioSection);
+	}
 
-initPortfolio();
+	await initPortfolio();
+};
+
+initialize().catch((error) => {
+	console.error(error);
+});

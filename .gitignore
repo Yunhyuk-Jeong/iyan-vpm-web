@@ -25,6 +25,8 @@ pnpm-debug.log*
 .parcel-cache/
 .vite/
 coverage/
+__pycache__/
+*.pyc
 
 # OS and editor files
 .DS_Store

@@ -1,0 +1,170 @@
+{
+  "hierarchyPlusRebone": {
+    "eyebrow": "VPM Tools",
+    "title": "Hierarchy Plus Rebone",
+    "copy": "A Unity editor tool that makes the Hierarchy easier to read and manage. It adds row styling, guide lines, component icons, and Tag / Layer labels so large avatar hierarchies and complex scenes can be parsed more quickly.",
+    "cards": [
+      {
+        "title": "Best For",
+        "body": "Complex VRChat avatar hierarchies, large scenes, and workflows where component state and object labels need to be checked constantly."
+      },
+      {
+        "title": "Hierarchy Visibility",
+        "body": "Uses row color, guide lines, icons, and labels to make hierarchy depth and object state easier to scan."
+      },
+      {
+        "title": "Reworked Fork",
+        "body": "Based on the no-longer-maintained original HierarchyPlus, rebuilt to respect the original license and fit modern Unity plus VPM / VCC packaging."
+      }
+    ],
+    "meta": {
+      "chips": ["Hierarchy", "Rebone", "VPM"],
+      "body": "This is an editor-only extension and does not affect runtime builds. It is organized for Unity 2022.3+ and VPM / VCC package workflows."
+    },
+    "sections": [
+      {
+        "title": "Key Features",
+        "items": [
+          "Adds row colors, background styling, and guide lines to the Hierarchy for easier structural scanning.",
+          "Makes parent / child depth easier to read through indentation and guide line rendering.",
+          "Displays GameObject and component icons on the right side of the Hierarchy.",
+          "Supports icon clicks and drag-toggle behavior for quickly enabling or disabling objects and some components.",
+          "Shows Tag and Layer labels and supports quick context-based editing.",
+          "Lets you hide selected icon types through Hidden Types rules.",
+          "Stores custom styling such as icon tint, inactive tint, guide color, and row background color."
+        ]
+      },
+      {
+        "title": "Requirements",
+        "items": [
+          "Unity 2022.3 or newer",
+          "VCC or VPM package management workflow",
+          "Editor-only usage",
+          "No runtime dependency"
+        ]
+      },
+      {
+        "title": "Basic Usage",
+        "ordered": true,
+        "items": [
+          "Install the package through VCC or VPM.",
+          "Open Iyan-Kim > Tools > Hierarchy Plus Rebone.",
+          "Enable the HierarchyPlus Enabled option.",
+          "Configure the Colors, Components, and Labels sections as needed.",
+          "Changes are reflected immediately in the Hierarchy window.",
+          "Use Refresh Icons if the icon cache does not update correctly."
+        ]
+      },
+      {
+        "title": "Option Details",
+        "entries": [
+          {
+            "title": "HierarchyPlus Enabled / Colors",
+            "body": "Turns the full feature set on or off and lets you configure row colors, guide lines, icon backgrounds, and active or inactive icon tint."
+          },
+          {
+            "title": "Guide Lines / Row Coloring",
+            "body": "Renders structural guide lines for parent / child relationships and alternates row backgrounds to improve readability in long hierarchies."
+          },
+          {
+            "title": "Components / Drag-Toggle",
+            "body": "Shows GameObject and component icons in the Hierarchy and lets you use context menus or drag-toggle interaction for fast state changes."
+          },
+          {
+            "title": "Labels / Context Click",
+            "body": "Displays Tag and Layer labels and supports quick value changes through label context actions."
+          },
+          {
+            "title": "Hidden Types / Refresh Icons",
+            "body": "Lets you hide specific component icon types and refresh the icon cache if rendering gets out of sync."
+          }
+        ]
+      },
+      {
+        "title": "Tips",
+        "items": [
+          "Guide Lines plus Row Coloring work especially well for complex VRChat avatar hierarchies.",
+          "If you often inspect component-heavy objects, enable the Components block so the Hierarchy becomes a quick status dashboard.",
+          "If Tag or Layer changes are frequent, Labels with context click support will save time.",
+          "Use Hidden Types to reduce visual noise when too many icons appear at once.",
+          "Avoid running the original HierarchyPlus side by side with this version, because both may try to modify the same editor surface."
+        ]
+      },
+      {
+        "title": "Troubleshooting",
+        "entries": [
+          {
+            "title": "Nothing changes in the Hierarchy",
+            "body": "Make sure HierarchyPlus Enabled is on, click back into the Hierarchy window, and try Refresh Icons if needed."
+          },
+          {
+            "title": "Component icons are missing",
+            "body": "Check the Components block and the Show GameObject Icon, Show Transform Icon, and Show Non-Toggleable Icons options. Also verify Hidden Types is not filtering them out."
+          },
+          {
+            "title": "Tag or Layer labels are missing",
+            "body": "Check that Labels, Show Layer Label, and Show Tag Label are enabled, and that default Layer / Untagged entries are not hidden."
+          },
+          {
+            "title": "Icons or colors overlap visually",
+            "body": "Adjust Icons X Offset, review Always Render Icons or background options, and widen the Hierarchy window if necessary."
+          },
+          {
+            "title": "It conflicts with the original HierarchyPlus",
+            "body": "This version changes namespaces and menu paths to reduce collisions, but running two Hierarchy extensions at the same time can still produce overlapping output."
+          }
+        ]
+      },
+      {
+        "title": "License and Origin Notice",
+        "entries": [
+          {
+            "title": "Base Project",
+            "body": "Hierarchy Plus Rebone is a modified and reorganized project based on the original HierarchyPlus. The original project was created by DreadScripts and this version was reworked by Iyan-Kim."
+          },
+          {
+            "title": "License",
+            "body": "It keeps the GNU General Public License v3.0 or later from the original project. Redistribution must preserve the same license terms and associated notice obligations."
+          },
+          {
+            "title": "Package Direction",
+            "body": "This package preserves the original license, clearly marks itself as a modified version, and reorganizes package layout, namespace, menu path, asmdef structure, and Unity 2022.3+ compatibility for VPM / VCC distribution."
+          }
+        ]
+      },
+      {
+        "title": "Release Notes",
+        "entries": [
+          {
+            "title": "1.0.6",
+            "body": "Standardized the package display name as `Iyan-Kim Hierarchy Plus Rebone`.\nUpdated package description and metadata for the current distribution format.\nDeclared the license as `GPL-3.0-or-later`.\nReorganized the VPM / VCC package layout."
+          },
+          {
+            "title": "1.0.5",
+            "body": "Cleaned up package distribution metadata.\nPerformed maintenance work for repository registration and VPM distribution stability.\nNo functional changes."
+          },
+          {
+            "title": "1.0.4",
+            "body": "Reorganized package structure for Unity 2022.3+.\nImproved the editor-only asmdef setup.\nAdjusted namespaces to reduce conflicts with the original HierarchyPlus."
+          },
+          {
+            "title": "1.0.3",
+            "body": "Aligned the menu path with the Iyan-Kim tool structure.\nUpdated the settings window name and PRODUCT_NAME to `Hierarchy Plus Rebone`.\nCleaned up internal file structure for VPM package distribution."
+          },
+          {
+            "title": "1.0.2",
+            "body": "Refactored the original HierarchyPlus code for a modern Unity package structure.\nReorganized saved settings, styling, content, indentation, and color-processing classes inside the package layout.\nSeparated editor-only code more clearly."
+          },
+          {
+            "title": "1.0.1",
+            "body": "Moved the original HierarchyPlus-based functionality into the Rebone project structure.\nReorganized namespaces and file layout.\nAdded the initial VPM package configuration."
+          },
+          {
+            "title": "1.0.0",
+            "body": "Initial release.\nStarted the Hierarchy Plus Rebone project based on the original HierarchyPlus.\nIncluded row colors, guide lines, component icons, and Tag / Layer label support for the Unity Hierarchy.\nPrepared the project for modification and redistribution under GPL-3.0."
+          }
+        ]
+      }
+    ]
+  }
+}

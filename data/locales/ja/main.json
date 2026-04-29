@@ -1,0 +1,42 @@
+{
+  "nav": {
+    "home": "HOME",
+    "portfolio": "PORTFOLIO"
+  },
+  "home": {
+    "kicker": "VRChat Gimmicks & Unity Tools",
+    "role": "Game Developer",
+    "scrollCue": "Portfolio",
+    "addVcc": "VCCに追加",
+    "addAlcom": "Wikiへ移動"
+  },
+  "portfolio": {
+    "kicker": "Portfolio",
+    "title": "VRChat Gimmicks & Unity Tools",
+    "copy": "これまでに制作したプロジェクト、商品、ギミック、ツールをまとめたページです。",
+    "showMore": "もっと見る",
+    "showLess": "閉じる"
+  },
+  "filters": {
+    "all": "すべて",
+    "vrchat-gimmick": "VRChatギミック",
+    "unity-tool": "Unityツール"
+  },
+  "modal": {
+    "visit": "BOOTHを見る",
+    "close": "閉じる"
+  },
+  "status": {
+    "loadingProjects": "プロジェクトを読み込み中...",
+    "noProjectsYet": "まだ登録されたプロジェクトはありません。",
+    "failedToLoadData": "ポートフォリオデータを読み込めませんでした。"
+  },
+  "tags": {
+    "VRChat Gimmick": "VRChatギミック",
+    "Unity Tool": "Unityツール"
+  },
+  "categories": {
+    "Gimmick": "ギミック",
+    "Tool": "ツール"
+  }
+}
