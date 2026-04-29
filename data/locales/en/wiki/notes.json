@@ -1,16 +1,61 @@
 {
   "notes": {
     "eyebrow": "Notes",
-    "title": "Changelog, tips, and support notes",
-    "copy": "Use this area for operational notes that do not fit the product cards: changelog highlights, quick tips, compatibility notes, and common fixes.",
-    "listCard": {
-      "title": "Good candidates for this section",
-      "items": [
-        "Version-specific behavior changes",
-        "Small workflow tips that users miss often",
-        "Known issues and temporary workarounds",
-        "Links out to BOOTH, GitHub, or support pages"
-      ]
-    }
+    "title": "Shared notes and operational guidance",
+    "copy": "This section is for information that is too broad for a single tool page but still useful during actual setup, usage, and release flow. It collects shared cautions, compatibility scope, first-response troubleshooting steps, and documentation policy in one place.",
+    "cards": [
+      {
+        "title": "Why this section exists",
+        "body": "If each tool page is focused on feature behavior and usage flow, `Notes` is where the cross-cutting operational context belongs. It works best as the place users check first for general expectations before moving into the detailed tool tabs."
+      },
+      {
+        "title": "What belongs here",
+        "body": "Environment setup notes, shared limitations, documentation rules, common issues and workarounds, and external link policy are all good candidates for this section. Keeping them here prevents the same operational text from being repeated across multiple tool pages."
+      }
+    ],
+    "meta": {
+      "chips": ["Notes", "Compatibility", "Support"],
+      "body": "Information that is not tied to one specific product should live here, while tool-specific behavior should stay inside the corresponding tab. As the wiki grows, this page becomes the shared baseline for how the rest of the documentation is interpreted."
+    },
+    "sections": [
+      {
+        "title": "General cautions",
+        "items": [
+          "Some tools assume a `Windows` environment and specific external dependencies.",
+          "If input conditions such as `FBX`, `UV`, or Blender path setup are wrong, the tool may not behave as expected.",
+          "The documented behavior and the currently distributed version may not always match exactly, so major changes should always be checked against the release notes.",
+          "Before applying a workflow directly to production assets, it is safer to verify the behavior in a sample or test environment first."
+        ]
+      },
+      {
+        "title": "Compatibility scope",
+        "items": [
+          "Some entries are designed around `Unity`-based workflows.",
+          "Some entries assume a specific usage context such as `VRChat` avatar production.",
+          "Packaged tools and standalone tools may differ in both installation flow and update flow.",
+          "Even when two tools appear similar, free `VPM Tools` and paid `Tools` may differ in scope and delivery model."
+        ]
+      },
+      {
+        "title": "First-response troubleshooting flow",
+        "ordered": true,
+        "items": [
+          "Confirm that the version you are using matches the version described in the documentation.",
+          "Check whether required input files, external paths, and dependencies are configured correctly.",
+          "Try reproducing the same task with a simpler sample file.",
+          "If the output looks wrong, reset the relevant options to a default state and generate again.",
+          "If the issue continues, review the release notes and known limitations before assuming a deeper failure."
+        ]
+      },
+      {
+        "title": "Documentation maintenance notes",
+        "items": [
+          "If a page is empty or marked as `WIP`, it means the documentation is not finished yet.",
+          "Screenshots represent real workflow examples, but the UI may change slightly between versions.",
+          "If the information is more about shared policy than about one specific feature, it belongs in `Notes` rather than inside a tool page.",
+          "External delivery links are generally managed around `BOOTH`, `GitHub`, and `VCC`."
+        ]
+      }
+    ]
   }
 }

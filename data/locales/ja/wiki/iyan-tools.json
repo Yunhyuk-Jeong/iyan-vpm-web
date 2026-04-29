@@ -1,0 +1,123 @@
+{
+  "iyanTools": {
+    "eyebrow": "Blender Tools",
+    "title": "Iyan-Kim Tools",
+    "copy": "`Iyan-Kim Tools` は、複数の制作補助ツールを1つのサイドバータブの下にまとめた統合Blenderアドオンスイートです。複数の独立アドオンを別々に配布するのではなく、1つのアドオンとしてインストールされ、`View3D > Sidebar > Iyan-Kim` の下でまとめて表示されます。",
+    "cards": [
+      {
+        "title": "統合アドオンスイート",
+        "body": "現在のスイートには `Mochi Bone Cleaner`、`Mesh Cleanup`、`UV Validation` が含まれます。3つのツールは1つのルートパネルに集約され、ユーザーに1つのインストール対象、1つのサイドバーカテゴリ、そして将来のツール追加に向けた安定した拡張基盤を提供します。"
+      },
+      {
+        "title": "なぜ構造を変えたのか",
+        "body": "このリポジトリはもともと複数の別個のBlenderアドオンとして育ってきました。しかしその方法では、ツールが増えるたびにタブ数、アドオン項目、登録処理の重複が増えてしまいます。統合パッケージは、それを1つのインストール可能なツールスイートとして整理することで解決します。"
+      }
+    ],
+    "meta": {
+      "chips": ["Blender", "Addon Suite", "v2.0.0"],
+      "body": "このスイートは、1つのサイドバーカテゴリ、1つのルートパネル、そして各サブツールパネルという構成で設計されています。Blenderが得意とするツールグルーピングにより適した形です。"
+    },
+    "sections": [
+      {
+        "title": "含まれるツール",
+        "entries": [
+          {
+            "title": "`Mochi Bone Cleaner`",
+            "body": "生成後やリターゲット後に残ったボーンを分類し、実際にウェイトが付いているボーンや保護対象のボーンは保持し、構造的に曖昧なボーンはレビュー対象として残したうえで、`SAFE_DELETE` に分類されたものだけを削除するツールです。"
+          },
+          {
+            "title": "`Mesh Cleanup`",
+            "body": "ルーズジオメトリ、退化フェース、完全に重なった重複フェース、重複頂点を検出し、保護付きのクリーンアップオペレーターとクイック修正フローを提供します。"
+          },
+          {
+            "title": "`UV Validation`",
+            "body": "面積ゼロに近いUVフェース、崩壊したUVフェース、極端に小さいまたは細いUVアイランド、UVマップを持たない対象を検出し、選択結果と要約カウンターを返します。"
+          }
+        ]
+      },
+      {
+        "title": "UI構成",
+        "items": [
+          "サイドバーカテゴリ: `Iyan-Kim`",
+          "ルートパネル: `Iyan-Kim Tools`",
+          "子パネル: `Mochi Bone Cleaner`、`Mesh Cleanup`、`UV Validation`",
+          "複数の分離タブではなく、1つのタブの下にサブツールがまとまる構造"
+        ]
+      },
+      {
+        "title": "リポジトリ構成",
+        "items": [
+          "`iyan_kim_tools/__init__.py` - 統合アドオンのエントリポイント",
+          "`iyan_kim_tools/config.py` - 共通UI定数",
+          "`iyan_kim_tools/mochi_bone_cleaner.py` - ボーン解析 / 整理ツール",
+          "`iyan_kim_tools/mesh_cleanup.py` - メッシュ整理スキャナ / 修正ツール",
+          "`iyan_kim_tools/uv_validation.py` - UV検証スキャナ",
+          "`scripts/package_addon.py` - パッケージングスクリプト"
+        ]
+      },
+      {
+        "title": "インストール手順",
+        "ordered": true,
+        "items": [
+          "パッケージ済みZIPをビルドまたはダウンロードします。",
+          "Blenderで `Edit > Preferences > Add-ons` を開きます。",
+          "`Install...` を押します。",
+          "ZIPファイルを選択します。",
+          "`Iyan-Kim Tools` を有効化します。"
+        ]
+      },
+      {
+        "title": "ローカルビルドとパッケージング",
+        "entries": [
+          {
+            "title": "ローカルビルド",
+            "body": "インストール可能なZIPは `python scripts/package_addon.py` でローカルビルドできます。"
+          },
+          {
+            "title": "想定される出力",
+            "body": "出力は `dist/iyan_kim_tools-v2.0.0.zip` のような形式を想定しており、Blenderが正しくインストールできるようにZIPルートには `iyan_kim_tools/` フォルダを保持する必要があります。"
+          },
+          {
+            "title": "GitHub Actions",
+            "body": "リポジトリには `.github/workflows/package-addon.yml` が含まれており、push、tag、手動実行を起点にパッケージをビルドできます。"
+          }
+        ]
+      },
+      {
+        "title": "スイート全体のデータフロー",
+        "ordered": true,
+        "items": [
+          "Blenderが `iyan_kim_tools` を有効化します。",
+          "ルートアドオンが親パネルと3つのサブツールを登録します。",
+          "すべてのツールパネルは同じ `Iyan-Kim` サイドバーカテゴリの下に表示されます。",
+          "その後、各サブツールが共通スイートの枠組みの中で自身のスキャン、分類、整理フローを実行します。"
+        ]
+      },
+      {
+        "title": "2.0.0での変更点",
+        "items": [
+          "統合アドオンパッケージ `iyan_kim_tools` を導入",
+          "旧スタンドアロンアドオンのディレクトリをアクティブなコードベースから削除",
+          "UIを単一の `Iyan-Kim` サイドバーカテゴリへ移動",
+          "各ツールを1つの親パネル配下のサブパネルとして再構成",
+          "パッケージングを統合アドオンZIPビルド方式へ変更",
+          "パッケージング前にスイートソースを検証するCIを追加"
+        ]
+      },
+      {
+        "title": "制限事項",
+        "items": [
+          "`Mesh Cleanup` と `UV Validation` はスイートモジュールとして統合されていますが、まだより細かい内部ファイル単位への再分割は完了していません。",
+          "オペレーター挙動、オーバーレイ挙動、パネルレイアウトについては、Blender内部での実行時検証がまだ必要です。"
+        ]
+      }
+    ],
+    "actionPosition": "afterLead",
+    "action": {
+      "title": "パッケージ済みリリースを取得",
+      "body": "`Iyan-Kim Tools` のパッケージ済みアドオンZIPは GitHub Releases ページから取得できます。",
+      "href": "https://github.com/Yunhyuk-Jeong/blender-iyan-tools/releases",
+      "label": "Releases を見る"
+    }
+  }
+}

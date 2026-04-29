@@ -84,12 +84,29 @@
           </div>
         </div>
 
-        <div class="wiki-nav__group" data-wiki-group="tools">
-          <button class="wiki-nav__button wiki-nav__button--group" type="button" data-wiki-group-toggle="tools"
-            data-i18n="nav.tools" aria-expanded="false">
-            Tools
+        <div class="wiki-nav__group" data-wiki-group="blender-tools">
+          <button class="wiki-nav__button wiki-nav__button--group" type="button" data-wiki-group-toggle="blender-tools"
+            data-i18n="nav.blenderTools" aria-expanded="false">
+            Blender Tools
           </button>
-          <div class="wiki-nav__subgroup" data-wiki-group-panel="tools" hidden>
+          <div class="wiki-nav__subgroup" data-wiki-group-panel="blender-tools" hidden>
+            <button class="wiki-nav__subbutton" type="button" data-wiki-tab="blender-tools-overview"
+              data-i18n="nav.overview">
+              Overview
+            </button>
+            <button class="wiki-nav__subbutton" type="button" data-wiki-tab="iyan-tools"
+              data-i18n="nav.iyanTools">
+              Iyan Tools
+            </button>
+          </div>
+        </div>
+
+        <div class="wiki-nav__group" data-wiki-group="paid-tools">
+          <button class="wiki-nav__button wiki-nav__button--group" type="button" data-wiki-group-toggle="paid-tools"
+            data-i18n="nav.paidTools" aria-expanded="false">
+            Paid Tools
+          </button>
+          <div class="wiki-nav__subgroup" data-wiki-group-panel="paid-tools" hidden>
             <button class="wiki-nav__subbutton" type="button" data-wiki-tab="tools-overview"
               data-i18n="nav.overview">
               Overview
@@ -151,6 +168,14 @@
 
         <section class="wiki-panel" id="sdf-generator" data-wiki-panel hidden aria-label="SDF Generator">
           <div class="wiki-markdown" data-wiki-content="sdfGenerator"></div>
+        </section>
+
+        <section class="wiki-panel" id="blender-tools-overview" data-wiki-panel hidden aria-label="Blender Tools Overview">
+          <div class="wiki-markdown" data-wiki-content="blenderToolsOverview"></div>
+        </section>
+
+        <section class="wiki-panel" id="iyan-tools" data-wiki-panel hidden aria-label="Iyan Tools">
+          <div class="wiki-markdown" data-wiki-content="iyanTools"></div>
         </section>
 
         <section class="wiki-panel" id="notes" data-wiki-panel hidden aria-label="Notes">

@@ -1,0 +1,21 @@
+{
+  "blenderToolsOverview": {
+    "eyebrow": "Blender Tools",
+    "title": "Blender-side tool suites and asset-prep workflow helpers",
+    "copy": "This section covers tools that are meant to run inside Blender, especially utilities that clean up scene data, validate mesh or UV quality, and reduce repetitive preparation work before export or downstream integration.",
+    "cards": [
+      {
+        "title": "What this group is for",
+        "body": "Unlike the `VPM Tools` pages, which focus on package distribution and Unity-side workflows, `Blender Tools` is where Blender-native tooling belongs. These pages are best used for add-ons, operators, and asset-prep helpers that run directly in the Blender UI."
+      },
+      {
+        "title": "How to read these pages",
+        "body": "A good Blender tool page should explain the target workflow, what kind of scene or mesh state it expects, what operators it exposes, and what result the user should expect after running it. If the tool is a suite, it should also show how the subtools are organized under the same UI."
+      }
+    ],
+    "meta": {
+      "chips": ["Blender", "Addon", "Workflow"],
+      "body": "The first entry in this group is `Iyan Tools`, a unified Blender addon suite that bundles several production helpers under a single sidebar tab. As more Blender-side tooling is documented, this section can grow into the asset-preparation side of the overall pipeline."
+    }
+  }
+}

@@ -25,6 +25,8 @@ const LOCALE_BUNDLES = [
 	'wiki/tools-overview',
 	'wiki/vsf-avatar-converter',
 	'wiki/sdf-generator',
+	'wiki/blender-tools-overview',
+	'wiki/iyan-tools',
 	'wiki/notes',
 ];
 
@@ -192,6 +194,10 @@ const renderWikiContent = async () => {
 		let html = renderHeader(sectionData);
 		html += renderLeadPanel(sectionData);
 
+		if (sectionData.action && sectionData.actionPosition === 'afterLead') {
+			html += renderActionBlock(sectionData.action);
+		}
+
 		if (sectionData.listCard) {
 			html += renderListCard(sectionData.listCard);
 		}
@@ -204,7 +210,7 @@ const renderWikiContent = async () => {
 			html += sectionData.sections.map(renderContentSection).join('');
 		}
 
-		if (sectionData.action) {
+		if (sectionData.action && sectionData.actionPosition !== 'afterLead') {
 			html += renderActionBlock(sectionData.action);
 		}
 
@@ -221,7 +227,8 @@ const GROUP_CHILDREN = {
 		'prefab-material-remapper',
 		'uv-mask-tool',
 	],
-	tools: ['tools-overview', 'vsf-avatar-converter', 'sdf-generator'],
+	'paid-tools': ['tools-overview', 'vsf-avatar-converter', 'sdf-generator'],
+	'blender-tools': ['blender-tools-overview', 'iyan-tools'],
 };
 
 const getGroupForTab = (tabId) =>

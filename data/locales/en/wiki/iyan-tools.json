@@ -1,0 +1,123 @@
+{
+  "iyanTools": {
+    "eyebrow": "Blender Tools",
+    "title": "Iyan-Kim Tools",
+    "copy": "`Iyan-Kim Tools` is a unified Blender addon suite that bundles multiple production helpers under a single sidebar tab. Instead of shipping several separate add-ons with different entries and categories, the suite installs as one addon and renders under `View3D > Sidebar > Iyan-Kim`.",
+    "cards": [
+      {
+        "title": "Unified addon suite",
+        "body": "The current suite includes `Mochi Bone Cleaner`, `Mesh Cleanup`, and `UV Validation`. All three live under one root panel so the user gets one install target, one sidebar category, and one stable place for future tools."
+      },
+      {
+        "title": "Why the structure changed",
+        "body": "The repository previously grew as separate Blender addons. That approach does not scale well because each tool adds another visible tab, another addon entry, and more duplicated registration patterns. The unified package solves that by turning the repo into one installable tool suite."
+      }
+    ],
+    "meta": {
+      "chips": ["Blender", "Addon Suite", "v2.0.0"],
+      "body": "The suite is organized around one sidebar category, one root panel, and child panels for each subtool. This matches the way Blender handles tool grouping more cleanly than a fragmented multi-addon layout."
+    },
+    "sections": [
+      {
+        "title": "Included tools",
+        "entries": [
+          {
+            "title": "`Mochi Bone Cleaner`",
+            "body": "Classifies generated or retargeted leftover bones, keeps weighted or protected bones, lets the user review ambiguous structural bones, and deletes only entries that are classified as `SAFE_DELETE`."
+          },
+          {
+            "title": "`Mesh Cleanup`",
+            "body": "Scans for loose geometry, degenerate faces, overlapping duplicate faces, and duplicate verts, then provides guarded cleanup operators and quick-fix flows for common repair tasks."
+          },
+          {
+            "title": "`UV Validation`",
+            "body": "Detects zero-area or collapsed UV faces, tiny or thin UV islands, and missing UV-map cases across targets, then returns per-run result summaries and selections."
+          }
+        ]
+      },
+      {
+        "title": "UI architecture",
+        "items": [
+          "Sidebar category: `Iyan-Kim`",
+          "Root panel: `Iyan-Kim Tools`",
+          "Child panels: `Mochi Bone Cleaner`, `Mesh Cleanup`, `UV Validation`",
+          "One tab with subtools, instead of several independent Blender addon tabs"
+        ]
+      },
+      {
+        "title": "Repository structure",
+        "items": [
+          "`iyan_kim_tools/__init__.py` - unified addon entry point",
+          "`iyan_kim_tools/config.py` - shared UI constants",
+          "`iyan_kim_tools/mochi_bone_cleaner.py` - bone analysis and cleanup tool",
+          "`iyan_kim_tools/mesh_cleanup.py` - mesh cleanup scanner / fixer",
+          "`iyan_kim_tools/uv_validation.py` - UV validation scanner",
+          "`scripts/package_addon.py` - packaging script"
+        ]
+      },
+      {
+        "title": "Installation",
+        "ordered": true,
+        "items": [
+          "Build or download the packaged ZIP.",
+          "In Blender, open `Edit > Preferences > Add-ons`.",
+          "Click `Install...`.",
+          "Select the ZIP file.",
+          "Enable `Iyan-Kim Tools`."
+        ]
+      },
+      {
+        "title": "Local build and packaging",
+        "entries": [
+          {
+            "title": "Local build",
+            "body": "The installable ZIP can be built locally with `python scripts/package_addon.py`."
+          },
+          {
+            "title": "Expected output",
+            "body": "The repository expects a packaged output like `dist/iyan_kim_tools-v2.0.0.zip`, with the `iyan_kim_tools/` folder kept at the archive root so Blender can install it correctly."
+          },
+          {
+            "title": "GitHub Actions",
+            "body": "The repository includes `.github/workflows/package-addon.yml` so the package can be built on pushes, tags, or manual workflow dispatch."
+          }
+        ]
+      },
+      {
+        "title": "Suite-level data flow",
+        "ordered": true,
+        "items": [
+          "Blender enables `iyan_kim_tools`.",
+          "The root addon registers the suite parent panel and the three subtools.",
+          "All tool panels render under the same `Iyan-Kim` sidebar category.",
+          "Each tool then executes its own scan, classification, or cleanup flow inside the shared suite shell."
+        ]
+      },
+      {
+        "title": "Version 2.0.0 changes",
+        "items": [
+          "Introduced the unified addon package `iyan_kim_tools`.",
+          "Removed the old standalone addon directories from the active codebase.",
+          "Moved the UI into a single `Iyan-Kim` sidebar category.",
+          "Reframed each tool as a subpanel under one parent panel.",
+          "Switched packaging to build the unified addon ZIP.",
+          "Added CI validation for the suite source files before packaging."
+        ]
+      },
+      {
+        "title": "Limitations",
+        "items": [
+          "`Mesh Cleanup` and `UV Validation` are integrated as suite modules, but not yet fully split into smaller internal files.",
+          "Runtime verification still needs to happen inside Blender for operator behavior, overlay behavior, and panel layout."
+        ]
+      }
+    ],
+    "actionPosition": "afterLead",
+    "action": {
+      "title": "Download packaged releases",
+      "body": "Use the GitHub Releases page to get the packaged addon ZIP builds for `Iyan-Kim Tools`.",
+      "href": "https://github.com/Yunhyuk-Jeong/blender-iyan-tools/releases",
+      "label": "View Releases"
+    }
+  }
+}

@@ -1,15 +1,16 @@
 {
-	"brand": {
-		"eyebrow": "Studio Iyan",
-		"title": "Wiki",
-		"copy": "패키지 설치, 사용 흐름, 프로젝트 메모를 정리하는 간단한 참고 공간입니다.",
-		"homeLink": "홈으로 돌아가기"
-	},
+  "brand": {
+    "eyebrow": "Studio Iyan",
+    "title": "Wiki",
+    "copy": "VPM 툴, 스탠드얼론 툴, Blender 툴, 프로젝트 메모를 정리한 간결한 문서 공간입니다.",
+    "homeLink": "홈으로 돌아가기"
+  },
   "nav": {
     "label": "Contents",
     "overview": "Overview",
     "vpmTools": "VPM Tools",
-    "tools": "Tools",
+    "paidTools": "Paid Tools",
+    "blenderTools": "Blender Tools",
     "planeFitToCameraTool": "Plane Fit To Camera Tool",
     "maBlendshapeSyncAutoSetup": "MA Blendshape Sync Auto Setup",
     "hierarchyPlusRebone": "Hierarchy Plus Rebone",
@@ -17,6 +18,7 @@
     "uvMaskTool": "UV Mask Tool",
     "vsfAvatarConverter": "VSF Avatar Converter",
     "sdfGenerator": "SDF Generator",
+    "iyanTools": "Iyan Tools",
     "notes": "Notes"
   }
 }

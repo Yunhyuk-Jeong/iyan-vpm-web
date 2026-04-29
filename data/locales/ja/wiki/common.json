@@ -2,14 +2,15 @@
   "brand": {
     "eyebrow": "Studio Iyan",
     "title": "Wiki",
-    "copy": "パッケージの導入、利用フロー、プロジェクトメモを整理するためのコンパクトな参照ページです。",
+    "copy": "VPMツール、スタンドアロンツール、Blenderツール、プロジェクトメモを整理したコンパクトなドキュメントページです。",
     "homeLink": "ホームへ戻る"
   },
   "nav": {
     "label": "Contents",
     "overview": "Overview",
     "vpmTools": "VPM Tools",
-    "tools": "Tools",
+    "paidTools": "Paid Tools",
+    "blenderTools": "Blender Tools",
     "planeFitToCameraTool": "Plane Fit To Camera Tool",
     "maBlendshapeSyncAutoSetup": "MA Blendshape Sync Auto Setup",
     "hierarchyPlusRebone": "Hierarchy Plus Rebone",
@@ -17,6 +18,7 @@
     "uvMaskTool": "UV Mask Tool",
     "vsfAvatarConverter": "VSF Avatar Converter",
     "sdfGenerator": "SDF Generator",
+    "iyanTools": "Iyan Tools",
     "notes": "Notes"
   }
 }
