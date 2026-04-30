@@ -15,6 +15,10 @@
       {
         "title": "멀티 메쉬 대응",
         "body": "같은 UV 타겟을 공유하는 여러 메쉬를 하나의 작업 대상으로 묶어 처리할 수 있어, 분리된 구조의 페이스 메쉬에도 대응할 수 있습니다."
+      },
+      {
+        "title": "Desktop Workflow",
+        "body": "독립 실행형 데스크톱 툴 구조라서 메쉬 로드, 미리보기, 생성, 보정, 내보내기까지를 한 작업 공간 안에서 이어서 처리할 수 있습니다."
       }
     ],
     "meta": {
@@ -26,6 +30,12 @@
       "alt": "Face Shadow SDF Generator Korean interface",
       "caption": "메인 작업 화면. 가로형 레이아웃 기준으로 3D 프리뷰, UV 작업, 결과 확인이 한 흐름으로 이어집니다.",
       "layout": "landscape"
+    },
+    "leadAction": {
+      "title": "BOOTH Product Page",
+      "body": "Face Shadow SDF Generator의 상품 페이지로 이동해 스토어 설명, 구매 흐름, 공개된 배포 패키지를 바로 확인할 수 있습니다.",
+      "href": "https://milktank-booth.booth.pm/items/8245542",
+      "label": "View on BOOTH"
     },
     "sections": [
       {

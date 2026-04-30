@@ -16,6 +16,12 @@
     "meta": {
       "chips": ["WIP", "Unity Tool", "Conversion"],
       "body": "現時点では、将来のドキュメント用に場所を確保している状態です。正式なページを作るときは、`入力対象`、`出力結果`、`対応範囲`、`移行時の注意点` を中心に整理するのが適切です。"
+    },
+    "leadAction": {
+      "title": "BOOTH Product Page",
+      "body": "VSF Avatar Converter の商品ページを開き、ストア説明、購入導線、公開されている配布パッケージを直接確認できます。",
+      "href": "https://milktank-booth.booth.pm/items/8195979",
+      "label": "View on BOOTH"
     }
   }
 }

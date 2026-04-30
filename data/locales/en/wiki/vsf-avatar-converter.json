@@ -14,8 +14,18 @@
       }
     ],
     "meta": {
-      "chips": ["WIP", "Unity Tool", "Conversion"],
+      "chips": [
+        "WIP",
+        "Unity Tool",
+        "Conversion"
+      ],
       "body": "At the moment this page only reserves the space for future documentation. When the tool page is filled in, the most useful structure will focus on `input targets`, `output results`, `compatibility scope`, and `migration cautions`."
+    },
+    "leadAction": {
+      "title": "BOOTH Product Page",
+      "body": "Open the VSF Avatar Converter product page on BOOTH for the store listing, purchase flow, and published release package.",
+      "href": "https://milktank-booth.booth.pm/items/8195979",
+      "label": "View on BOOTH"
     }
   }
 }

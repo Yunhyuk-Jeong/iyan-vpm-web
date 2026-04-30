@@ -988,11 +988,14 @@ h1 {
 
 .wiki-lead--wide-media .wiki-lead__media .wiki-media {
   width: 100%;
-  max-width: 920px;
+  max-width: none;
+  margin-inline: auto;
 }
 
 .wiki-lead--wide-media .wiki-lead__media {
   width: 100%;
+  display: grid;
+  justify-items: center;
   justify-self: center;
 }
 

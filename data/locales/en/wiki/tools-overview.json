@@ -14,8 +14,18 @@
       }
     ],
     "meta": {
-      "chips": ["Paid", "Standalone", "Workflow"],
+      "chips": [
+        "Paid",
+        "Standalone",
+        "Workflow"
+      ],
       "body": "If you are new to this group, start with the overview and then move into the specific tab you need. Entries that are not ready yet stay marked as `WIP`, while completed pages gradually expand to include real screenshots, detailed controls, and full release notes."
+    },
+    "leadAction": {
+      "title": "BOOTH Page",
+      "body": "Open the Studio Iyan BOOTH page to check the currently published paid tools and product listings in one place.",
+      "href": "https://milktank-booth.booth.pm/",
+      "label": "Visit BOOTH"
     }
   }
 }

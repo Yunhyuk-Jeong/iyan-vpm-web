@@ -16,6 +16,12 @@
     "meta": {
       "chips": ["Paid", "Standalone", "Workflow"],
       "body": "初めて見る場合は、まずこのOverviewで全体の性格を把握してから、必要なツールの下位タブに進むのが効率的です。まだ準備中の項目は `WIP` として残し、完成したページは実際の画面、詳細な操作、完全なリリースノートまで段階的に拡張していきます。"
+    },
+    "leadAction": {
+      "title": "BOOTH Page",
+      "body": "現在公開中の有料ツールと商品一覧をまとめて確認できるよう、Studio Iyan の BOOTH ページへ移動します。",
+      "href": "https://milktank-booth.booth.pm/",
+      "label": "Visit BOOTH"
     }
   }
 }

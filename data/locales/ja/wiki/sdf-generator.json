@@ -15,6 +15,10 @@
       {
         "title": "マルチメッシュ対応",
         "body": "同じUVターゲットを共有する複数メッシュを、1つの作業対象としてまとめて処理できます。"
+      },
+      {
+        "title": "Desktop Workflow",
+        "body": "スタンドアロンのデスクトップツールとして構成されているため、メッシュ読み込み、プレビュー、生成、補正、書き出しまでを一つの作業空間で完結できます。"
       }
     ],
     "meta": {
@@ -26,6 +30,12 @@
       "alt": "Face Shadow SDF Generator Japanese interface",
       "caption": "メイン作業画面。横長レイアウトで、3Dプレビュー、UV作業、結果確認が一続きで見える構成です。",
       "layout": "landscape"
+    },
+    "leadAction": {
+      "title": "BOOTH Product Page",
+      "body": "Face Shadow SDF Generator の商品ページを開き、ストア説明、購入導線、公開されている配布パッケージを直接確認できます。",
+      "href": "https://milktank-booth.booth.pm/items/8245542",
+      "label": "View on BOOTH"
     },
     "sections": [
       {
