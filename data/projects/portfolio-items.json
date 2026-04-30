@@ -1,10 +1,25 @@
-﻿[
+[
+	{
+		"date": "2026-04-30",
+		"address": "https://milktank-booth.booth.pm/items/8286800",
+		"shopName": "Studio Iyan",
+		"productName": "Stellar Veil",
+		"tag": "Unity Shader",
+		"platform": "Unity",
+		"category": "Shader",
+		"builtWith": "HLSL/CG",
+		"description": {
+			"ko": "별과 성운이 흐르는 판타지풍 밤하늘을 손쉽게 🌌✨\nStellar Veil은 VRChat 월드와 Unity 씬을 위한 프로시저럴 스카이박스 쉐이더입니다.\n몽환적인 판타지 야경부터 깊은 한밤중까지, 다양한 분위기의 하늘을 연출할 수 있습니다.",
+			"en": "Create a fantasy-style night sky with flowing stars and nebulae 🌌✨\nStellar Veil is a procedural skybox shader for VRChat worlds and Unity scenes.\nFrom dreamy fantasy nightscapes to deep midnight skies, it lets you create a wide range of atmospheric skies.",
+			"ja": "星や星雲が流れる、ファンタジー風の夜空を手軽に 🌌✨\nStellar Veilは、VRChatワールドやUnityシーン向けのプロシージャル・スカイボックスシェーダーです。\n幻想的なファンタジー夜景から深い真夜中まで、さまざまな雰囲気の空を演出できます。"
+		}
+	},
 	{
 		"date": "2026-04-28",
 		"address": "https://milktank-booth.booth.pm/items/8245542",
 		"shopName": "Studio Iyan",
 		"productName": "SDF Generator",
-		"tag": "Unity Tool",
+		"tag": "Tool",
 		"platform": "Windows",
 		"category": "Tool",
 		"builtWith": "Python",
@@ -34,10 +49,10 @@
 		"address": "https://milktank-booth.booth.pm/items/8195979",
 		"shopName": "Studio Iyan",
 		"productName": "VSF Avatar Converter",
-		"tag": "Unity Tool",
+		"tag": "Tool",
 		"platform": "Unity",
 		"category": "Tool",
-		"builtWith": "Unity",
+		"builtWith": "C#",
 		"description": {
 			"ko": "VSF Avatar Converter는 VRChat 아바타를 VSeeFace에서 사용 가능한 형식으로 손쉽게 변환할 수 있도록 지원하는 툴입니다.",
 			"en": "VSF Avatar Converter is a tool that enables easy conversion of VRChat avatars into formats compatible with VSeeFace.",

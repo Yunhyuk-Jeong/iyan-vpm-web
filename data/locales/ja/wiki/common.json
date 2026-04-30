@@ -2,8 +2,8 @@
   "brand": {
     "eyebrow": "Studio Iyan",
     "title": "Wiki",
-    "copy": "VPMツール、スタンドアロンツール、Blenderツール、プロジェクトメモを整理したコンパクトなドキュメントページです。",
-    "homeLink": "ホームへ戻る"
+    "copy": "VPMツール、スタンドアロンツール、Blenderツール、プロジェクトメモを整理したコンパクトなドキュメントスペースです。",
+    "homeLink": "ホームに戻る"
   },
   "nav": {
     "label": "Contents",
@@ -18,7 +18,7 @@
     "uvMaskTool": "UV Mask Tool",
     "vsfAvatarConverter": "VSF Avatar Converter",
     "sdfGenerator": "SDF Generator",
-    "iyanTools": "Iyan Tools",
+    "iyanTools": "Studio Iyan Tools",
     "notes": "Notes"
   }
 }

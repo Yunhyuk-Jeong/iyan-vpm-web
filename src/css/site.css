@@ -1624,10 +1624,16 @@ h1 {
   text-transform: uppercase;
 }
 
-.product-card--unity-tool {
+.product-card--tool {
   --card-accent: #8bbdff;
   --card-accent-soft: rgba(80, 150, 255, 0.18);
   --card-accent-border: rgba(80, 150, 255, 0.28);
+}
+
+.product-card--unity-shader {
+  --card-accent: #b997ff;
+  --card-accent-soft: rgba(149, 107, 255, 0.18);
+  --card-accent-border: rgba(149, 107, 255, 0.28);
 }
 
 body.modal-open {

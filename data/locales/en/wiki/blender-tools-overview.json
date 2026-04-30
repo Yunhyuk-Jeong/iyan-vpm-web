@@ -15,7 +15,7 @@
     ],
     "meta": {
       "chips": ["Blender", "Addon", "Workflow"],
-      "body": "The first entry in this group is `Iyan Tools`, a unified Blender addon suite that bundles several production helpers under a single sidebar tab. As more Blender-side tooling is documented, this section can grow into the asset-preparation side of the overall pipeline."
+      "body": "The first entry in this group is `Studio Iyan Tools`, a unified Blender addon suite that bundles several production helpers under a single sidebar tab. As more Blender-side tooling is documented, this section can grow into the asset-preparation side of the overall pipeline."
     }
   }
 }

@@ -1,69 +1,79 @@
 {
   "iyanTools": {
     "eyebrow": "Blender Tools",
-    "title": "Iyan-Kim Tools",
-    "copy": "`Iyan-Kim Tools` は、複数の制作補助ツールを1つのサイドバータブの下にまとめた統合Blenderアドオンスイートです。複数の独立アドオンを別々に配布するのではなく、1つのアドオンとしてインストールされ、`View3D > Sidebar > Iyan-Kim` の下でまとめて表示されます。",
+    "title": "Studio Iyan Tools",
+    "copy": "`Studio Iyan Tools` は、複数の制作補助ツールを1つのサイドバータブにまとめた統合 Blender アドオンスイートです。スイートは1つのアドオンとしてインストールされ、`View3D > Sidebar > Studio Iyan` 配下に表示されるため、ユーザーは1つのインストール対象、1つのサイドバーカテゴリ、そして今後のツール追加先をまとめて得られます。",
     "cards": [
       {
         "title": "統合アドオンスイート",
-        "body": "現在のスイートには `Mochi Bone Cleaner`、`Mesh Cleanup`、`UV Validation` が含まれます。3つのツールは1つのルートパネルに集約され、ユーザーに1つのインストール対象、1つのサイドバーカテゴリ、そして将来のツール追加に向けた安定した拡張基盤を提供します。"
+        "body": "現在のスイートには `Mochi Bone Cleaner`、`Mesh Cleanup`、`UV Validation` が含まれています。3つとも1つのルートパネル配下に整理されており、複数の分離されたアドオンではなく、1つのまとまった Blender ツールスイートとして扱えます。"
       },
       {
-        "title": "なぜ構造を変えたのか",
-        "body": "このリポジトリはもともと複数の別個のBlenderアドオンとして育ってきました。しかしその方法では、ツールが増えるたびにタブ数、アドオン項目、登録処理の重複が増えてしまいます。統合パッケージは、それを1つのインストール可能なツールスイートとして整理することで解決します。"
+        "title": "現在のバージョン",
+        "body": "現在の統合アドオンバージョンは `2.0.2` です。パッケージは Blender 4.2+ 拡張形式と、マニフェストベースのビルドフローを前提に管理されています。"
       }
     ],
     "meta": {
-      "chips": ["Blender", "Addon Suite", "v2.0.0"],
-      "body": "このスイートは、1つのサイドバーカテゴリ、1つのルートパネル、そして各サブツールパネルという構成で設計されています。Blenderが得意とするツールグルーピングにより適した形です。"
+      "chips": ["Blender", "Addon Suite", "v2.0.2"],
+      "body": "このスイートは、1つのサイドバーカテゴリ、1つのルートパネル、そして各サブツール用の子パネルという構成で整理されています。複数の独立したアドオンタブや重複した登録よりも、Blender のグルーピングモデルに自然に合う形です。"
     },
     "sections": [
       {
-        "title": "含まれるツール",
+        "title": "なぜこの構造なのか",
+        "items": [
+          "1つのインストール対象",
+          "1つのサイドバータブ",
+          "1つの最上位親パネル",
+          "今後 Studio Iyan ツールを追加するための安定した拡張ポイント"
+        ]
+      },
+      {
+        "title": "UI構造",
+        "items": [
+          "サイドバーカテゴリ: `Studio Iyan`",
+          "ルートパネル: `Studio Iyan Tools`",
+          "子パネル: `Mochi Bone Cleaner`, `Mesh Cleanup`, `UV Validation`",
+          "複数の独立したアドオンタブではなく、1つのタブの中にサブツールがまとまる構成"
+        ]
+      },
+      {
+        "title": "含まれているツール",
         "entries": [
           {
             "title": "`Mochi Bone Cleaner`",
-            "body": "生成後やリターゲット後に残ったボーンを分類し、実際にウェイトが付いているボーンや保護対象のボーンは保持し、構造的に曖昧なボーンはレビュー対象として残したうえで、`SAFE_DELETE` に分類されたものだけを削除するツールです。"
+            "body": "生成またはリターゲット後に残った不要なボーンを分類し、実際にウェイトがあるボーンや保護対象ボーンは保持し、曖昧な構造ボーンはレビュー対象として残し、`SAFE_DELETE` に分類されたものだけを削除できるようにしたツールです。"
           },
           {
             "title": "`Mesh Cleanup`",
-            "body": "ルーズジオメトリ、退化フェース、完全に重なった重複フェース、重複頂点を検出し、保護付きのクリーンアップオペレーターとクイック修正フローを提供します。"
+            "body": "ルーズジオメトリ、退化面、重なった重複面、重複頂点を検出し、保護ロジック付きのクリーンアップオペレーターと、一般的な修正フロー向けのクイックフィックスを提供します。"
           },
           {
             "title": "`UV Validation`",
-            "body": "面積ゼロに近いUVフェース、崩壊したUVフェース、極端に小さいまたは細いUVアイランド、UVマップを持たない対象を検出し、選択結果と要約カウンターを返します。"
+            "body": "面積が0に近い、または崩れたUV面、小さすぎる/細すぎるUVアイランド、UVマップが存在しないケースを検出し、実行ごとの要約結果と選択結果を返します。"
           }
         ]
       },
       {
-        "title": "UI構成",
+        "title": "リポジトリ構造",
         "items": [
-          "サイドバーカテゴリ: `Iyan-Kim`",
-          "ルートパネル: `Iyan-Kim Tools`",
-          "子パネル: `Mochi Bone Cleaner`、`Mesh Cleanup`、`UV Validation`",
-          "複数の分離タブではなく、1つのタブの下にサブツールがまとまる構造"
-        ]
-      },
-      {
-        "title": "リポジトリ構成",
-        "items": [
-          "`iyan_kim_tools/__init__.py` - 統合アドオンのエントリポイント",
+          "`iyan_kim_tools/blender_manifest.toml` - Blender 4.2+ 拡張マニフェスト",
+          "`iyan_kim_tools/__init__.py` - 統合アドオンのエントリーポイント",
           "`iyan_kim_tools/config.py` - 共通UI定数",
-          "`iyan_kim_tools/mochi_bone_cleaner.py` - ボーン解析 / 整理ツール",
-          "`iyan_kim_tools/mesh_cleanup.py` - メッシュ整理スキャナ / 修正ツール",
-          "`iyan_kim_tools/uv_validation.py` - UV検証スキャナ",
+          "`iyan_kim_tools/mochi_bone_cleaner.py` - ボーン解析とクリーンアップツール",
+          "`iyan_kim_tools/mesh_cleanup.py` - メッシュクリーンアップスキャナ / 修正ツール",
+          "`iyan_kim_tools/uv_validation.py` - UV 検証スキャナ",
           "`scripts/package_addon.py` - パッケージングスクリプト"
         ]
       },
       {
-        "title": "インストール手順",
+        "title": "インストール方法",
         "ordered": true,
         "items": [
-          "パッケージ済みZIPをビルドまたはダウンロードします。",
-          "Blenderで `Edit > Preferences > Add-ons` を開きます。",
-          "`Install...` を押します。",
-          "ZIPファイルを選択します。",
-          "`Iyan-Kim Tools` を有効化します。"
+          "パッケージ済み ZIP をビルドまたはダウンロードします。",
+          "Blender 4.2 以降で拡張機能設定を開きます。",
+          "`Install from Disk...` をクリックします。",
+          "ZIP ファイルを選択します。",
+          "`Studio Iyan Tools` を有効化します。"
         ]
       },
       {
@@ -71,15 +81,15 @@
         "entries": [
           {
             "title": "ローカルビルド",
-            "body": "インストール可能なZIPは `python scripts/package_addon.py` でローカルビルドできます。"
+            "body": "`python scripts/package_addon.py` でインストール可能な ZIP をローカルビルドできます。"
           },
           {
-            "title": "想定される出力",
-            "body": "出力は `dist/iyan_kim_tools-v2.0.0.zip` のような形式を想定しており、Blenderが正しくインストールできるようにZIPルートには `iyan_kim_tools/` フォルダを保持する必要があります。"
+            "title": "想定出力",
+            "body": "現在のパッケージ出力は `dist/iyan_kim_tools-2.0.2.zip` を想定しており、Blender が拡張を正しくインストールできるように `blender_manifest.toml` と `__init__.py` はアーカイブのルートに置かれます。"
           },
           {
-            "title": "GitHub Actions",
-            "body": "リポジトリには `.github/workflows/package-addon.yml` が含まれており、push、tag、手動実行を起点にパッケージをビルドできます。"
+            "title": "GitHub Actions パッケージング",
+            "body": "`.github/workflows/package-addon.yml` は `main` または `master` への push で ZIP をビルドし、`v2.0.0` のようなタグではリリース添付を作成し、`workflow_dispatch` による手動パッケージングもサポートします。"
           }
         ]
       },
@@ -87,37 +97,39 @@
         "title": "スイート全体のデータフロー",
         "ordered": true,
         "items": [
-          "Blenderが `iyan_kim_tools` を有効化します。",
-          "ルートアドオンが親パネルと3つのサブツールを登録します。",
-          "すべてのツールパネルは同じ `Iyan-Kim` サイドバーカテゴリの下に表示されます。",
-          "その後、各サブツールが共通スイートの枠組みの中で自身のスキャン、分類、整理フローを実行します。"
+          "Blender が `iyan_kim_tools` を有効化します。",
+          "ルートアドオンが親パネルと各サブツールパネルを登録します。",
+          "すべてのツールパネルが共通の `Studio Iyan` サイドバーカテゴリの下に表示されます。",
+          "各ツールは統合スイート内部で、それぞれのスキャン、分類、検証、クリーンアップ処理を実行します。"
         ]
       },
       {
-        "title": "2.0.0での変更点",
+        "title": "2.0.0 で変わった点",
         "items": [
-          "統合アドオンパッケージ `iyan_kim_tools` を導入",
-          "旧スタンドアロンアドオンのディレクトリをアクティブなコードベースから削除",
-          "UIを単一の `Iyan-Kim` サイドバーカテゴリへ移動",
-          "各ツールを1つの親パネル配下のサブパネルとして再構成",
-          "パッケージングを統合アドオンZIPビルド方式へ変更",
-          "パッケージング前にスイートソースを検証するCIを追加"
+          "統合アドオンパッケージ `iyan_kim_tools` を導入しました。",
+          "旧来のスタンドアロンアドオンディレクトリをアクティブコードベースから削除しました。",
+          "UI を1つの `Studio Iyan` サイドバーカテゴリへ統合しました。",
+          "各ツールを1つの親パネル配下の子パネル構造へ再編しました。",
+          "`1.1.0` で改善された Mochi Bone Cleaner の解析ロジックを維持しました。",
+          "Blender 4.2+ 拡張マニフェストを追加しました。",
+          "パッケージング方式をマニフェストベースの拡張 ZIP ビルドへ切り替えました。",
+          "パッケージング前にスイートのソースファイルとマニフェストを検証する CI を追加しました。"
         ]
       },
       {
         "title": "制限事項",
         "items": [
-          "`Mesh Cleanup` と `UV Validation` はスイートモジュールとして統合されていますが、まだより細かい内部ファイル単位への再分割は完了していません。",
-          "オペレーター挙動、オーバーレイ挙動、パネルレイアウトについては、Blender内部での実行時検証がまだ必要です。"
+          "`Mesh Cleanup` と `UV Validation` はスイートモジュールとして統合されていますが、まだ内部をより細かいファイル単位へ分割する段階には至っていません。",
+          "オペレーター動作、オーバーレイ動作、パネルレイアウトの Blender ランタイム検証は、引き続き Blender 内で行う必要があります。"
         ]
       }
     ],
     "actionPosition": "afterLead",
     "action": {
-      "title": "パッケージ済みリリースを取得",
-      "body": "`Iyan-Kim Tools` のパッケージ済みアドオンZIPは GitHub Releases ページから取得できます。",
+      "title": "パッケージ済みリリースを入手",
+      "body": "`Studio Iyan Tools` 用のパッケージ済み拡張 ZIP ビルドは GitHub Releases ページから取得できます。",
       "href": "https://github.com/Yunhyuk-Jeong/blender-iyan-tools/releases",
-      "label": "Releases を見る"
+      "label": "View Releases"
     }
   }
 }

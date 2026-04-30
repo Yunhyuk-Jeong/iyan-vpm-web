@@ -2,7 +2,7 @@
   "brand": {
     "eyebrow": "Studio Iyan",
     "title": "Wiki",
-    "copy": "VPM 툴, 스탠드얼론 툴, Blender 툴, 프로젝트 메모를 정리한 간결한 문서 공간입니다.",
+    "copy": "VPM 도구, 스탠드얼론 도구, Blender 도구, 프로젝트 메모를 정리한 간결한 문서 공간입니다.",
     "homeLink": "홈으로 돌아가기"
   },
   "nav": {
@@ -18,7 +18,7 @@
     "uvMaskTool": "UV Mask Tool",
     "vsfAvatarConverter": "VSF Avatar Converter",
     "sdfGenerator": "SDF Generator",
-    "iyanTools": "Iyan Tools",
+    "iyanTools": "Studio Iyan Tools",
     "notes": "Notes"
   }
 }

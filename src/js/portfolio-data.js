@@ -3,9 +3,17 @@ const THUMBNAIL_CACHE_URL = "./data/projects/thumbnail-cache.json";
 const PROJECT_PLACEHOLDER_IMAGE = "./assets/project-placeholder.svg";
 
 const slugifyTag = (value) => value
-  .toLowerCase()
-  .replace(/[^a-z0-9]+/g, "-")
-  .replace(/^-+|-+$/g, "");
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+const normalizeTag = (tag) => {
+  if (tag === "Unity Tool") {
+    return "Tool";
+  }
+
+  return tag;
+};
 
 const parseProjectDate = (value) => {
   if (!value) {
@@ -37,18 +45,30 @@ const normalizeDescription = (description, tag, shopName, productName) => {
 };
 
 const buildFallbackSummary = (project) => {
-  if (project.tag === "Unity Tool") {
+  if (project.tag === "Tool" || project.tag === "Unity Tool") {
     return `${project.productName} is a Unity workflow tool released through ${project.shopName}. Add a short project summary here to explain the problem it solves and the workflow it improves.`;
+  }
+
+  if (project.tag === "Unity Shader") {
+    return `${project.productName} is a Unity shader release published through ${project.shopName}. Add a short summary here to explain the visual target, rendering workflow, and what this shader is built for.`;
   }
 
   return `${project.productName} is a VRChat gimmick release published through ${project.shopName}. Add a short summary here to explain the core interaction, technical focus, and what makes this work stand out.`;
 };
 
 const inferMeta = (tag) => {
-  if (tag === "Unity Tool") {
+  if (tag === "Tool" || tag === "Unity Tool") {
     return {
       platform: "Unity",
       category: "Tool",
+      builtWith: "Unity",
+    };
+  }
+
+  if (tag === "Unity Shader") {
+    return {
+      platform: "Unity",
+      category: "Shader",
       builtWith: "Unity",
     };
   }
@@ -61,7 +81,7 @@ const inferMeta = (tag) => {
 };
 
 const normalizeProject = (project, index, thumbnailCache) => {
-  const normalizedTag = project.tag || "VRChat Gimmick";
+  const normalizedTag = normalizeTag(project.tag || "VRChat Gimmick");
   const fallbackMeta = inferMeta(normalizedTag);
 
   return {
@@ -141,8 +161,10 @@ export const createProjectCard = (project) => {
   const image = document.createElement("img");
 
   card.className = "product-card";
-  if (project.typeSlug === "unity-tool") {
-    card.classList.add("product-card--unity-tool");
+  if (project.typeSlug === "tool") {
+    card.classList.add("product-card--tool");
+  } else if (project.typeSlug === "unity-shader") {
+    card.classList.add("product-card--unity-shader");
   }
 
   card.href = project.address;

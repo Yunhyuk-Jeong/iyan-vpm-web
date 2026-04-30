@@ -20,7 +20,8 @@
   "filters": {
     "all": "All",
     "vrchat-gimmick": "VRChat Gimmick",
-    "unity-tool": "Unity Tool"
+    "tool": "Tool",
+    "unity-shader": "Unity Shader"
   },
   "modal": {
     "visit": "Visit BOOTH",
@@ -33,10 +34,13 @@
   },
   "tags": {
     "VRChat Gimmick": "VRChat Gimmick",
-    "Unity Tool": "Unity Tool"
+    "Tool": "Tool",
+    "Unity Tool": "Tool",
+    "Unity Shader": "Unity Shader"
   },
   "categories": {
     "Gimmick": "Gimmick",
-    "Tool": "Tool"
+    "Tool": "Tool",
+    "Shader": "Shader"
   }
 }
