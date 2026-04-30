@@ -15,10 +15,18 @@
       {
         "title": "Workflow",
         "body": "여러 Plane을 한 번에 등록하고, 거리와 회전 옵션까지 함께 조정할 수 있어 반복 작업을 줄이기 좋습니다. Canvas 없이 메쉬 기반으로 화면 연출을 구성하고 싶을 때 특히 유용합니다."
+      },
+      {
+        "title": "Editor Only",
+        "body": "이 도구는 런타임 컴포넌트를 추가하지 않는 Editor 전용 도구입니다. 씬 연출과 배치 작업 단계에서 Plane 정렬을 빠르게 처리하는 데 초점을 두고 있습니다."
       }
     ],
     "meta": {
-      "chips": ["Unity", "Editor Tool", "VPM"],
+      "chips": [
+        "Unity",
+        "Editor Tool",
+        "VPM"
+      ],
       "body": "Unity 기본 Plane(XZ, 10×10)에 최적화되어 있으며, Plane과 유사한 XZ 메쉬에도 같은 방식으로 적용할 수 있습니다."
     },
     "image": {
@@ -118,6 +126,10 @@
         "title": "릴리즈 노트",
         "entries": [
           {
+            "title": "1.1.0",
+            "body": "패키지 표시 이름을 `Studio Iyan Plane Fit To Camera Tool`으로 변경했습니다.\n제작자 이름을 `Studio Iyan`으로 변경했습니다.\n이메일 주소가 변경되었습니다."
+          },
+          {
             "title": "1.0.10",
             "body": "패키지 표시 이름을 `Iyan-Kim Plane Fit To Camera Tool`로 변경했습니다.\nVCC / Package Manager에서 제작자 브랜드가 더 명확하게 보이도록 정리했습니다.\n기능 변경은 없습니다."
           },
@@ -163,6 +175,12 @@
           }
         ]
       }
-    ]
+    ],
+    "leadAction": {
+      "title": "GitHub Repository",
+      "body": "소스 코드, 패키지 구성, 최신 배포 ZIP을 GitHub 저장소에서 바로 확인할 수 있습니다.",
+      "href": "https://github.com/Yunhyuk-Jeong/vpm-plane-fit-to-camera",
+      "label": "View GitHub Repo"
+    }
   }
 }

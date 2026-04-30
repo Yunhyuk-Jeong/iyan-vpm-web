@@ -14,7 +14,7 @@
   --orange-soft: rgba(242, 140, 40, 0.14);
   --shadow: 0 24px 72px rgba(0, 0, 0, 0.36);
   font-family:
-    "Plus Jakarta Sans", "Segoe UI Variable Display", Inter, ui-sans-serif,
+    "Google Sans Flex", "Segoe UI Variable Display", Inter, ui-sans-serif,
     system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
@@ -33,6 +33,24 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+html:lang(ko) {
+  font-family:
+    "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic",
+    "Segoe UI Variable Display", "Segoe UI", sans-serif;
+}
+
+html:lang(en) {
+  font-family:
+    "Google Sans Flex", "Segoe UI Variable Display", Inter, ui-sans-serif,
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+html:lang(ja) {
+  font-family:
+    "Noto Sans JP", "Hiragino Sans", "Yu Gothic", "Meiryo",
+    "Segoe UI Variable Display", "Segoe UI", sans-serif;
 }
 
 body {
@@ -174,6 +192,12 @@ a {
     background-color 160ms ease,
     color 160ms ease,
     transform 160ms ease;
+}
+
+.language-switcher__button:link,
+.language-switcher__button:visited,
+.language-switcher__button:active {
+  color: var(--muted);
 }
 
 .language-switcher__button:hover {
@@ -420,6 +444,12 @@ h1 {
     box-shadow 160ms ease;
 }
 
+.link-button:link,
+.link-button:visited,
+.link-button:active {
+  color: var(--ink);
+}
+
 .link-button svg {
   width: 19px;
   height: 19px;
@@ -447,6 +477,13 @@ h1 {
   color: #ffffff;
 }
 
+.link-button--blue:link,
+.link-button--blue:visited,
+.link-button--blue:active,
+.link-button--blue:hover {
+  color: #ffffff;
+}
+
 .link-button--blue:hover {
   background: var(--blue-hover);
   border-color: transparent;
@@ -458,6 +495,13 @@ h1 {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.14), transparent),
     rgba(77, 114, 197, 0.24);
+  color: #eef3ff;
+}
+
+.link-button--wiki:link,
+.link-button--wiki:visited,
+.link-button--wiki:active,
+.link-button--wiki:hover {
   color: #eef3ff;
 }
 
@@ -474,6 +518,12 @@ h1 {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.22), transparent),
     var(--orange);
+  color: #111111;
+}
+
+.link-button--booth:link,
+.link-button--booth:visited,
+.link-button--booth:active {
   color: #111111;
 }
 
@@ -648,6 +698,12 @@ h1 {
     box-shadow 160ms ease;
 }
 
+.wiki-nav__button:link,
+.wiki-nav__button:visited,
+.wiki-nav__button:active {
+  color: #d9e2f3;
+}
+
 .wiki-nav__button:hover {
   background: rgba(255, 255, 255, 0.06);
   border-color: rgba(255, 255, 255, 0.18);
@@ -720,6 +776,12 @@ h1 {
     border-color 160ms ease,
     color 160ms ease,
     transform 160ms ease;
+}
+
+.wiki-nav__subbutton:link,
+.wiki-nav__subbutton:visited,
+.wiki-nav__subbutton:active {
+  color: #c7d4e9;
 }
 
 .wiki-nav__subbutton:hover {
@@ -1052,12 +1114,20 @@ h1 {
   overflow: hidden;
 }
 
+.wiki-card--cta-compact {
+  padding: 0;
+}
+
 .wiki-cta {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 18px;
   align-items: center;
   padding: 22px;
+}
+
+.wiki-card--cta-compact .wiki-cta {
+  padding: 18px;
 }
 
 .wiki-cta__copy {
@@ -1068,6 +1138,23 @@ h1 {
 
 .wiki-cta__button {
   min-width: 188px;
+  color: #ffffff !important;
+}
+
+.wiki-cta__button:link,
+.wiki-cta__button:visited,
+.wiki-cta__button:active,
+.wiki-cta__button:hover,
+.wiki-cta__button span {
+  color: #ffffff !important;
+}
+
+.wiki-cta__button svg {
+  fill: #ffffff !important;
+}
+
+.wiki-card--cta-compact .wiki-cta__button {
+  min-width: 172px;
 }
 
 .wiki-list {

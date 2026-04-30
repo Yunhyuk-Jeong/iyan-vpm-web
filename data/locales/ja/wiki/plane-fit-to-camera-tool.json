@@ -15,10 +15,18 @@
       {
         "title": "Workflow",
         "body": "複数のPlaneを一度に登録し、距離や回転オプションもまとめて調整できるため、繰り返し作業を減らしやすい構成です。"
+      },
+      {
+        "title": "Editor Only",
+        "body": "このツールはランタイム用コンポーネントを追加しない Editor 専用ツールです。シーン演出や配置調整の段階で Plane の整列を素早く処理することに重点を置いています。"
       }
     ],
     "meta": {
-      "chips": ["Unity", "Editor Tool", "VPM"],
+      "chips": [
+        "Unity",
+        "Editor Tool",
+        "VPM"
+      ],
       "body": "Unity標準のPlane(XZ, 10×10)に最適化されており、Planeのように扱えるXZベースのメッシュにも適用できます。"
     },
     "image": {
@@ -111,6 +119,10 @@
         "title": "リリース要約",
         "entries": [
           {
+            "title": "1.1.0",
+            "body": "パッケージ表示名を `Studio Iyan Plane Fit To Camera Tool` に変更しました。\n制作者名を `Studio Iyan` に変更しました。\nメールアドレスを変更しました。"
+          },
+          {
             "title": "1.0.10",
             "body": "パッケージ表示名を整理し、VCC / Package Managerでのブランド表記をより明確にしました。"
           },
@@ -128,6 +140,12 @@
           }
         ]
       }
-    ]
+    ],
+    "leadAction": {
+      "title": "GitHub Repository",
+      "body": "ソースコード、パッケージ構成、最新の配布 ZIP を GitHub リポジトリで直接確認できます。",
+      "href": "https://github.com/Yunhyuk-Jeong/vpm-plane-fit-to-camera",
+      "label": "View GitHub Repo"
+    }
   }
 }

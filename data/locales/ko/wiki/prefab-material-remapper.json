@@ -15,10 +15,18 @@
       {
         "title": "Safe Prefab Editing",
         "body": "LoadPrefabContents / SaveAsPrefabAsset 흐름으로 Prefab Asset을 직접 불러오고 저장하므로 씬 인스턴스가 아니라 원본 에셋을 안전하게 수정합니다."
+      },
+      {
+        "title": "Editor Only",
+        "body": "Prefab Asset을 직접 정리하고 교체하는 Editor 전용 도구이며, 런타임 중 머티리얼을 전환하는 용도가 아니라 제작 단계 정리 작업을 위한 구성입니다."
       }
     ],
     "meta": {
-      "chips": ["Prefab", "Material", "VPM"],
+      "chips": [
+        "Prefab",
+        "Material",
+        "VPM"
+      ],
       "body": "Unity 2022.3 이상에서 동작하며, Project 창에 존재하는 Prefab Asset과 머티리얼이 할당된 Renderer 또는 SkinnedMeshRenderer를 대상으로 사용합니다."
     },
     "image": {
@@ -128,6 +136,10 @@
         "title": "릴리즈 노트",
         "entries": [
           {
+            "title": "1.1.0",
+            "body": "패키지 표시 이름을 `Studio Iyan Prefab Material Remapper`으로 변경했습니다.\n제작자 이름을 `Studio Iyan`으로 변경했습니다.\n이메일 주소가 변경되었습니다."
+          },
+          {
             "title": "1.0.2",
             "body": "패키지 표시 이름을 `Iyan-Kim Prefab Material Remapper`로 변경했습니다.\nVCC / Package Manager에서 제작자 브랜드가 더 명확하게 보이도록 정리했습니다.\n기능 변경은 없습니다."
           },
@@ -141,6 +153,12 @@
           }
         ]
       }
-    ]
+    ],
+    "leadAction": {
+      "title": "GitHub Repository",
+      "body": "소스 코드, 패키지 구성, 최신 배포 ZIP을 GitHub 저장소에서 바로 확인할 수 있습니다.",
+      "href": "https://github.com/Yunhyuk-Jeong/vpm-prefab-material-remapper",
+      "label": "View GitHub Repo"
+    }
   }
 }

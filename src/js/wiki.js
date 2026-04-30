@@ -141,8 +141,8 @@ const renderContentSection = (section) => `
 	</section>
 `;
 
-const renderActionBlock = ({ title, body, href, label }) => `
-	<section class="wiki-card wiki-card--cta">
+const renderActionBlock = ({ title, body, href, label }, extraClass = '') => `
+	<section class="wiki-card wiki-card--cta${extraClass ? ` ${extraClass}` : ''}">
 		<div class="wiki-cta">
 			<div class="wiki-cta__copy">
 				<h3 class="wiki-section__title">${escapeHtml(title)}</h3>
@@ -158,8 +158,8 @@ const renderActionBlock = ({ title, body, href, label }) => `
 	</section>
 `;
 
-const renderLeadPanel = ({ image, cards, meta }) => {
-	if (!image && (!Array.isArray(cards) || cards.length === 0) && !meta) {
+const renderLeadPanel = ({ image, cards, meta, leadAction }) => {
+	if (!image && (!Array.isArray(cards) || cards.length === 0) && !meta && !leadAction) {
 		return '';
 	}
 
@@ -173,6 +173,7 @@ const renderLeadPanel = ({ image, cards, meta }) => {
 						: ''
 				}
 				${meta ? renderMetaCard(meta) : ''}
+				${leadAction ? renderActionBlock(leadAction, 'wiki-card--cta-compact') : ''}
 			</div>
 		</section>
 	`;

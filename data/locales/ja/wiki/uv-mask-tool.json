@@ -15,10 +15,18 @@
       {
         "title": "Preview and Export",
         "body": "UV プレビュー、テクスチャ重ね表示、ワイヤーフレーム、Scene View ハイライト、解像度プリセット、パディング、アンチエイリアスまで一連の流れで扱えます。"
+      },
+      {
+        "title": "Editor Only",
+        "body": "UV 選択と PNG マスク出力はすべて Editor 上の制作工程で行う前提で設計されており、ランタイムでは出力済みテクスチャを使用する流れを想定しています。"
       }
     ],
     "meta": {
-      "chips": ["UV", "Mask", "VPM"],
+      "chips": [
+        "UV",
+        "Mask",
+        "VPM"
+      ],
       "body": "Unity 2022.3 以上、MeshRenderer または SkinnedMeshRenderer、UV を持つ Mesh、Material Slot を持つ Renderer を前提に動作します。"
     },
     "image": {
@@ -134,6 +142,10 @@
         "title": "リリースノート",
         "entries": [
           {
+            "title": "1.2.0",
+            "body": "パッケージ表示名を `Studio Iyan UV Mask Tool` に変更しました。\n制作者名を `Studio Iyan` に変更しました。\nメールアドレスを変更しました。"
+          },
+          {
             "title": "1.1.0",
             "body": "パッケージバージョンを `1.1.0` に更新しました。\nパッケージ表示名を `Iyan-Kim UV Mask Tool` に整理しました。\nMaterial Slot ベースの UV アイランド選択と PNG マスク出力ワークフローを整理しました。\nRenderer 選択、Material Slot 選択、UV プレビュー、選択情報、出力設定 UI を構成しました。\nIsland / Face 選択モードに対応します。\nScene View 三角形ハイライトに対応します。\n解像度プリセットとカスタム解像度をサポートします。\nパディング、アルファ、色、アンチエイリアス設定に対応します。\n韓国語、英語、日本語 UI と保存される言語設定に対応します。"
           },
@@ -143,6 +155,12 @@
           }
         ]
       }
-    ]
+    ],
+    "leadAction": {
+      "title": "GitHub Repository",
+      "body": "ソースコード、パッケージ構成、最新の配布 ZIP を GitHub リポジトリで直接確認できます。",
+      "href": "https://github.com/Yunhyuk-Jeong/vpm-uv-mask-tool",
+      "label": "View GitHub Repo"
+    }
   }
 }

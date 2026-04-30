@@ -15,10 +15,18 @@
       {
         "title": "Reworked Fork",
         "body": "Based on the no-longer-maintained original HierarchyPlus, rebuilt to respect the original license and fit modern Unity plus VPM / VCC packaging."
+      },
+      {
+        "title": "Editor Only",
+        "body": "This is an editor-only hierarchy enhancement. It changes how structure and component state are visualized in Unity, without directly affecting runtime behavior."
       }
     ],
     "meta": {
-      "chips": ["Hierarchy", "Rebone", "VPM"],
+      "chips": [
+        "Hierarchy",
+        "Rebone",
+        "VPM"
+      ],
       "body": "This is an editor-only extension and does not affect runtime builds. It is organized for Unity 2022.3+ and VPM / VCC package workflows."
     },
     "sections": [
@@ -136,6 +144,10 @@
         "title": "Release Notes",
         "entries": [
           {
+            "title": "1.1.0",
+            "body": "Changed the package display name to `Studio Iyan Hierarchy Plus Rebone`.\nChanged the creator name to `Studio Iyan`.\nUpdated the email address."
+          },
+          {
             "title": "1.0.6",
             "body": "Standardized the package display name as `Iyan-Kim Hierarchy Plus Rebone`.\nUpdated package description and metadata for the current distribution format.\nDeclared the license as `GPL-3.0-or-later`.\nReorganized the VPM / VCC package layout."
           },
@@ -165,6 +177,12 @@
           }
         ]
       }
-    ]
+    ],
+    "leadAction": {
+      "title": "GitHub Repository",
+      "body": "View the source code, package structure, and the latest packaged ZIP releases directly in the GitHub repository.",
+      "href": "https://github.com/Yunhyuk-Jeong/vpm-hierarchy-plus-rebone",
+      "label": "View GitHub Repo"
+    }
   }
 }

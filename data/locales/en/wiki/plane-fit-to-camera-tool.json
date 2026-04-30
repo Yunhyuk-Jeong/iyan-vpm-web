@@ -15,10 +15,18 @@
       {
         "title": "Workflow",
         "body": "You can register multiple Plane objects, control distance and rotation options, and fit them in one pass to reduce repetitive setup work."
+      },
+      {
+        "title": "Editor Only",
+        "body": "This is an editor-only tool that does not add runtime components. It is designed for fast scene-side plane alignment work during setup and presentation staging."
       }
     ],
     "meta": {
-      "chips": ["Unity", "Editor Tool", "VPM"],
+      "chips": [
+        "Unity",
+        "Editor Tool",
+        "VPM"
+      ],
       "body": "The tool is optimized for the default Unity Plane (XZ, 10×10) and also works with XZ-based meshes that behave like planes."
     },
     "image": {
@@ -117,6 +125,10 @@
         "title": "Release Notes",
         "entries": [
           {
+            "title": "1.1.0",
+            "body": "Changed the package display name to `Studio Iyan Plane Fit To Camera Tool`.\nChanged the creator name to `Studio Iyan`.\nUpdated the email address."
+          },
+          {
             "title": "1.0.10",
             "body": "Changed the package display name to Iyan-Kim Plane Fit To Camera Tool and cleaned up the branding shown in VCC / Package Manager."
           },
@@ -162,6 +174,12 @@
           }
         ]
       }
-    ]
+    ],
+    "leadAction": {
+      "title": "GitHub Repository",
+      "body": "View the source code, package structure, and the latest packaged ZIP releases directly in the GitHub repository.",
+      "href": "https://github.com/Yunhyuk-Jeong/vpm-plane-fit-to-camera",
+      "label": "View GitHub Repo"
+    }
   }
 }

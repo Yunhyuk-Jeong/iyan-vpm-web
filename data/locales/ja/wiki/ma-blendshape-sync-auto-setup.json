@@ -15,10 +15,18 @@
       {
         "title": "Batch Setup",
         "body": "複数ターゲットを登録し、プレビューで確認した後に一括適用できるため、繰り返し作業を大きく減らせます。"
+      },
+      {
+        "title": "Editor Only",
+        "body": "設定処理はすべて Editor 内で実行され、ランタイムには生成済みの Modular Avatar 設定結果だけが残ります。"
       }
     ],
     "meta": {
-      "chips": ["Modular Avatar", "Automation", "VPM"],
+      "chips": [
+        "Modular Avatar",
+        "Automation",
+        "VPM"
+      ],
       "body": "Unity 2022.3 以上、Modular Avatar 1.14.3 以上、NDMF 環境を前提としています。ソースとターゲットの両方に有効な SkinnedMeshRenderer が必要です。"
     },
     "image": {
@@ -119,6 +127,10 @@
         "title": "リリースノート",
         "entries": [
           {
+            "title": "1.1.0",
+            "body": "パッケージ表示名を `Studio Iyan MA Blendshape Sync Auto Setup` に変更しました。\n制作者名を `Studio Iyan` に変更しました。\nメールアドレスを変更しました。"
+          },
+          {
             "title": "1.0.9",
             "body": "パッケージ表示名を `Iyan-Kim MA Blendshape Sync Auto Setup` に変更しました。\nVCC / Package Manager でのブランド表示を整理しました。\n機能変更はありません。"
           },
@@ -160,6 +172,12 @@
           }
         ]
       }
-    ]
+    ],
+    "leadAction": {
+      "title": "GitHub Repository",
+      "body": "ソースコード、パッケージ構成、最新の配布 ZIP を GitHub リポジトリで直接確認できます。",
+      "href": "https://github.com/Yunhyuk-Jeong/vpm-ma-blendshape-sync-auto-setup",
+      "label": "View GitHub Repo"
+    }
   }
 }
