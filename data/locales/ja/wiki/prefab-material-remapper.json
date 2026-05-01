@@ -61,7 +61,7 @@
         "title": "基本的な使い方",
         "ordered": true,
         "items": [
-          "Iyan-Kim > Tools > Prefab Material Remapper を開きます。",
+          "Studio Iyan > Tools > Prefab Material Remapper を開きます。",
           "Project ウィンドウの Prefab Asset を指定するかドラッグ＆ドロップします。",
           "Scan Slots を押して現在のマテリアル名からキー一覧を生成します。",
           "各キーごとに置き換えたい実マテリアルを指定します。",
@@ -155,10 +155,10 @@
       }
     ],
     "leadAction": {
-      "title": "GitHub Repository",
-      "body": "ソースコード、パッケージ構成、最新の配布 ZIP を GitHub リポジトリで直接確認できます。",
-      "href": "https://github.com/Yunhyuk-Jeong/vpm-prefab-material-remapper",
-      "label": "View GitHub Repo"
+      "title": "Package VPM Listing",
+      "body": "このボタンを押すと、Prefab Material Remapper 専用の VPM listing が VCC に追加されます。Studio Iyan 全体リポジトリではなく、このツール専用の個別 listing を登録します。",
+      "href": "vcc://vpm/addRepo?url=https://raw.githubusercontent.com/Yunhyuk-Jeong/iyan-vpm/main/prefab-material-remapper.json",
+      "label": "Add to VCC"
     }
   }
 }

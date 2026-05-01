@@ -60,7 +60,7 @@
         "title": "Basic Usage",
         "ordered": true,
         "items": [
-          "Open Iyan-Kim > Tools > Modular Avatar Blendshape Sync Auto Setup.",
+          "Open Studio Iyan > Tools > Modular Avatar Blendshape Sync Auto Setup.",
           "Assign the source object that provides the reference blendshapes.",
           "Add one or more target objects through drag and drop or the add-target button.",
           "Enable child-object collection if you want child SkinnedMeshRenderer objects included automatically.",
@@ -174,10 +174,10 @@
       }
     ],
     "leadAction": {
-      "title": "GitHub Repository",
-      "body": "View the source code, package structure, and the latest packaged ZIP releases directly in the GitHub repository.",
-      "href": "https://github.com/Yunhyuk-Jeong/vpm-ma-blendshape-sync-auto-setup",
-      "label": "View GitHub Repo"
+      "title": "Package VPM Listing",
+      "body": "Use this button to add the package-only VPM listing for MA Blendshape Sync Auto Setup to VCC. This registers the dedicated listing for this tool instead of the full Studio Iyan repository.",
+      "href": "vcc://vpm/addRepo?url=https://raw.githubusercontent.com/Yunhyuk-Jeong/iyan-vpm/main/ma-blendshape-sync-auto-setup.json",
+      "label": "Add to VCC"
     }
   }
 }

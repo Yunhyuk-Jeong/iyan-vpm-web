@@ -303,7 +303,7 @@ h1 {
 
 .link-grid {
   display: grid;
-  width: min(100%, 820px);
+  width: 100%;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
   padding: 8px;
@@ -2137,10 +2137,10 @@ body.modal-open {
   }
 
   .link-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 7px;
-  }
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 7px;
+    }
 
   .contact-links {
     right: 18px;

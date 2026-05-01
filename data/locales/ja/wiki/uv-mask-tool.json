@@ -1,7 +1,7 @@
 {
   "uvMaskTool": {
     "eyebrow": "VPM Tools",
-    "title": "Iyan-Kim UV Mask Tool",
+    "title": "UV Mask Tool",
     "copy": "Renderer の Material Slot を基準に UV アイランドを選択し、選択領域を PNG マスクテクスチャとして書き出せる Unity Editor ツールです。複雑な UV 領域を外部ツールで塗り直さなくても、Unity 内で必要な部分だけを素早くマスク化できます。",
     "cards": [
       {
@@ -61,7 +61,7 @@
         "title": "基本的な使い方",
         "ordered": true,
         "items": [
-          "Iyan-Kim > Tools > UV Island Mask Generator を開きます。",
+          "Studio Iyan > Tools > UV Island Mask Generator を開きます。",
           "Renderer フィールドに MeshRenderer または SkinnedMeshRenderer を指定します。",
           "マスク化したい Material Slot を選びます。",
           "UV プレビュー上で必要な UV アイランドまたは Face を選択します。",
@@ -157,10 +157,10 @@
       }
     ],
     "leadAction": {
-      "title": "GitHub Repository",
-      "body": "ソースコード、パッケージ構成、最新の配布 ZIP を GitHub リポジトリで直接確認できます。",
-      "href": "https://github.com/Yunhyuk-Jeong/vpm-uv-mask-tool",
-      "label": "View GitHub Repo"
+      "title": "Package VPM Listing",
+      "body": "このボタンを押すと、Iyan-Kim UV Mask Tool 専用の VPM listing が VCC に追加されます。Studio Iyan 全体リポジトリではなく、このツール専用の個別 listing を登録します。",
+      "href": "vcc://vpm/addRepo?url=https://raw.githubusercontent.com/Yunhyuk-Jeong/iyan-vpm/main/uv-mask-tool.json",
+      "label": "Add to VCC"
     }
   }
 }

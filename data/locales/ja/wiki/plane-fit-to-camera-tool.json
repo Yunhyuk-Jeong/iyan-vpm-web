@@ -58,7 +58,7 @@
         "title": "基本的な使い方",
         "ordered": true,
         "items": [
-          "Iyan-Kim > Tools > Plane Fit To Camera を開きます。",
+          "Studio Iyan > Tools > Plane Fit To Camera を開きます。",
           "Cameraスロットに対象カメラを指定します。",
           "Planeリストに1つ以上のPlaneオブジェクトを追加します。",
           "距離、回転、整列オプションを設定します。",
@@ -142,10 +142,10 @@
       }
     ],
     "leadAction": {
-      "title": "GitHub Repository",
-      "body": "ソースコード、パッケージ構成、最新の配布 ZIP を GitHub リポジトリで直接確認できます。",
-      "href": "https://github.com/Yunhyuk-Jeong/vpm-plane-fit-to-camera",
-      "label": "View GitHub Repo"
+      "title": "Package VPM Listing",
+      "body": "このボタンを押すと、Plane Fit To Camera Tool 専用の VPM listing が VCC に追加されます。Studio Iyan 全体リポジトリではなく、このツール専用の個別 listing を登録します。",
+      "href": "vcc://vpm/addRepo?url=https://raw.githubusercontent.com/Yunhyuk-Jeong/iyan-vpm/main/plane-fit-to-camera.json",
+      "label": "Add to VCC"
     }
   }
 }

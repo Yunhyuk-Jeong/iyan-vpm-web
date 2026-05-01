@@ -60,7 +60,7 @@
         "title": "기본 사용 방법",
         "ordered": true,
         "items": [
-          "Iyan-Kim > Tools > Plane Fit To Camera 메뉴를 엽니다.",
+          "Studio Iyan > Tools > Plane Fit To Camera 메뉴를 엽니다.",
           "Camera 슬롯에 사용할 카메라를 지정합니다.",
           "Plane 슬롯에 하나 이상의 Plane 오브젝트를 추가합니다.",
           "Align Position, Align Rotation, Use Current Distance, Keep Square, Image Rotation 옵션을 설정합니다.",
@@ -177,10 +177,10 @@
       }
     ],
     "leadAction": {
-      "title": "GitHub Repository",
-      "body": "소스 코드, 패키지 구성, 최신 배포 ZIP을 GitHub 저장소에서 바로 확인할 수 있습니다.",
-      "href": "https://github.com/Yunhyuk-Jeong/vpm-plane-fit-to-camera",
-      "label": "View GitHub Repo"
+      "title": "Package VPM Listing",
+      "body": "이 버튼을 누르면 Plane Fit To Camera Tool 전용 VPM listing이 VCC에 추가됩니다. 전체 Studio Iyan 저장소가 아니라, 이 툴만을 위한 개별 listing을 등록합니다.",
+      "href": "vcc://vpm/addRepo?url=https://raw.githubusercontent.com/Yunhyuk-Jeong/iyan-vpm/main/plane-fit-to-camera.json",
+      "label": "Add to VCC"
     }
   }
 }

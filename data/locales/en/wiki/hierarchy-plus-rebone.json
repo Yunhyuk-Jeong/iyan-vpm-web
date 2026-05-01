@@ -179,10 +179,10 @@
       }
     ],
     "leadAction": {
-      "title": "GitHub Repository",
-      "body": "View the source code, package structure, and the latest packaged ZIP releases directly in the GitHub repository.",
-      "href": "https://github.com/Yunhyuk-Jeong/vpm-hierarchy-plus-rebone",
-      "label": "View GitHub Repo"
+      "title": "Package VPM Listing",
+      "body": "Use this button to add the package-only VPM listing for Hierarchy Plus Rebone to VCC. This registers the dedicated listing for this tool instead of the full Studio Iyan repository.",
+      "href": "vcc://vpm/addRepo?url=https://raw.githubusercontent.com/Yunhyuk-Jeong/iyan-vpm/main/hierarchy-plus-rebone.json",
+      "label": "Add to VCC"
     }
   }
 }

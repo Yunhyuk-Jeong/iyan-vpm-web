@@ -61,7 +61,7 @@
         "title": "기본 사용 방법",
         "ordered": true,
         "items": [
-          "Iyan-Kim > Tools > Prefab Material Remapper 메뉴를 엽니다.",
+          "Studio Iyan > Tools > Prefab Material Remapper 메뉴를 엽니다.",
           "Prefab Asset 필드에 Project 창의 Prefab Asset을 지정하거나 드래그 앤 드롭합니다.",
           "슬롯 스캔 버튼을 눌러 현재 머티리얼 슬롯 이름을 키 목록으로 불러옵니다.",
           "각 키 옆의 머티리얼 필드에 실제로 적용할 머티리얼을 지정합니다.",
@@ -155,10 +155,10 @@
       }
     ],
     "leadAction": {
-      "title": "GitHub Repository",
-      "body": "소스 코드, 패키지 구성, 최신 배포 ZIP을 GitHub 저장소에서 바로 확인할 수 있습니다.",
-      "href": "https://github.com/Yunhyuk-Jeong/vpm-prefab-material-remapper",
-      "label": "View GitHub Repo"
+      "title": "Package VPM Listing",
+      "body": "이 버튼을 누르면 Prefab Material Remapper 전용 VPM listing이 VCC에 추가됩니다. 전체 Studio Iyan 저장소가 아니라, 이 툴만을 위한 개별 listing을 등록합니다.",
+      "href": "vcc://vpm/addRepo?url=https://raw.githubusercontent.com/Yunhyuk-Jeong/iyan-vpm/main/prefab-material-remapper.json",
+      "label": "Add to VCC"
     }
   }
 }
