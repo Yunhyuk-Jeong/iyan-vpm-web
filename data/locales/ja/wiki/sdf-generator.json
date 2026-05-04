@@ -2,64 +2,148 @@
   "sdfGenerator": {
     "eyebrow": "Tools",
     "title": "Face Shadow SDF Generator",
-    "copy": "`Face Shadow SDF Generator` は、`FBX` メッシュを読み込み、現在の3Dビュー方向とUVを基準にスタイライズされた影マップを生成するデスクトップツールです。単一メッシュだけでなく、1つのUVターゲットが複数メッシュに分かれている場合でも、マルチメッシュ選択でまとめて作業できます。",
+    "copy": "`Face Shadow SDF Generator` は、`FBX` メッシュからスタイライズされた影マップを生成するスタンドアロンのデスクトップアプリケーションです。Blender を使ってメッシュと UV データを抽出し、単一メッシュと複数メッシュの両方を扱えます。プレビュー、補正、書き出しまでを一つの作業フローにまとめています。現在のバージョンは `1.3.2` です。",
     "cards": [
       {
-        "title": "メッシュ基準の生成",
-        "body": "単なるUV画像ではなく、実際のメッシュ形状と現在の3Dプレビュー方向を基準に結果を生成します。"
+        "title": "メッシュ基準のベイク",
+        "body": "平面的な UV 画像だけを見るのではなく、実際のメッシュ形状、UV データ、現在の 3D ビュー方向を基準に結果を生成します。"
       },
       {
-        "title": "手動補正を含むワークフロー",
-        "body": "`UV Select`、手動ブラシ補正、逆方向ライトでの再ベイク、RGパック出力までを1つの流れで扱えます。"
+        "title": "手動補正を内蔵",
+        "body": "`UV Select`、`Dark Shadow`、`Light Accent`、`Erase Feature Paint`、さらに左右コピー用の `Mirror Feature Paint` まで含まれており、すばやく調整できます。"
       },
       {
-        "title": "マルチメッシュ対応",
-        "body": "同じUVターゲットを共有する複数メッシュを、1つの作業対象としてまとめて処理できます。"
+        "title": "複合ターゲット対応",
+        "body": "一つの UV 作業対象が複数のメッシュオブジェクトに分かれている場合、まとめて選択して一つの作業対象として扱えます。"
       },
       {
-        "title": "Desktop Workflow",
-        "body": "スタンドアロンのデスクトップツールとして構成されているため、メッシュ読み込み、プレビュー、生成、補正、書き出しまでを一つの作業空間で完結できます。"
+        "title": "シーム補正を改善",
+        "body": "バージョン `1.3.2` では、正の `UV edge padding` の処理が改善され、UV 境界のまわりに黒いシームが広がる問題を軽減しました。"
       }
     ],
     "meta": {
-      "chips": ["Paid", "Standalone", "FBX", "SDF"],
-      "body": "スタイライズされた顔影マップを素早く反復生成し、不足部分だけを手動補正で仕上げるために設計されたツールです。自動生成、直接ペイント補正、パック出力が1つのワークフローにまとまっています。"
+      "chips": [
+        "Paid",
+        "Standalone",
+        "FBX",
+        "SDF"
+      ],
+      "body": "このツールはスタイライズされた顔影ワークフロー向けに設計されていますが、パイプライン自体は顔専用ではありません。使用可能な UV を持つ `FBX` メッシュであれば、同じプレビュー、生成、補正、書き出しの流れで処理できます。"
     },
     "image": {
       "src": "./assets/wiki/tools/sdf-generator/ja_01.png",
       "alt": "Face Shadow SDF Generator Japanese interface",
-      "caption": "メイン作業画面。横長レイアウトで、3Dプレビュー、UV作業、結果確認が一続きで見える構成です。",
+      "caption": "メイン作業画面です。横長レイアウトの中で、3D プレビュー、UV 作業領域、結果確認が一つの流れとしてつながります。",
       "layout": "landscape"
     },
     "leadAction": {
       "title": "BOOTH Product Page",
-      "body": "Face Shadow SDF Generator の商品ページを開き、ストア説明、購入導線、公開されている配布パッケージを直接確認できます。",
+      "body": "Face Shadow SDF Generator の BOOTH 商品ページで、ストア説明、購入フロー、公開されている配布パッケージを確認できます。",
       "href": "https://milktank-booth.booth.pm/items/8245542",
       "label": "View on BOOTH"
     },
     "sections": [
       {
-        "title": "主な機能",
+        "title": "基本ワークフロー",
         "items": [
-          "Blenderバックエンドを使った `FBX` 読み込みとメッシュ / 法線 / UV / マテリアル情報の取得",
-          "単一メッシュ / マルチメッシュ選択",
-          "複数UVレイヤーがある場合の `UV Map` 選択",
-          "現在の3Dプレビュー方向を基準にした影マップ生成",
-          "`UV Island` 選択による部分作業",
-          "`Dark Shadow`、`Light Accent`、`Erase Feature Paint` による手動補正",
-          "`Mirror Feature Paint` による左右コピー",
-          "逆方向ライティングで再ベイクした `flipped.png` の生成",
-          "`R = main`、`G = flipped` 形式の `rg.png` 出力",
-          "UV外側アルファ0出力と多言語UI対応"
+          "`FBX`",
+          "Blender 抽出",
+          "メッシュ / UV 選択",
+          "3D ビュー基準のベイク",
+          "必要に応じた UV アイランド制限",
+          "必要に応じた手動ブラシ補正",
+          "`main / flipped / rg / mask / asym` の書き出し"
         ]
       },
       {
-        "title": "必要条件",
+        "title": "現在の機能",
+        "items": [
+          "Blender ベースの `FBX` 読み込み",
+          "静的メッシュとスキンドメッシュの両対応",
+          "単一メッシュと複数メッシュの対象選択",
+          "UV レイヤーまたはマテリアル分割に基づく `UV Map` 選択",
+          "ビュー基準ベイク用のインタラクティブ 3D プレビュー",
+          "`UV Island` 選択",
+          "手動の暗部 / 明部ブラシ補正",
+          "ミラーペイントと消去対応",
+          "正負の UV パディング調整",
+          "`flipped` 用の反対光リベイク",
+          "`RG` パック出力",
+          "UV 外側の透明出力",
+          "英語 / 韓国語 / 日本語 UI"
+        ]
+      },
+      {
+        "title": "要件",
         "items": [
           "Windows",
-          "Blenderのインストール",
-          "メッシュとUV情報を含む `FBX` ファイル",
-          "Blenderパスはアプリ内で指定して保存可能"
+          "ローカルにインストールされた Blender",
+          "ソース起動と開発用の Python 環境",
+          "有効なメッシュと UV データを持つ `FBX` ファイル"
+        ]
+      },
+      {
+        "title": "クイックスタート",
+        "ordered": true,
+        "items": [
+          "アプリを起動します。",
+          "自動検出に失敗した場合は Blender のパスを設定します。",
+          "`FBX` を読み込みます。",
+          "単一メッシュを選ぶか、作業対象が複数オブジェクトに分かれている場合は複数メッシュをまとめて選択します。",
+          "正しい `UV Map` を選択します。",
+          "3D プレビューで作業方向を合わせます。",
+          "必要であれば `UV Select` で特定の UV アイランドだけを選択します。",
+          "必要であれば `Dark Shadow` や `Light Accent` で手動補正を加えます。",
+          "`Generate` を押します。",
+          "`main`、`flipped`、`rg` を確認します。",
+          "`Export Maps` を押して保存します。"
+        ]
+      },
+      {
+        "title": "初期設定の推奨値",
+        "items": [
+          "Resolution: `4K`",
+          "Preset: `Balanced`",
+          "Bake smoothing: `0`",
+          "UV edge padding: `3`",
+          "Feature strength: `0.43`",
+          "Transparent outside UV: 有効",
+          "Anime feature shadows: 有効",
+          "Use current 3D view: 有効"
+        ]
+      },
+      {
+        "title": "UI レイアウト",
+        "entries": [
+          {
+            "title": "左パネル",
+            "body": "Blender パス、`FBX` ローダー、メッシュ一覧、`UV Map` セレクター、バージョン表示、言語選択を配置しています。"
+          },
+          {
+            "title": "中央パネル",
+            "body": "3D プレビュー、UV 選択 / ペイント作業領域、出力プレビューモードを表示します。"
+          },
+          {
+            "title": "右パネル",
+            "body": "UV 選択ツール、ブラシツール、UV 表示ツール、ライティングプリセット、ベイク / 出力設定、レイヤー設定、エクスポート制御をまとめています。"
+          }
+        ]
+      },
+      {
+        "title": "ターゲット選択モデル",
+        "entries": [
+          {
+            "title": "単一メッシュ",
+            "body": "対象が一つのメッシュにある場合は、そのメッシュを選択して正しい UV オプションを選べば十分です。"
+          },
+          {
+            "title": "複数メッシュ",
+            "body": "一つの作業対象が複数のメッシュオブジェクトに分かれている場合は、まとめて選択できます。アプリは互換性のある選択を一つの内部複合メッシュにまとめ、プレビュー、ベイク、UV マスク、書き出しに使います。"
+          },
+          {
+            "title": "`UV Map` オプション",
+            "body": "一つのメッシュでも `UV Map` ドロップダウンに複数の候補が表示されることがあります。実際に UV レイヤーが複数ある場合もあれば、重なった UV レイアウトがマテリアル単位で分割されて見えている場合もあります。"
+          }
         ]
       },
       {
@@ -67,98 +151,23 @@
         "entries": [
           {
             "title": "`main.png`",
-            "body": "基本生成結果です。"
+            "body": "基本となるベイク結果です。"
           },
           {
             "title": "`flipped.png`",
-            "body": "単純な左右反転ではなく、逆方向ライティングで再ベイクした結果です。"
+            "body": "反対方向の光で再計算した結果です。単純な左右反転画像ではありません。"
           },
           {
             "title": "`rg.png`",
-            "body": "`R = main`、`G = flipped` でパックした出力です。"
+            "body": "`R = main`、`G = flipped`、`B` は未使用、透明出力が有効な場合は `A` に UV アルファが入ります。"
           },
           {
             "title": "`mask.png`",
-            "body": "作業用および出力用のマスクです。"
+            "body": "作業用および書き出し用のマスクです。"
           },
           {
             "title": "`asym.png`",
-            "body": "`main` と `flipped` を基にした派生結果です。"
-          }
-        ]
-      },
-      {
-        "title": "基本的な使い方",
-        "ordered": true,
-        "items": [
-          "プログラムを起動します。",
-          "Blenderパスが自動検出されない場合は `blender.exe` を指定します。",
-          "対象の `FBX` を選択します。",
-          "`Load FBX` を押してメッシュを読み込みます。",
-          "メッシュ一覧から作業対象のメッシュまたはメッシュグループを選びます。",
-          "`UV Map` から使用するUVオプションを選びます。",
-          "3Dプレビューで作業方向を確認します。",
-          "必要なら `UV Select` でUVアイランドを選択します。",
-          "必要なら手動ブラシで細部を補正します。",
-          "`Generate` を押します。",
-          "`main`、`flipped`、`rg` などを確認します。",
-          "`Export Maps` を押して保存します。"
-        ]
-      },
-      {
-        "title": "初回におすすめの流れ",
-        "ordered": true,
-        "items": [
-          "`4K` 解像度から始めます。",
-          "`Balanced` プリセットで一度生成します。",
-          "まず全体の方向性が合っているか確認します。",
-          "UV選択で作業範囲を絞ります。",
-          "最後にブラシで不足部分だけを補正します。"
-        ]
-      },
-      {
-        "title": "画面構成",
-        "entries": [
-          {
-            "title": "左パネル",
-            "body": "Blenderパス、`FBX` ファイル選択、メッシュ一覧、`UV Map` 選択、バージョン表示、言語選択を扱います。"
-          },
-          {
-            "title": "中央パネル",
-            "body": "3Dプレビュー、UV選択 / ブラシ作業プレビュー、結果プレビューを表示します。"
-          },
-          {
-            "title": "右パネル",
-            "body": "UV選択オプション、ブラシオプション、UV表示設定、プリセット、ベイク / 出力設定、レイヤー設定、出力フォルダ / 保存をまとめています。"
-          }
-        ]
-      },
-      {
-        "title": "主要オプション",
-        "entries": [
-          {
-            "title": "`Mesh Selection`",
-            "body": "`Mesh List` は読み込んだメッシュ一覧で、名前基準 A-Z に並びます。\n複数のメッシュを1つの作業対象としてまとめて選択できます。\n`UV Map` は現在のメッシュ、または選択したメッシュグループで使うUVオプションです。"
-          },
-          {
-            "title": "`UV Selection`",
-            "body": "`Select All UV` は表示中のUVアイランドをすべて選択し、`Clear UV Selection` は現在の選択をすべて解除します。\n`Use selected UV islands` を有効にすると、選択したUVアイランドだけが生成に使われます。"
-          },
-          {
-            "title": "`Manual Feature Brush`",
-            "body": "`Select UV Islands`、`Place Dark Shadow`、`Place Light Accent`、`Erase Feature Paint` モードを備えています。\n`Brush size %` でブラシサイズを調整し、`Mirror Feature Paint` で左右コピー、`Clear Feature Paint` で手動ペイントを全削除できます。"
-          },
-          {
-            "title": "`Lighting Presets`",
-            "body": "`Balanced` は標準設定、`Defined` は左右コントラストを強め、`Dramatic` はより強い方向性とコントラストを与え、`Extreme` は非常に強いスタイライズ結果を作ります。"
-          },
-          {
-            "title": "`Bake / Output`",
-            "body": "`Resolution` は `512`、`1K`、`2K`、`4K`、`8K`、`16K` をサポートします。\n`Bake contrast`、`Bake ambient`、`Light X / Y / Z`、`Bake smoothing`、`UV edge padding`、`Feature strength`、`Feature blur` を調整できます。\n`Transparent outside UV`、`Anime feature shadows`、`Use current 3D view`、`Reset 3D View` もこの領域に含まれます。"
-          },
-          {
-            "title": "`Advanced Layers`",
-            "body": "`Layer count`、`Growth intensity`、`Horizontal growth`、`Vertical growth`、`Blend mode`、`SDF radius` を使って中間生成レイヤーと最終合成の挙動を調整できます。"
+            "body": "`main` と `flipped` から生成される派生出力です。"
           }
         ]
       },
@@ -171,6 +180,7 @@
           "`selected_uv`",
           "`shape_face_uv`",
           "`uv_mask`",
+          "`analysis_overlay`",
           "`layer_current`",
           "`layer_first`",
           "`layer_last`",
@@ -183,79 +193,86 @@
         ]
       },
       {
-        "title": "マウス操作",
+        "title": "プロパティ参照",
         "entries": [
           {
-            "title": "3D Preview",
-            "body": "ドラッグで回転します。"
+            "title": "`Blender path` / `FBX file` / `Load FBX`",
+            "body": "ヘッドレス抽出に使う Blender 実行ファイルのパス、現在の `FBX`、そしてメッシュ / UV / マテリアル由来の UV オプションを抽出する読み込み処理を制御します。"
+          },
+          {
+            "title": "`Mesh list` / `UV Map`",
+            "body": "メッシュ一覧は読み込まれたメッシュを名前順で A-Z に並べます。一つの作業対象が複数オブジェクトに分かれている場合は複数選択を使います。`UV Map` は現在のメッシュ、または選択したメッシュグループに適用する UV オプションを選びます。"
+          },
+          {
+            "title": "`UV Selection`",
+            "body": "`Select All UV` は表示中のすべての UV アイランドを選択し、`Clear UV Selection` は現在の選択を解除します。`Use selected UV islands` を有効にすると、選択した UV アイランドだけを生成対象にします。"
+          },
+          {
+            "title": "`Manual Feature Brush`",
+            "body": "`Select UV Islands`、`Place Dark Shadow`、`Place Light Accent`、`Erase Feature Paint` を含みます。`Brush size %` は統合ブラシサイズで、`Mirror Feature Paint` は左右コピー、`Clear Feature Paint` は手動ペイントの全消去です。"
+          },
+          {
+            "title": "`Bake / Output`",
+            "body": "`Resolution` は `512`、`1K`、`2K`、`4K`、`8K`、`16K` をサポートします。この領域では `Bake contrast`、`Bake ambient`、`Light X / Y / Z`、`Bake smoothing`、`UV edge padding`、`Feature strength`、`Feature blur`、`Transparent outside UV`、`Anime feature shadows`、`Use current 3D view`、`Reset 3D View` を調整できます。"
+          },
+          {
+            "title": "`Advanced Layers`",
+            "body": "`Layer count`、`Growth intensity`、`Horizontal growth`、`Vertical growth`、`Blend mode`、`SDF radius` は中間生成レイヤーと最終合成挙動を制御します。"
+          }
+        ]
+      },
+      {
+        "title": "操作メモ",
+        "entries": [
+          {
+            "title": "3D プレビュー",
+            "body": "ドラッグでメッシュを回転します。現在の向きをベイク基準にしたい場合は `Use current 3D view` を使います。"
           },
           {
             "title": "UV Select",
-            "body": "ホイールでズーム、中央ドラッグでパン、左クリックでUV選択、`Ctrl + 左クリック` で選択追加 / 解除です。\n左ドラッグはペイント、右ドラッグは消去です。"
+            "body": "マウスホイールでズーム、中ボタンドラッグでパン、左クリックでアイランド選択、`Ctrl + 左クリック` で選択追加 / 解除、左ドラッグでペイント、右ドラッグで消去します。"
           }
         ]
       },
       {
-        "title": "Tips",
+        "title": "既知の制限",
         "items": [
-          "最初に自動生成結果を確認し、その後でブラシ補正を入れるほうが安定しやすいです。",
-          "`flipped` は単純な画像反転ではないため、UVが非対称な構造でも使えます。",
-          "左右に同じディテールを入れたい場合は `Mirror Feature Paint` を使う方が速いです。",
-          "マルチメッシュ作業では、選択メッシュが同じ `UV Map` を共有しているか先に確認してください。",
-          "非常に高い解像度は最終出力時だけにして、作業中は `2K` または `4K` を使うのが効率的です。"
-        ]
-      },
-      {
-        "title": "トラブルシューティング",
-        "entries": [
-          {
-            "title": "メッシュを選んでも生成されない",
-            "body": "選択したメッシュが共通のUVオプションを共有しているか確認してください。"
-          },
-          {
-            "title": "UV境界に暗い線が出る",
-            "body": "`UV edge padding` をさらにマイナス方向へ下げてみてください。\n`Bake smoothing` を少し上げるのも有効です。"
-          },
-          {
-            "title": "結果が弱すぎる",
-            "body": "`Defined`、`Dramatic`、`Extreme` プリセットを試してください。\n`Bake contrast` と `Feature strength` を上げてみてください。"
-          },
-          {
-            "title": "結果が強すぎる",
-            "body": "`Bake contrast` を下げ、`Bake ambient` を上げてください。"
-          },
-          {
-            "title": "動作が遅い",
-            "body": "最初は低解像度で作業し、最後だけ高解像度で生成してください。"
-          }
+          "`8K` と `16K` は依然として重い場合があります。",
+          "手動ペイントは UV 空間ベースの補助補正であり、完全な 3D スカルプトシステムではありません。",
+          "一部の `FBX` は、本当の別 UV レイヤーではなくマテリアル分割を通して重なった作業領域を表現しています。",
+          "シームの多い UV レイアウトでは、元アセットによって負のパディングや手動補正が引き続き必要になる場合があります。"
         ]
       },
       {
         "title": "リリースノート",
         "entries": [
           {
+            "title": "1.3.2",
+            "body": "正の UV パディングで、UV アイランド周辺に黒いシームが広がる問題を修正しました。\n透明出力でもパディングされた端のにじみが見えるように、アルファ出力もあわせて拡張しました。\n壊れた境界ピクセルが外側へ複製されないように、正のパディング前に直近の UV 境界リングを先に補修するよう修正しました。"
+          },
+          {
             "title": "1.3.1",
-            "body": "手動ブラシサイズのスケールを調整し、小さい値でも細いストロークが出るよう改善\n横 / 縦別ブラシ設定を廃止し、`Brush size` に統合\nUVペイントプレビューから `Feature blur` の影響を除去\n`1.0` 未満でUVワイヤーが消える問題を修正\nサブピクセルレンダリング改善により細いUVワイヤーの視認性を向上"
+            "body": "小さい値でもより細いストロークになるよう、手動ブラシサイズのスケーリングを修正しました。\n横 / 縦のブラシ設定を削除し、`Brush size` 一つに統合しました。\nUV ペイントプレビューから `Feature blur` の影響を除去しました。\n`1.0` 未満で UV ワイヤーが消える問題を修正しました。\nサブピクセルレンダリングで細い UV ワイヤーの視認性を改善しました。"
           },
           {
             "title": "1.3.0",
-            "body": "1つのUVターゲットが複数メッシュに分かれているケース向けにマルチメッシュ選択を追加\n選択メッシュを1つの合成ターゲットとして扱う Composite Mesh 処理を追加\n共通UVオプションがないマルチメッシュ選択では安全に生成をブロック\n合成ターゲットに合わせて3DプレビューとUV選択フローを更新"
+            "body": "一つの UV 対象が複数メッシュに分かれているケース向けに複数メッシュ選択を追加しました。\n選択メッシュを一つの複合対象として扱う内部 Composite Mesh 生成を追加しました。\n選択メッシュが共通 UV オプションを持たない場合は生成を安全にブロックするようにしました。\n複合対象に合わせて 3D プレビューと UV 選択フローを更新しました。"
           },
           {
             "title": "1.2.0",
-            "body": "右側プロパティにホバー説明ツールチップを追加\n英語 / 韓国語 / 日本語 UI 切り替えを追加\n解像度が変わっても体感強度が安定する Feature Blur 動作を追加\n以前の標準ブラー感を新しいデフォルトとして復元"
+            "body": "右パネルの各プロパティにツールチップ説明を追加しました。\n英語 / 韓国語 / 日本語の UI 切り替えを追加しました。\n解像度が変わっても体感強度が安定する Feature Blur 動作を追加しました。\n以前の標準的なブラー感を新しいデフォルトとして復元しました。"
           },
           {
             "title": "1.1.1",
-            "body": "複数UVレイヤーを持つメッシュ向けに UV Map 選択機能を追加\n重なったUV構造向けにマテリアル単位で分離したUVオプションを追加\n左パネルにバージョン表示を追加"
+            "body": "複数 UV レイヤーを持つメッシュ向けに UV Map 選択を追加しました。\n重なった UV レイアウト向けにマテリアル分割 UV オプションを追加しました。\n左パネルにバージョン表示を追加しました。"
           },
           {
             "title": "1.0.0",
-            "body": "Blender連携を含むスタンドアロンデスクトップUIを追加\nGPUベースの3Dプレビューとビュー基準ベイクワークフローを追加\nUVアイランド選択、手動ペイント、ミラー、消去機能を追加\n`main`、`flipped`、`rg`、`mask`、`asym` 出力フローを追加"
+            "body": "Blender 連携を含むスタンドアロンのデスクトップ UI を追加しました。\nGPU ベースの 3D プレビューとビュー基準ベイクワークフローを追加しました。\nUV アイランド選択、手動ペイント、ミラー、消去機能を追加しました。\n`main`、`flipped`、`rg`、`mask`、`asym` の出力フローを追加しました。"
           },
           {
             "title": "0.1.0",
-            "body": "初回リリース\n決定論的なルールベース影生成パイプラインを追加\nBlenderベースの基本 `FBX` 読み込みとUVマスク出力を追加"
+            "body": "初回リリースです。\n決定論的なルールベース影生成パイプラインを追加しました。\nBlender ベースの基本 `FBX` 読み込みと UV マスク出力フローを追加しました。"
           }
         ]
       }

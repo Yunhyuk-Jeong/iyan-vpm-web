@@ -2,23 +2,23 @@
   "sdfGenerator": {
     "eyebrow": "Tools",
     "title": "Face Shadow SDF Generator",
-    "copy": "`Face Shadow SDF Generator` is a desktop tool that loads `FBX` meshes and generates stylized shadow maps based on the current 3D view direction and UV layout. It can work with a single mesh, or with multiple meshes selected together when one UV target is split across several mesh pieces.",
+    "copy": "`Face Shadow SDF Generator` is a standalone desktop application for generating stylized shadow maps from `FBX` meshes. It uses Blender for extraction, supports both single-mesh and multi-mesh targets, and keeps preview, correction, and export in one workflow. Current version: `1.3.2`.",
     "cards": [
       {
-        "title": "Mesh-aware generation",
-        "body": "The result is generated from the actual mesh shape and the current 3D preview direction, not from a flat UV image alone."
+        "title": "Mesh-aware baking",
+        "body": "Generation is driven by the actual mesh shape, UV data, and the current 3D view direction, not by a flat image-only workflow."
       },
       {
-        "title": "Manual correction included",
-        "body": "The workflow covers `UV Select`, manual brush correction, opposite-light rebake, and packed texture export in one place."
+        "title": "Manual correction",
+        "body": "The workflow includes `UV Select`, `Dark Shadow`, `Light Accent`, `Erase Feature Paint`, and mirrored paint transfer for fast cleanup."
       },
       {
-        "title": "Multi-mesh support",
-        "body": "If one face target is split across several meshes that share the same UV target, they can be handled together as one working selection."
+        "title": "Composite targets",
+        "body": "Multiple meshes can be selected together when one working UV target is split across several mesh objects."
       },
       {
-        "title": "Desktop workflow",
-        "body": "The tool is built as a standalone desktop workflow, so mesh loading, preview, generation, correction, and export stay inside one dedicated workspace."
+        "title": "Seam-safe export",
+        "body": "Version `1.3.2` improves positive UV padding so exported maps avoid black seam growth around UV borders."
       }
     ],
     "meta": {
@@ -28,37 +28,122 @@
         "FBX",
         "SDF"
       ],
-      "body": "This tool is built for fast iteration on stylized face shadow maps, with manual cleanup available when the generated result needs additional control. Automatic generation, direct paint correction, and packed export live in the same workflow."
+      "body": "This tool is built for stylized face-shadow workflows, but the pipeline itself is not limited to face-only assets. Any `FBX` mesh with usable UVs can move through the same preview, bake, correction, and export flow."
     },
     "image": {
       "src": "./assets/wiki/tools/sdf-generator/en_01.png",
       "alt": "Face Shadow SDF Generator English interface",
-      "caption": "Main workspace view. The landscape layout keeps the 3D preview, UV work area, and result inspection connected in one flow.",
+      "caption": "Main workspace view. The landscape layout keeps the 3D preview, UV work area, and output inspection in one connected flow.",
       "layout": "landscape"
+    },
+    "leadAction": {
+      "title": "BOOTH Product Page",
+      "body": "Open the Face Shadow SDF Generator product page on BOOTH for the store listing, purchase flow, and published release package.",
+      "href": "https://milktank-booth.booth.pm/items/8245542",
+      "label": "View on BOOTH"
     },
     "sections": [
       {
-        "title": "Key features",
+        "title": "Core workflow",
         "items": [
-          "`FBX` loading through a Blender backend with mesh, normal, UV, and material data",
-          "Single-mesh and multi-mesh selection",
-          "`UV Map` selection when multiple UV layers exist",
-          "Shadow generation based on the current 3D preview direction",
-          "Selective work through `UV Island` filtering",
-          "Manual correction with `Dark Shadow`, `Light Accent`, and `Erase Feature Paint`",
-          "Mirrored paint transfer through `Mirror Feature Paint`",
-          "Rebaked opposite-light result in `flipped.png`",
-          "Packed output in `rg.png` with `R = main` and `G = flipped`",
-          "Transparent outside-UV export and multilingual UI support"
+          "`FBX`",
+          "Blender extraction",
+          "Mesh / UV selection",
+          "3D view-driven bake",
+          "Optional UV island restriction",
+          "Optional manual brush correction",
+          "`main / flipped / rg / mask / asym` export"
+        ]
+      },
+      {
+        "title": "Current capabilities",
+        "items": [
+          "Blender-based `FBX` import",
+          "Static and skinned mesh support",
+          "Single-mesh and multi-mesh target selection",
+          "`UV Map` selection by UV layer or material split",
+          "Interactive 3D preview for view-based baking",
+          "`UV Island` selection",
+          "Manual dark / light brush correction",
+          "Mirror paint and erase support",
+          "Positive and negative UV padding control",
+          "Opposite-light rebake for `flipped`",
+          "`RG` packed export",
+          "Transparent outside-UV export",
+          "English / Korean / Japanese UI"
         ]
       },
       {
         "title": "Requirements",
         "items": [
           "Windows",
-          "Blender installed",
-          "An `FBX` file that contains mesh and UV data",
-          "The Blender path can be assigned and saved inside the app"
+          "Blender installed locally",
+          "Python environment for source launch and development",
+          "An `FBX` file with valid mesh and UV data"
+        ]
+      },
+      {
+        "title": "Quick start",
+        "ordered": true,
+        "items": [
+          "Launch the app.",
+          "Set the Blender path if auto-detection fails.",
+          "Load an `FBX`.",
+          "Select one mesh, or select multiple meshes if the working target is split across several objects.",
+          "Choose the correct `UV Map`.",
+          "Rotate the 3D preview to the intended working direction.",
+          "If needed, switch to `UV Select` and choose only specific UV islands.",
+          "If needed, paint manual `Dark Shadow` or `Light Accent` detail.",
+          "Click `Generate`.",
+          "Review `main`, `flipped`, and `rg`.",
+          "Click `Export Maps`."
+        ]
+      },
+      {
+        "title": "Recommended first settings",
+        "items": [
+          "Resolution: `4K`",
+          "Preset: `Balanced`",
+          "Bake smoothing: `0`",
+          "UV edge padding: `3`",
+          "Feature strength: `0.43`",
+          "Transparent outside UV: enabled",
+          "Anime feature shadows: enabled",
+          "Use current 3D view: enabled"
+        ]
+      },
+      {
+        "title": "UI layout",
+        "entries": [
+          {
+            "title": "Left panel",
+            "body": "Blender path, `FBX` loader, mesh list, `UV Map` selector, version label, and language selector."
+          },
+          {
+            "title": "Center panel",
+            "body": "3D preview, UV select / paint workspace, and output preview modes."
+          },
+          {
+            "title": "Right panel",
+            "body": "UV selection tools, brush tools, UV display tools, lighting presets, bake and output settings, layer settings, and export controls."
+          }
+        ]
+      },
+      {
+        "title": "Target selection model",
+        "entries": [
+          {
+            "title": "Single mesh",
+            "body": "If the target lives in one mesh, select that mesh and choose the correct UV option."
+          },
+          {
+            "title": "Multi-mesh",
+            "body": "If one working target is split across multiple mesh objects, select them together. The app combines compatible selections into one internal composite mesh for preview, baking, UV masking, and export."
+          },
+          {
+            "title": "UV Map options",
+            "body": "The `UV Map` dropdown can expose more than one option for one mesh. This usually comes from multiple UV layers or from material-based splits on overlapping UV layouts."
+          }
         ]
       },
       {
@@ -66,15 +151,15 @@
         "entries": [
           {
             "title": "`main.png`",
-            "body": "Primary generated result."
+            "body": "Primary baked result."
           },
           {
             "title": "`flipped.png`",
-            "body": "A rebaked result using the opposite lighting direction, not just a mirrored image."
+            "body": "Opposite-light rebake. This is not a simple horizontal flip."
           },
           {
             "title": "`rg.png`",
-            "body": "Packed output with `R = main` and `G = flipped`."
+            "body": "Packed output where `R = main`, `G = flipped`, `B` is unused, and `A` stores UV alpha when transparent export is enabled."
           },
           {
             "title": "`mask.png`",
@@ -82,82 +167,7 @@
           },
           {
             "title": "`asym.png`",
-            "body": "Derived output generated from `main` and `flipped`."
-          }
-        ]
-      },
-      {
-        "title": "Basic workflow",
-        "ordered": true,
-        "items": [
-          "Launch the program.",
-          "If the Blender path is not detected automatically, assign `blender.exe`.",
-          "Choose the target `FBX` file.",
-          "Press `Load FBX` to import meshes.",
-          "Select the mesh or mesh group you want to work on.",
-          "Choose the UV option from `UV Map`.",
-          "Confirm the working direction in the 3D preview.",
-          "If needed, select UV islands in `UV Select`.",
-          "If needed, refine details with the manual brush.",
-          "Press `Generate`.",
-          "Review `main`, `flipped`, `rg`, and related outputs.",
-          "Press `Export Maps` to save files."
-        ]
-      },
-      {
-        "title": "Recommended first pass",
-        "ordered": true,
-        "items": [
-          "Start at `4K` resolution.",
-          "Generate one pass with the `Balanced` preset.",
-          "Check the overall direction first.",
-          "Reduce the working area with UV selection.",
-          "Only then add final detail with the brush."
-        ]
-      },
-      {
-        "title": "Interface layout",
-        "entries": [
-          {
-            "title": "Left panel",
-            "body": "Handles the Blender path, `FBX` file selection, mesh list, `UV Map` selection, version label, and language selector."
-          },
-          {
-            "title": "Center panel",
-            "body": "Shows the 3D preview, the UV selection / brush workspace, and the result preview."
-          },
-          {
-            "title": "Right panel",
-            "body": "Contains UV selection settings, brush settings, UV display settings, presets, bake / output settings, layer settings, and output folder controls."
-          }
-        ]
-      },
-      {
-        "title": "Main options",
-        "entries": [
-          {
-            "title": "`Mesh Selection`",
-            "body": "`Mesh List` is the imported mesh list sorted A-Z by name.\nMultiple meshes can be selected together when they represent one working target.\n`UV Map` chooses the UV option used by the current mesh or selected mesh group."
-          },
-          {
-            "title": "`UV Selection`",
-            "body": "`Select All UV` selects every visible UV island, while `Clear UV Selection` clears the current selection.\nWhen `Use selected UV islands` is enabled, generation only uses the selected islands."
-          },
-          {
-            "title": "`Manual Feature Brush`",
-            "body": "Includes `Select UV Islands`, `Place Dark Shadow`, `Place Light Accent`, and `Erase Feature Paint` modes.\n`Brush size %` changes brush size, `Mirror Feature Paint` copies the paint to the opposite side, and `Clear Feature Paint` removes all manual paint."
-          },
-          {
-            "title": "`Lighting Presets`",
-            "body": "`Balanced` is the default preset, `Defined` increases left-right contrast, `Dramatic` pushes stronger direction and contrast, and `Extreme` gives a very strong stylized result."
-          },
-          {
-            "title": "`Bake / Output`",
-            "body": "`Resolution` supports `512`, `1K`, `2K`, `4K`, `8K`, and `16K`.\nYou can adjust `Bake contrast`, `Bake ambient`, `Light X / Y / Z`, `Bake smoothing`, `UV edge padding`, `Feature strength`, and `Feature blur`.\n`Transparent outside UV`, `Anime feature shadows`, `Use current 3D view`, and `Reset 3D View` also belong to this area."
-          },
-          {
-            "title": "`Advanced Layers`",
-            "body": "`Layer count`, `Growth intensity`, `Horizontal growth`, `Vertical growth`, `Blend mode`, and `SDF radius` control the intermediate generation layers and the final blend behavior."
+            "body": "Derived output based on `main` and `flipped`."
           }
         ]
       },
@@ -170,6 +180,7 @@
           "`selected_uv`",
           "`shape_face_uv`",
           "`uv_mask`",
+          "`analysis_overlay`",
           "`layer_current`",
           "`layer_first`",
           "`layer_last`",
@@ -182,88 +193,89 @@
         ]
       },
       {
-        "title": "Mouse controls",
+        "title": "Property reference",
         "entries": [
           {
-            "title": "3D Preview",
-            "body": "Drag to rotate."
+            "title": "`Blender path` / `FBX file` / `Load FBX`",
+            "body": "These controls define the Blender executable used for headless extraction, the current `FBX`, and the load action that extracts mesh, UV, and material-based UV options."
+          },
+          {
+            "title": "`Mesh list` / `UV Map`",
+            "body": "The mesh list shows all imported meshes sorted A-Z. Multi-selection is used when one working target is split across several mesh objects. `UV Map` chooses the active UV option for the current mesh or selected mesh group."
+          },
+          {
+            "title": "`UV Selection`",
+            "body": "`Select All UV` selects every visible UV island. `Clear UV Selection` clears the current selection. `Use selected UV islands` restricts generation to the selected islands only."
+          },
+          {
+            "title": "`Manual Feature Brush`",
+            "body": "Includes `Select UV Islands`, `Place Dark Shadow`, `Place Light Accent`, and `Erase Feature Paint`. `Brush size %` is the unified brush size. `Mirror Feature Paint` copies paint across the UV X axis, and `Clear Feature Paint` removes all manual paint."
+          },
+          {
+            "title": "`Bake / Output`",
+            "body": "`Resolution` supports `512`, `1K`, `2K`, `4K`, `8K`, and `16K`. The panel also exposes `Bake contrast`, `Bake ambient`, `Light X / Y / Z`, `Bake smoothing`, `UV edge padding`, `Feature strength`, `Feature blur`, `Transparent outside UV`, `Anime feature shadows`, `Use current 3D view`, and `Reset 3D View`."
+          },
+          {
+            "title": "`Advanced Layers`",
+            "body": "`Layer count`, `Growth intensity`, `Horizontal growth`, `Vertical growth`, `Blend mode`, and `SDF radius` control intermediate generated layers and final blending behavior."
+          }
+        ]
+      },
+      {
+        "title": "Interaction notes",
+        "entries": [
+          {
+            "title": "3D preview",
+            "body": "Drag to rotate the mesh. Use `Use current 3D view` when the current orientation should drive the bake."
           },
           {
             "title": "UV Select",
-            "body": "Mouse wheel zooms in and out, middle drag pans, left click selects UV, and `Ctrl + Left Click` adds or removes from the selection.\nLeft drag paints, right drag erases."
+            "body": "Mouse wheel zooms, middle drag pans, left click selects islands, `Ctrl + Left click` adds or removes islands from the selection, left drag paints, and right drag erases."
           }
         ]
       },
       {
-        "title": "Tips",
+        "title": "Known limitations",
         "items": [
-          "It is usually more stable to inspect the generated result first and only then add brush corrections.",
-          "`flipped` is not a simple image flip, so it can still be useful on asymmetrical UV layouts.",
-          "If you want matching detail on both sides, `Mirror Feature Paint` is the faster option.",
-          "For multi-mesh work, first confirm that the selected meshes share the same `UV Map` target.",
-          "Generate only the final result at very high resolution; use `2K` or `4K` while iterating."
-        ]
-      },
-      {
-        "title": "Troubleshooting",
-        "entries": [
-          {
-            "title": "Nothing generates after mesh selection",
-            "body": "Check whether the selected meshes share a common UV option."
-          },
-          {
-            "title": "Dark seams appear on UV borders",
-            "body": "Try lowering `UV edge padding` further into negative values.\nYou can also raise `Bake smoothing` slightly."
-          },
-          {
-            "title": "The result feels too weak",
-            "body": "Try the `Defined`, `Dramatic`, or `Extreme` presets.\nRaise `Bake contrast` and `Feature strength`."
-          },
-          {
-            "title": "The result feels too strong",
-            "body": "Lower `Bake contrast` and raise `Bake ambient`."
-          },
-          {
-            "title": "The workflow feels slow",
-            "body": "Work at a lower resolution first and only switch to a high-resolution export at the end."
-          }
+          "`8K` and `16K` can still be heavy.",
+          "Manual feature paint is a UV-space assist pass, not a full 3D-aware sculpting system.",
+          "Some `FBX` files expose overlapping work regions through materials rather than true separate UV layers.",
+          "Seam-heavy UV layouts may still require negative padding and manual cleanup depending on the source asset."
         ]
       },
       {
         "title": "Release notes",
         "entries": [
           {
+            "title": "1.3.2",
+            "body": "Fixed positive UV padding so exported maps do not grow black seam lines around UV islands.\nExpanded output alpha together with positive padding so padded edge bleed remains visible in transparent exports.\nRepaired the immediate UV border ring before positive padding so damaged border pixels are not copied outward."
+          },
+          {
             "title": "1.3.1",
-            "body": "Adjusted manual brush size scaling so very small values produce thinner strokes\nRemoved separate horizontal / vertical brush settings and unified them under `Brush size`\nRemoved `Feature blur` influence from the UV paint preview\nFixed the issue where UV wires disappeared below `1.0`\nImproved thin UV wire visibility through sub-pixel rendering updates"
+            "body": "Fixed manual brush size scaling so small values produce visibly thinner strokes.\nReplaced separate brush width and height controls with one unified brush size control.\nRemoved feature blur influence from UV paint preview.\nFixed UV wire rendering below `1.0`.\nImproved thin UV wire visibility through subpixel rendering."
           },
           {
             "title": "1.3.0",
-            "body": "Added multi-mesh selection for cases where one UV target is split across several meshes\nAdded internal Composite Mesh handling so selected meshes can be treated as one combined target\nBlocked generation safely when a multi-mesh selection does not share a common UV option\nUpdated the 3D preview and UV selection flow to work with the composite target"
+            "body": "Added multi-mesh target selection for UV targets split across several mesh objects.\nAdded internal composite mesh generation for preview and baking.\nBlocked multi-mesh generation when selected meshes do not share a compatible UV option.\nUpdated 3D preview and UV selection to work with the combined target mesh."
           },
           {
             "title": "1.2.0",
-            "body": "Added hover description tooltips to the right-side properties\nAdded UI language switching for English, Korean, and Japanese\nAdded Feature Blur behavior that keeps its perceived strength stable across resolution changes\nRestored the previous default blur feel as the new baseline"
+            "body": "Added property tooltips on the right panel.\nAdded English, Korean, and Japanese UI switching.\nAdded resolution-consistent manual feature blur behavior.\nRestored the legacy default feature blur strength."
           },
           {
             "title": "1.1.1",
-            "body": "Added UV Map selection for meshes with multiple UV layers\nAdded material-separated UV options for overlapping UV structures\nAdded version display to the left panel"
+            "body": "Added UV map selection for meshes with multiple UV layers.\nAdded material-split UV options for overlapping UV layouts.\nAdded version display in the left panel."
           },
           {
             "title": "1.0.0",
-            "body": "Added a standalone desktop UI with Blender integration\nAdded a GPU-based 3D preview and view-based bake workflow\nAdded UV island selection, manual paint, mirror, and erase features\nAdded the `main`, `flipped`, `rg`, `mask`, and `asym` output flow"
+            "body": "Added standalone desktop UI with Blender integration.\nAdded GPU-based 3D preview and view-based baking workflow.\nAdded UV island selection, manual feature paint, mirror paint, and erase.\nAdded `main`, `flipped`, `rg`, `mask`, and `asym` export flow."
           },
           {
             "title": "0.1.0",
-            "body": "Initial release\nAdded a deterministic rule-based shadow generation pipeline\nAdded Blender-based basic `FBX` loading and UV mask export"
+            "body": "Initial release.\nAdded deterministic rule-based shadow generation pipeline.\nAdded basic Blender-based `FBX` loading and UV mask export flow."
           }
         ]
       }
-    ],
-    "leadAction": {
-      "title": "BOOTH Product Page",
-      "body": "Open the Face Shadow SDF Generator product page on BOOTH for the store listing, purchase flow, and published release package.",
-      "href": "https://milktank-booth.booth.pm/items/8245542",
-      "label": "View on BOOTH"
-    }
+    ]
   }
 }

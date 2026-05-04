@@ -2,64 +2,148 @@
   "sdfGenerator": {
     "eyebrow": "Tools",
     "title": "Face Shadow SDF Generator",
-    "copy": "`Face Shadow SDF Generator`는 FBX 메쉬를 불러와 3D 뷰와 UV를 기준으로 스타일라이즈드 그림자 맵을 생성하는 데스크톱 툴입니다. 하나의 메쉬만 처리하는 경우뿐 아니라, 하나의 UV 타겟이 여러 메쉬로 나뉘어 있는 경우에도 멀티 메쉬 선택으로 함께 작업할 수 있습니다.",
+    "copy": "`Face Shadow SDF Generator`는 `FBX` 메쉬에서 스타일라이즈드 그림자 맵을 생성하는 스탠드얼론 데스크톱 애플리케이션입니다. Blender를 이용해 메쉬와 UV 데이터를 추출하고, 단일 메쉬와 멀티 메쉬 대상을 모두 지원하며, 미리보기부터 보정과 내보내기까지를 하나의 작업 흐름 안에서 처리합니다. 현재 버전은 `1.3.2`입니다.",
     "cards": [
       {
-        "title": "메쉬 기반 생성",
-        "body": "이 툴은 단순히 UV 이미지만 보고 결과를 만드는 방식이 아니라, 실제 메쉬 형태와 현재 3D 프리뷰 방향을 기준으로 결과를 생성합니다."
+        "title": "메쉬 기반 베이크",
+        "body": "평면 UV 이미지만 기준으로 결과를 만드는 것이 아니라, 실제 메쉬 형태와 UV 데이터, 그리고 현재 3D 뷰 방향을 기준으로 결과를 생성합니다."
       },
       {
         "title": "수동 보정 포함",
-        "body": "`UV Select`, 수동 브러시 보정, 반대 방향 조명 재베이크, RG 패킹 출력까지 하나의 워크플로 안에서 처리할 수 있습니다."
+        "body": "`UV Select`, `Dark Shadow`, `Light Accent`, `Erase Feature Paint`, 그리고 좌우 복사용 `Mirror Feature Paint`까지 포함해 빠르게 결과를 다듬을 수 있습니다."
       },
       {
-        "title": "멀티 메쉬 대응",
-        "body": "같은 UV 타겟을 공유하는 여러 메쉬를 하나의 작업 대상으로 묶어 처리할 수 있어, 분리된 구조의 페이스 메쉬에도 대응할 수 있습니다."
+        "title": "복합 대상 지원",
+        "body": "하나의 UV 작업 대상이 여러 메쉬 오브젝트로 나뉘어 있는 경우, 여러 메쉬를 함께 선택해 하나의 작업 대상으로 처리할 수 있습니다."
       },
       {
-        "title": "Desktop Workflow",
-        "body": "독립 실행형 데스크톱 툴 구조라서 메쉬 로드, 미리보기, 생성, 보정, 내보내기까지를 한 작업 공간 안에서 이어서 처리할 수 있습니다."
+        "title": "심 보정 강화",
+        "body": "버전 `1.3.2`에서는 양수 `UV edge padding` 처리 방식이 개선되어, UV 경계 주변에 검은 심이 번지던 문제를 줄였습니다."
       }
     ],
     "meta": {
-      "chips": ["Paid", "Standalone", "FBX", "SDF"],
-      "body": "스타일라이즈드 얼굴 그림자 맵을 빠르게 반복 생성하고, 부족한 부분은 수동 보정으로 마무리하는 작업 흐름에 맞춰 설계된 툴입니다. 자동 생성과 직접 보정, 그리고 패킹 출력이 한 화면 안에서 이어집니다."
+      "chips": [
+        "Paid",
+        "Standalone",
+        "FBX",
+        "SDF"
+      ],
+      "body": "이 툴은 스타일라이즈드 얼굴 그림자 작업을 빠르게 반복하기 위한 흐름에 맞춰 설계되어 있지만, 파이프라인 자체는 얼굴 전용에만 제한되지 않습니다. UV를 가진 `FBX` 메쉬라면 같은 미리보기, 생성, 보정, 내보내기 흐름으로 처리할 수 있습니다."
     },
     "image": {
       "src": "./assets/wiki/tools/sdf-generator/ko_01.png",
       "alt": "Face Shadow SDF Generator Korean interface",
-      "caption": "메인 작업 화면. 가로형 레이아웃 기준으로 3D 프리뷰, UV 작업, 결과 확인이 한 흐름으로 이어집니다.",
+      "caption": "메인 작업 화면. 가로형 레이아웃 안에서 3D 미리보기, UV 작업 영역, 결과 확인 흐름이 자연스럽게 이어집니다.",
       "layout": "landscape"
     },
     "leadAction": {
       "title": "BOOTH Product Page",
-      "body": "Face Shadow SDF Generator의 상품 페이지로 이동해 스토어 설명, 구매 흐름, 공개된 배포 패키지를 바로 확인할 수 있습니다.",
+      "body": "Face Shadow SDF Generator의 BOOTH 상품 페이지에서 스토어 설명, 구매 흐름, 그리고 공개된 배포 패키지를 바로 확인할 수 있습니다.",
       "href": "https://milktank-booth.booth.pm/items/8245542",
       "label": "View on BOOTH"
     },
     "sections": [
       {
-        "title": "주요 기능",
+        "title": "핵심 작업 흐름",
         "items": [
-          "`FBX` 불러오기와 Blender 백엔드 기반 메쉬 / 노멀 / UV / 재질 정보 읽기",
-          "단일 메쉬 또는 멀티 메쉬 선택",
-          "여러 UV 레이어 중 원하는 `UV Map` 선택",
-          "현재 3D 프리뷰 방향 기준 그림자 맵 생성",
-          "`UV Island` 선택 후 부분 작업",
-          "`Dark Shadow`, `Light Accent`, `Erase Feature Paint` 수동 브러시 보정",
-          "`Mirror Feature Paint`를 통한 좌우 복사",
-          "반대 방향 조명으로 다시 베이크한 `flipped.png` 생성",
-          "`R = main`, `G = flipped` 형태의 `rg.png` 출력",
-          "UV 바깥쪽 알파 0 출력과 다국어 UI 지원"
+          "`FBX`",
+          "Blender 추출",
+          "메쉬 / UV 선택",
+          "3D 뷰 기반 베이크",
+          "선택적 UV 아일랜드 제한",
+          "선택적 수동 브러시 보정",
+          "`main / flipped / rg / mask / asym` 내보내기"
+        ]
+      },
+      {
+        "title": "현재 지원 기능",
+        "items": [
+          "Blender 기반 `FBX` 가져오기",
+          "정적 메쉬와 스키닝 메쉬 지원",
+          "단일 메쉬 및 멀티 메쉬 대상 선택",
+          "UV 레이어 또는 머티리얼 분리 기준의 `UV Map` 선택",
+          "뷰 기반 베이크를 위한 실시간 3D 미리보기",
+          "`UV Island` 선택",
+          "수동 어두운 / 밝은 브러시 보정",
+          "미러 페인트와 지우기 지원",
+          "양수 / 음수 UV 패딩 조절",
+          "`flipped`용 반대 방향 조명 리베이크",
+          "`RG` 패킹 출력",
+          "UV 바깥 투명 알파 출력",
+          "영어 / 한국어 / 일본어 UI"
         ]
       },
       {
         "title": "요구 사항",
         "items": [
           "Windows",
-          "Blender 설치",
-          "메쉬와 UV 정보가 포함된 `FBX` 파일",
-          "Blender 경로는 앱 내부에서 직접 지정하고 저장 가능"
+          "로컬에 설치된 Blender",
+          "소스 실행 및 개발용 Python 환경",
+          "유효한 메쉬와 UV 데이터를 가진 `FBX` 파일"
+        ]
+      },
+      {
+        "title": "빠른 시작",
+        "ordered": true,
+        "items": [
+          "앱을 실행합니다.",
+          "자동 감지에 실패하면 Blender 경로를 지정합니다.",
+          "`FBX`를 불러옵니다.",
+          "메쉬를 하나 선택하거나, 작업 대상이 여러 오브젝트로 나뉘어 있으면 여러 메쉬를 함께 선택합니다.",
+          "올바른 `UV Map`을 선택합니다.",
+          "3D 미리보기에서 작업 방향을 맞춥니다.",
+          "필요하면 `UV Select`로 특정 UV 아일랜드만 선택합니다.",
+          "필요하면 `Dark Shadow` 또는 `Light Accent`로 수동 보정을 추가합니다.",
+          "`Generate`를 누릅니다.",
+          "`main`, `flipped`, `rg`를 확인합니다.",
+          "`Export Maps`를 눌러 저장합니다."
+        ]
+      },
+      {
+        "title": "처음 사용할 때 추천 설정",
+        "items": [
+          "Resolution: `4K`",
+          "Preset: `Balanced`",
+          "Bake smoothing: `0`",
+          "UV edge padding: `3`",
+          "Feature strength: `0.43`",
+          "Transparent outside UV: 켜기",
+          "Anime feature shadows: 켜기",
+          "Use current 3D view: 켜기"
+        ]
+      },
+      {
+        "title": "UI 구성",
+        "entries": [
+          {
+            "title": "왼쪽 패널",
+            "body": "Blender 경로, `FBX` 로더, 메쉬 목록, `UV Map` 선택기, 버전 표시, 언어 선택기가 위치합니다."
+          },
+          {
+            "title": "중앙 패널",
+            "body": "3D 미리보기, UV 선택 / 페인트 작업 영역, 결과 미리보기 모드를 표시합니다."
+          },
+          {
+            "title": "오른쪽 패널",
+            "body": "UV 선택 도구, 브러시 도구, UV 표시 도구, 조명 프리셋, 베이크 및 출력 설정, 레이어 설정, 내보내기 제어가 모여 있습니다."
+          }
+        ]
+      },
+      {
+        "title": "대상 선택 모델",
+        "entries": [
+          {
+            "title": "단일 메쉬",
+            "body": "작업 대상이 하나의 메쉬에 있으면 그 메쉬를 선택하고 알맞은 UV 옵션을 고르면 됩니다."
+          },
+          {
+            "title": "멀티 메쉬",
+            "body": "하나의 작업 대상이 여러 메쉬 오브젝트로 나뉘어 있으면 함께 선택할 수 있습니다. 앱은 호환되는 선택을 하나의 내부 복합 메쉬로 결합해 미리보기, 베이크, UV 마스킹, 내보내기에 사용합니다."
+          },
+          {
+            "title": "`UV Map` 옵션",
+            "body": "하나의 메쉬에서도 `UV Map` 드롭다운에 여러 옵션이 보일 수 있습니다. 실제로 UV 레이어가 여러 개인 경우도 있고, 겹치는 UV 레이아웃이 머티리얼 기준으로 분리되어 보이는 경우도 있습니다."
+          }
         ]
       },
       {
@@ -67,103 +151,28 @@
         "entries": [
           {
             "title": "`main.png`",
-            "body": "기본 생성 결과입니다."
+            "body": "기본 베이크 결과입니다."
           },
           {
             "title": "`flipped.png`",
-            "body": "단순 좌우 반전이 아니라, 반대 방향 조명으로 한 번 더 베이크한 결과입니다."
+            "body": "반대 방향 조명으로 다시 계산한 결과입니다. 단순 좌우 반전 이미지가 아닙니다."
           },
           {
             "title": "`rg.png`",
-            "body": "`R = main`, `G = flipped` 형태로 패킹된 결과입니다."
+            "body": "`R = main`, `G = flipped`, `B`는 미사용, `A`에는 투명 출력이 켜져 있을 때 UV 알파가 들어갑니다."
           },
           {
             "title": "`mask.png`",
-            "body": "작업 및 출력 마스크입니다."
+            "body": "작업 및 출력용 마스크입니다."
           },
           {
             "title": "`asym.png`",
-            "body": "`main`과 `flipped`를 기반으로 만든 파생 결과입니다."
+            "body": "`main`과 `flipped`를 기반으로 만든 파생 출력입니다."
           }
         ]
       },
       {
-        "title": "기본 사용 방법",
-        "ordered": true,
-        "items": [
-          "프로그램을 실행합니다.",
-          "Blender 경로가 자동으로 잡히지 않으면 `blender.exe`를 지정합니다.",
-          "작업할 `FBX`를 선택합니다.",
-          "`Load FBX`를 눌러 메쉬를 불러옵니다.",
-          "메쉬 목록에서 작업할 메쉬 또는 메쉬 그룹을 선택합니다.",
-          "`UV Map`에서 사용할 UV 옵션을 선택합니다.",
-          "3D 프리뷰에서 작업 방향을 확인합니다.",
-          "필요하면 `UV Select`에서 UV 아일랜드를 선택합니다.",
-          "필요하면 수동 브러시로 디테일을 보정합니다.",
-          "`Generate`를 눌러 결과를 생성합니다.",
-          "`main`, `flipped`, `rg` 등을 확인합니다.",
-          "`Export Maps`를 눌러 파일을 저장합니다."
-        ]
-      },
-      {
-        "title": "처음 사용할 때 추천 순서",
-        "ordered": true,
-        "items": [
-          "`4K` 해상도로 시작합니다.",
-          "`Balanced` 프리셋으로 한 번 생성합니다.",
-          "전체 방향이 맞는지 먼저 확인합니다.",
-          "`UV` 선택으로 범위를 줄입니다.",
-          "마지막에 브러시로 부족한 부분만 보정합니다."
-        ]
-      },
-      {
-        "title": "화면 구성",
-        "entries": [
-          {
-            "title": "왼쪽 패널",
-            "body": "Blender 경로, `FBX` 파일 선택, 메쉬 목록, `UV Map` 선택, 버전 표시, 언어 선택을 담당합니다."
-          },
-          {
-            "title": "가운데 패널",
-            "body": "3D 프리뷰, UV 선택 / 브러시 작업 프리뷰, 결과 프리뷰를 보여줍니다."
-          },
-          {
-            "title": "오른쪽 패널",
-            "body": "UV 선택 옵션, 브러시 옵션, UV 표시 옵션, 프리셋, 베이크 / 출력 설정, 레이어 설정, 출력 폴더 / 저장을 담당합니다."
-          }
-        ]
-      },
-      {
-        "title": "주요 옵션",
-        "entries": [
-          {
-            "title": "`Mesh Selection`",
-            "body": "`Mesh List`는 이름 기준 A-Z로 정렬된 불러온 메쉬 목록입니다.\n멀티 선택을 통해 여러 메쉬를 하나의 작업 타겟으로 묶을 수 있습니다.\n`UV Map`은 현재 메쉬 또는 선택된 메쉬 그룹에서 사용할 UV 옵션입니다."
-          },
-          {
-            "title": "`UV Selection`",
-            "body": "`Select All UV`는 현재 보이는 UV 아일랜드를 모두 선택하고, `Clear UV Selection`은 현재 선택을 모두 해제합니다.\n`Use selected UV islands`를 켜면 선택한 UV 아일랜드만 생성에 사용합니다."
-          },
-          {
-            "title": "`Manual Feature Brush`",
-            "body": "`Select UV Islands`, `Place Dark Shadow`, `Place Light Accent`, `Erase Feature Paint` 모드를 제공합니다.\n`Brush size %`로 브러시 크기를 조정하고, `Mirror Feature Paint`로 좌우 복사, `Clear Feature Paint`로 수동 칠한 내용을 초기화할 수 있습니다."
-          },
-          {
-            "title": "`Lighting Presets`",
-            "body": "`Balanced`는 기본 설정, `Defined`는 더 강한 좌우 대비, `Dramatic`은 더 강한 방향성과 대비, `Extreme`은 매우 강한 스타일라이즈드 대비를 제공합니다."
-          },
-          {
-            "title": "`Bake / Output`",
-            "body": "`Resolution`은 `512`, `1K`, `2K`, `4K`, `8K`, `16K`를 지원합니다.\n`Bake contrast`, `Bake ambient`, `Light X / Y / Z`, `Bake smoothing`, `UV edge padding`, `Feature strength`, `Feature blur`를 조절할 수 있습니다.\n`Transparent outside UV`, `Anime feature shadows`, `Use current 3D view`, `Reset 3D View`도 이 영역에 포함됩니다."
-          },
-          {
-            "title": "`Advanced Layers`",
-            "body": "`Layer count`, `Growth intensity`, `Horizontal growth`, `Vertical growth`, `Blend mode`, `SDF radius`를 통해 중간 생성 레이어와 최종 합성 방식을 조절할 수 있습니다."
-          }
-        ]
-      },
-      {
-        "title": "프리뷰 모드",
+        "title": "미리보기 모드",
         "items": [
           "`interactive_3d`",
           "`uv_select`",
@@ -171,6 +180,7 @@
           "`selected_uv`",
           "`shape_face_uv`",
           "`uv_mask`",
+          "`analysis_overlay`",
           "`layer_current`",
           "`layer_first`",
           "`layer_last`",
@@ -183,79 +193,86 @@
         ]
       },
       {
-        "title": "마우스 조작",
+        "title": "속성 참고",
         "entries": [
           {
-            "title": "3D Preview",
-            "body": "드래그로 회전합니다."
+            "title": "`Blender path` / `FBX file` / `Load FBX`",
+            "body": "헤드리스 추출에 사용할 Blender 실행 파일 경로와 현재 `FBX`, 그리고 메쉬 / UV / 머티리얼 기반 UV 옵션을 추출하는 로드 동작을 제어합니다."
+          },
+          {
+            "title": "`Mesh list` / `UV Map`",
+            "body": "메쉬 목록은 가져온 메쉬를 이름 기준 A-Z로 보여줍니다. 하나의 작업 대상이 여러 오브젝트로 나뉘어 있으면 멀티 선택을 사용합니다. `UV Map`은 현재 메쉬 또는 선택된 메쉬 그룹에 적용할 UV 옵션을 고릅니다."
+          },
+          {
+            "title": "`UV Selection`",
+            "body": "`Select All UV`는 보이는 모든 UV 아일랜드를 선택하고, `Clear UV Selection`은 현재 선택을 지웁니다. `Use selected UV islands`를 켜면 선택된 UV 아일랜드만 생성에 사용합니다."
+          },
+          {
+            "title": "`Manual Feature Brush`",
+            "body": "`Select UV Islands`, `Place Dark Shadow`, `Place Light Accent`, `Erase Feature Paint`를 포함합니다. `Brush size %`는 통합 브러시 크기이며, `Mirror Feature Paint`는 좌우 복사, `Clear Feature Paint`는 수동 페인트 전체 삭제를 담당합니다."
+          },
+          {
+            "title": "`Bake / Output`",
+            "body": "`Resolution`은 `512`, `1K`, `2K`, `4K`, `8K`, `16K`를 지원합니다. 이 영역에서 `Bake contrast`, `Bake ambient`, `Light X / Y / Z`, `Bake smoothing`, `UV edge padding`, `Feature strength`, `Feature blur`, `Transparent outside UV`, `Anime feature shadows`, `Use current 3D view`, `Reset 3D View`를 조정할 수 있습니다."
+          },
+          {
+            "title": "`Advanced Layers`",
+            "body": "`Layer count`, `Growth intensity`, `Horizontal growth`, `Vertical growth`, `Blend mode`, `SDF radius`는 중간 생성 레이어와 최종 합성 동작을 제어합니다."
+          }
+        ]
+      },
+      {
+        "title": "조작 메모",
+        "entries": [
+          {
+            "title": "3D 미리보기",
+            "body": "드래그로 메쉬를 회전합니다. 현재 방향을 베이크 기준으로 삼고 싶다면 `Use current 3D view`를 사용합니다."
           },
           {
             "title": "UV Select",
-            "body": "휠은 줌 인 / 아웃, 가운데 드래그는 패닝, 좌클릭은 UV 선택, `Ctrl + 좌클릭`은 선택 추가 / 해제입니다.\n좌드래그는 브러시 칠하기, 우드래그는 지우기입니다."
+            "body": "마우스 휠은 줌, 가운데 드래그는 팬, 좌클릭은 아일랜드 선택, `Ctrl + 좌클릭`은 선택 추가 / 제거, 좌드래그는 페인트, 우드래그는 지우기입니다."
           }
         ]
       },
       {
-        "title": "팁",
+        "title": "알려진 제한 사항",
         "items": [
-          "먼저 자동 생성 결과를 보고, 그다음 브러시 보정을 하는 편이 더 안정적입니다.",
-          "`flipped`는 단순 이미지 반전이 아니므로, UV 비대칭 구조에서도 사용할 수 있습니다.",
-          "브러시로 양쪽에 같은 디테일을 주고 싶다면 `Mirror Feature Paint`를 활용하는 편이 빠릅니다.",
-          "멀티 메쉬 작업 시에는 선택한 메쉬들이 같은 `UV Map`을 공유하는지 먼저 확인하는 것이 좋습니다.",
-          "최종 결과만 고해상도로 생성하고, 작업 중에는 `2K` 또는 `4K`를 사용하는 것이 효율적입니다."
-        ]
-      },
-      {
-        "title": "문제 해결",
-        "entries": [
-          {
-            "title": "메쉬를 선택했는데 생성이 안 됨",
-            "body": "선택한 메쉬들이 공통 UV 옵션을 공유하는지 확인하세요."
-          },
-          {
-            "title": "UV 경계에 이상한 어두운 선이 생김",
-            "body": "`UV edge padding`을 더 음수로 내려보세요.\n`Bake smoothing`을 약간만 올려보세요."
-          },
-          {
-            "title": "결과가 너무 약함",
-            "body": "`Defined`, `Dramatic`, `Extreme` 프리셋을 사용해 보세요.\n`Bake contrast`와 `Feature strength`를 올려보세요."
-          },
-          {
-            "title": "결과가 너무 강함",
-            "body": "`Bake contrast`를 낮추고 `Bake ambient`를 올려보세요."
-          },
-          {
-            "title": "작업이 느림",
-            "body": "먼저 낮은 해상도로 작업하고 마지막에만 고해상도로 생성하세요."
-          }
+          "`8K`와 `16K`는 여전히 무거울 수 있습니다.",
+          "수동 페인트는 UV 공간 기반 보조 보정이며, 완전한 3D 조각 시스템은 아닙니다.",
+          "일부 `FBX`는 실제 별도 UV 레이어 대신 머티리얼 분리를 통해 겹치는 작업 영역을 노출합니다.",
+          "심이 많은 UV 레이아웃은 소스 에셋에 따라 음수 패딩과 수동 정리가 여전히 필요할 수 있습니다."
         ]
       },
       {
         "title": "릴리즈 노트",
         "entries": [
           {
+            "title": "1.3.2",
+            "body": "양수 UV 패딩 처리에서 UV 아일랜드 주변에 검은 심이 번지던 문제를 수정했습니다.\n투명 출력에서도 패딩된 가장자리 번짐이 유지되도록 알파 출력도 함께 확장했습니다.\n손상된 경계 픽셀이 바깥으로 복사되지 않도록, 양수 패딩 전에 즉시 UV 경계 링을 먼저 보정하도록 수정했습니다."
+          },
+          {
             "title": "1.3.1",
-            "body": "수동 브러시 크기 스케일을 수정해 작은 값에서도 더 얇은 스트로크가 나오도록 개선\n브러시 가로 / 세로 설정을 제거하고 단일 `Brush size`로 통합\nUV 페인트 프리뷰에서 `Feature blur` 영향 제거\n`1.0` 미만 UV 와이어가 사라지던 문제 수정\n서브픽셀 렌더링 개선으로 얇은 UV 와이어 가시성 향상"
+            "body": "작은 값에서 더 얇은 스트로크가 나오도록 수동 브러시 크기 스케일을 수정했습니다.\n가로 / 세로 브러시 설정을 제거하고 `Brush size` 하나로 통합했습니다.\nUV 페인트 미리보기에서 `Feature blur` 영향이 제거되었습니다.\n`1.0` 미만에서 UV 와이어가 사라지던 문제를 수정했습니다.\n서브픽셀 렌더링으로 얇은 UV 와이어 가시성을 개선했습니다."
           },
           {
             "title": "1.3.0",
-            "body": "하나의 UV 타겟이 여러 메쉬로 나뉘어 있는 경우를 위한 멀티 메쉬 선택 기능 추가\n선택된 메쉬를 내부적으로 하나의 합성 타겟으로 묶는 Composite Mesh 처리 추가\n공통 UV 옵션이 없는 멀티 메쉬 선택은 생성이 막히도록 안전 처리 추가\n합성 타겟에 맞춰 3D 프리뷰와 UV 선택 흐름 업데이트"
+            "body": "하나의 UV 대상이 여러 메쉬로 나뉘어 있는 경우를 위한 멀티 메쉬 선택 기능을 추가했습니다.\n선택된 메쉬를 하나의 복합 대상처럼 다루는 내부 Composite Mesh 생성을 추가했습니다.\n선택된 메쉬들이 공통 UV 옵션을 공유하지 않으면 생성이 차단되도록 안전 장치를 넣었습니다.\n복합 대상을 기준으로 3D 미리보기와 UV 선택 흐름을 업데이트했습니다."
           },
           {
             "title": "1.2.0",
-            "body": "오른쪽 프로퍼티에 hover 설명 툴팁 추가\n영어 / 한국어 / 일본어 UI 전환 기능 추가\n해상도가 바뀌어도 체감 강도가 맞춰지는 Feature Blur 동작 추가\n이전 기본 블러 강도를 새 기본값으로 복원"
+            "body": "오른쪽 패널 속성에 툴팁 설명을 추가했습니다.\n영어 / 한국어 / 일본어 UI 전환을 추가했습니다.\n해상도가 달라져도 체감 강도가 유지되는 Feature Blur 동작을 추가했습니다.\n이전 기본 블러 느낌을 새로운 기본값으로 복원했습니다."
           },
           {
             "title": "1.1.1",
-            "body": "여러 UV 레이어를 가진 메쉬를 위한 UV Map 선택 기능 추가\n겹쳐진 UV 구조를 위해 재질 단위로 분리된 UV 옵션 추가\n왼쪽 패널에 버전 표시 추가"
+            "body": "여러 UV 레이어를 가진 메쉬를 위한 UV Map 선택 기능을 추가했습니다.\n겹치는 UV 레이아웃을 위한 머티리얼 분리 UV 옵션을 추가했습니다.\n왼쪽 패널에 버전 표시를 추가했습니다."
           },
           {
             "title": "1.0.0",
-            "body": "Blender 연동이 포함된 스탠드얼론 데스크톱 UI 추가\nGPU 기반 3D 프리뷰와 뷰 기준 베이크 워크플로 추가\nUV 아일랜드 선택, 수동 페인트, 미러, 지우개 기능 추가\n`main`, `flipped`, `rg`, `mask`, `asym` 출력 흐름 추가"
+            "body": "Blender 연동을 포함한 스탠드얼론 데스크톱 UI를 추가했습니다.\nGPU 기반 3D 미리보기와 뷰 기반 베이크 워크플로를 추가했습니다.\nUV 아일랜드 선택, 수동 피처 페인트, 미러 페인트, 지우기 기능을 추가했습니다.\n`main`, `flipped`, `rg`, `mask`, `asym` 출력 흐름을 추가했습니다."
           },
           {
             "title": "0.1.0",
-            "body": "초기 릴리즈\n결정론적 규칙 기반 그림자 생성 파이프라인 추가\nBlender 기반 기본 `FBX` 로드와 UV 마스크 출력 추가"
+            "body": "초기 릴리즈입니다.\n결정론적 규칙 기반 그림자 생성 파이프라인을 추가했습니다.\nBlender 기반 기본 `FBX` 로딩과 UV 마스크 출력 흐름을 추가했습니다."
           }
         ]
       }
