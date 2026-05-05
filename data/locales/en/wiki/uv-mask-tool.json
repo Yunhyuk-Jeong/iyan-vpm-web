@@ -1,24 +1,24 @@
 {
   "uvMaskTool": {
     "eyebrow": "VPM Tools",
-    "title": "UV Mask Tool",
-    "copy": "A Unity editor tool for selecting UV islands from a Renderer's Material Slot and exporting the selected region as a PNG mask texture. It lets you build precise UV masks directly inside Unity without repainting UV regions manually in an external tool.",
+    "title": "Studio Iyan UV Mask Tool",
+    "copy": "`Studio Iyan UV Mask Tool` is a Unity `Editor-only` utility for selecting UV islands or individual UV faces from a renderer's material slot and exporting the selected region as a `PNG` mask texture. It is built for avatar, outfit, prop, and texture-mask workflows that need precise UV-region extraction directly inside Unity.",
     "cards": [
       {
         "title": "Best For",
-        "body": "VRChat avatars, outfits, props, and modular meshes with multiple material slots and UV islands that need mask textures."
+        "body": "VRChat avatars, outfits, props, and modular meshes that need precise texture masks from specific material-slot regions."
       },
       {
-        "title": "UV Selection Workflow",
-        "body": "Reads only the triangles that belong to the selected Material Slot, lets you select islands or faces, and exports the result directly as a PNG mask."
+        "title": "Island and Face Selection",
+        "body": "You can select by UV island for fast broad targeting, or switch to per-face selection when only a narrow or irregular UV area should be masked."
       },
       {
-        "title": "Preview and Export",
-        "body": "Combines UV preview, texture overlay, wireframe, Scene View highlighting, resolution presets, padding, and anti-aliasing in a single workflow."
+        "title": "Brush and Overlay Workflow",
+        "body": "Version `1.3.0` adds face-paint drag selection, preview texture overlay, wireframe color control, and a pause toggle for Scene overlay updates while brushing."
       },
       {
         "title": "Editor Only",
-        "body": "UV selection and PNG mask export are editor-side authoring steps. At runtime, only the exported textures are expected to be used."
+        "body": "The full workflow runs in the Unity Editor. At runtime, only the exported textures are expected to be used."
       }
     ],
     "meta": {
@@ -27,31 +27,36 @@
         "Mask",
         "VPM"
       ],
-      "body": "Designed for Unity 2022.3+, MeshRenderer or SkinnedMeshRenderer targets, meshes with usable UVs, and renderers that expose one or more Material Slots."
+      "body": "Designed for Unity `2022.3+`, `MeshRenderer` or `SkinnedMeshRenderer` targets, meshes with usable UV data, and renderers that expose one or more material slots."
     },
     "image": {
       "src": "./assets/wiki/vpm-tools/uv-mask-tool/en_01.png",
-      "alt": "UV Mask Tool English UI screenshot",
-      "caption": "You can assign a renderer, choose the target Material Slot, preview UVs, configure export settings, and write the selected area to a PNG mask from one window."
+      "alt": "Studio Iyan UV Mask Tool English UI screenshot",
+      "caption": "Assign a renderer, choose the material slot, inspect UVs, switch between island and face selection, and export the selected region as a mask texture from one window."
     },
     "sections": [
       {
         "title": "Key Features",
         "items": [
-          "Detects UV islands from only the submesh triangles used by the selected Material Slot.",
-          "Automatically detects available UV channels for the selected slot.",
-          "Supports UV preview, zoom, panning, wireframe display, and texture overlay preview.",
-          "Supports both island-based selection and individual face selection.",
-          "Can highlight the matching mesh triangles in the Scene View.",
-          "Exports PNG masks with resolution presets, custom resolution, alpha, padding, and anti-aliasing controls.",
-          "Supports Korean, English, and Japanese UI, and stores language settings in EditorPrefs."
+          "Material-slot based UV triangle detection",
+          "UV island generation from the selected slot only",
+          "Island selection and individual face selection",
+          "Brush workflow for face selection with `LMB` paint and `RMB` erase",
+          "Preview texture overlay inside the UV preview",
+          "Zoomable and pannable UV preview",
+          "Configurable `UV Wireframe Color`",
+          "Separate `Preview Color` and exported `Selected Color`",
+          "Optional Scene View highlight for the selected region",
+          "Optional toggle to pause Scene overlay updates while brushing",
+          "`PNG` export with preset or custom resolution, alpha, padding, and anti-aliasing",
+          "English / Korean / Japanese UI support with saved language preference"
         ]
       },
       {
         "title": "Requirements",
         "items": [
-          "Unity 2022.3 or newer",
-          "MeshRenderer or SkinnedMeshRenderer",
+          "Unity `2022.3` or newer",
+          "`MeshRenderer` or `SkinnedMeshRenderer`",
           "A mesh with usable UV data",
           "A renderer with one or more material slots",
           "Editor-only usage"
@@ -61,47 +66,64 @@
         "title": "Basic Usage",
         "ordered": true,
         "items": [
-          "Open Studio Iyan > Tools > UV Island Mask Generator.",
-          "Assign a MeshRenderer or SkinnedMeshRenderer in the renderer field.",
-          "Choose the Material Slot that should define the mask source area.",
-          "Select the desired UV islands or individual faces in the preview.",
-          "Configure resolution, alpha, colors, padding, and anti-aliasing.",
-          "Click Export PNG to save the selected UV region as a mask texture."
+          "Open `Studio Iyan > Tools > UV Island Mask Generator`.",
+          "Assign a `MeshRenderer` or `SkinnedMeshRenderer`.",
+          "Choose the target `Material Slot`.",
+          "Inspect the generated UV region in the preview.",
+          "Select UV islands or switch to face mode for finer control.",
+          "Use drag painting in face mode if needed.",
+          "Set export resolution, alpha, colors, padding, and anti-aliasing.",
+          "Click `Export PNG` to save the selected area as a mask texture."
+        ]
+      },
+      {
+        "title": "How It Works",
+        "items": [
+          "The tool reads the selected renderer.",
+          "It scans only the submesh triangles used by the chosen material slot.",
+          "Usable UV channels are detected automatically.",
+          "Connected UV triangles are grouped into islands.",
+          "You can select by island, by face, or by brush in face mode.",
+          "The selected region is rasterized into a `PNG` mask texture."
         ]
       },
       {
         "title": "Option Details",
         "entries": [
           {
-            "title": "Renderer / Material Slot",
-            "body": "Defines the working mesh target and the specific Material Slot whose submesh triangles should be scanned."
+            "title": "`Renderer` / `Material Slot`",
+            "body": "Defines the working mesh target and the material slot whose submesh triangles should be scanned for UV generation."
           },
           {
-            "title": "UV Preview / Preview Texture",
-            "body": "Shows the UV layout for the selected slot and lets you overlay either a manually assigned Texture2D or the current material's main texture."
+            "title": "`UV Preview` / `Preview Texture`",
+            "body": "Shows the UV layout for the selected slot and can overlay either a manually assigned texture or the current material's main texture."
           },
           {
-            "title": "Selection Mode / Select All / Invert / Clear",
-            "body": "Lets you switch between island mode and face mode, then quickly manage selection state with select-all, invert, or clear actions."
+            "title": "`Selection Mode`",
+            "body": "Supports island mode and face mode. Face mode in `1.3.0` supports drag-based painting and erasing instead of click-only selection."
           },
           {
-            "title": "Scene View Highlight",
-            "body": "Highlights the actual mesh triangles that correspond to the selected UV region directly inside the Scene View."
+            "title": "`Scene View Highlight`",
+            "body": "Highlights the actual mesh triangles that correspond to the selected UV region. For `SkinnedMeshRenderer`, the Scene overlay is aligned to the current pose / transform."
           },
           {
-            "title": "Export Settings",
-            "body": "Supports preset resolutions from 256 to 4096, custom resolution up to 8192, alpha output, background and selection colors, padding, and anti-aliasing options."
+            "title": "`Preview and Color Controls`",
+            "body": "Supports `UV Wireframe Color`, separate `Preview Color`, export `Selected Color`, optional preview texture overlay, and a pause toggle for Scene overlay updates while brushing."
+          },
+          {
+            "title": "`Export Settings`",
+            "body": "Supports preset resolutions `256`, `512`, `1024`, `2048`, `4096`, custom resolution up to `8192`, alpha, background and selected colors, padding, and anti-aliasing."
           }
         ]
       },
       {
         "title": "Tips",
         "items": [
-          "Choose the Material Slot first so the correct material region is isolated before selecting islands.",
-          "Island mode is fastest on clean UV layouts, while face mode is useful for small or irregular areas.",
-          "Preview Texture makes it much easier to confirm what region is being selected on top of the actual texture.",
-          "High resolutions combined with SSAA 4x can consume a lot of memory, so large exports should be handled carefully.",
-          "This is especially useful for outfit pieces, ornaments, skin zones, or shader masks on VRChat avatars."
+          "Choose the material slot first so the correct UV region is isolated before selection.",
+          "Island mode is fastest on clean UV layouts, while face mode is better for narrow or irregular mask regions.",
+          "Preview texture overlay makes it much easier to confirm selection against the real texture.",
+          "High resolutions and `SSAA 4x` can consume a lot of memory, so large exports should be handled carefully.",
+          "If Unity cannot read the mesh data correctly, confirm that the model import settings allow mesh data access."
         ]
       },
       {
@@ -109,23 +131,23 @@
         "entries": [
           {
             "title": "The mesh cannot be found",
-            "body": "For MeshRenderer targets, verify that a MeshFilter exists on the same GameObject and that sharedMesh is assigned. For SkinnedMeshRenderer, make sure sharedMesh is connected correctly."
+            "body": "For `MeshRenderer`, confirm that a `MeshFilter` exists on the same GameObject and that `sharedMesh` is assigned. For `SkinnedMeshRenderer`, verify that `sharedMesh` is connected correctly."
           },
           {
-            "title": "The Material Slot list is empty",
+            "title": "The material slot list is empty",
             "body": "Check that the renderer actually has material slots and that the selected submesh contains valid triangles. Empty submeshes may be skipped."
           },
           {
             "title": "No usable UV channels are detected",
-            "body": "Make sure the mesh contains UV data and that the selected Material Slot triangles have non-zero UV area."
+            "body": "Make sure the mesh contains UV data and that the selected material-slot triangles have non-zero UV area."
           },
           {
             "title": "UV islands are not generated",
-            "body": "Detection can fail if UVs overlap heavily or if only zero-area triangles exist. Try another Material Slot or review the automatically detected UV channel results."
+            "body": "Detection can fail if UVs overlap heavily or if only zero-area triangles exist. Try another material slot or review the automatically detected UV channel results."
           },
           {
-            "title": "Export PNG is disabled",
-            "body": "Confirm that a renderer and Material Slot are selected, at least one island or face is chosen, and the resolution value stays between 1 and 8192."
+            "title": "`Export PNG` is disabled",
+            "body": "Confirm that a renderer and material slot are selected, at least one island or face is chosen, and the resolution remains between `1` and `8192`."
           }
         ]
       },
@@ -134,13 +156,17 @@
         "entries": [
           {
             "title": "MIT License",
-            "body": "Iyan-Kim UV Mask Tool is distributed under the MIT License. It can be used in personal and commercial projects, and may be modified or redistributed under the license terms."
+            "body": "This project is released under the `MIT License`. It can be used, modified, and redistributed in both personal and commercial projects under the license terms."
           }
         ]
       },
       {
         "title": "Release Notes",
         "entries": [
+          {
+            "title": "1.3.0",
+            "body": "Added face selection mode for selecting individual UV triangles.\nAdded brush workflow for face selection with `LMB` drag to paint and `RMB` drag to erase.\nAdded preview texture overlay support in the UV preview.\nAdded configurable `UV Wireframe Color`.\nAdded separate `Preview Color` and export `Selected Color`.\nAdded an optional toggle to pause Scene overlay updates while brushing.\nImproved Scene View overlay alignment for current pose / transform on `SkinnedMeshRenderer`.\nImproved Scene overlay rendering for the current submesh selection.\nImproved UV preview interaction with zoom, pan, texture overlay, and face-level feedback.\nImproved brush candidate lookup using cached UV-space bins.\nNarrowed hover picking to cached candidate triangles.\nReduced Scene View repaints during brush interaction.\nChanged Scene View preview to use current posed geometry for better selection matching.\nChanged face selection from click-only to drag painting support.\nChanged the default `UV Wireframe Color` to black."
+          },
           {
             "title": "1.2.0",
             "body": "Changed the package display name to `Studio Iyan UV Mask Tool`.\nChanged the creator name to `Studio Iyan`.\nUpdated the email address."
@@ -151,14 +177,14 @@
           },
           {
             "title": "1.0.0",
-            "body": "Initial release.\nAdded the base workflow for selecting UV islands and exporting them as PNG masks in the Unity Editor.\nAdded mesh reading for MeshRenderer and SkinnedMeshRenderer targets.\nAdded submesh triangle reading by Material Slot.\nAdded UV channel detection and UV island generation.\nAdded UV preview and selection tools.\nAdded PNG export.\nAdded the MIT License and VPM package structure."
+            "body": "Initial release.\nAdded the base workflow for selecting UV islands and exporting them as PNG masks in the Unity Editor.\nAdded mesh reading for `MeshRenderer` and `SkinnedMeshRenderer` targets.\nAdded submesh triangle reading by material slot.\nAdded UV channel detection and UV island generation.\nAdded UV preview and selection tools.\nAdded PNG export.\nAdded the MIT License and VPM package structure."
           }
         ]
       }
     ],
     "leadAction": {
       "title": "Package VPM Listing",
-      "body": "Use this button to add the package-only VPM listing for Iyan-Kim UV Mask Tool to VCC. This registers the dedicated listing for this tool instead of the full Studio Iyan repository.",
+      "body": "Use this button to add the package-only VPM listing for `Studio Iyan UV Mask Tool` to VCC. This registers the dedicated listing for this tool instead of the full Studio Iyan repository.",
       "href": "vcc://vpm/addRepo?url=https://raw.githubusercontent.com/Yunhyuk-Jeong/iyan-vpm/main/uv-mask-tool.json",
       "label": "Add to VCC"
     }

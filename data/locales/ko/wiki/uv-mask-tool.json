@@ -1,24 +1,24 @@
 {
   "uvMaskTool": {
     "eyebrow": "VPM Tools",
-    "title": "UV Mask Tool",
-    "copy": "Renderer의 Material Slot을 기준으로 UV 섬을 선택하고, 선택한 영역을 PNG 마스크 텍스처로 내보낼 수 있는 Unity Editor 툴입니다. 복잡한 UV 영역을 외부 툴에서 다시 칠하지 않고도 Unity 안에서 필요한 영역만 빠르게 마스크로 만들 수 있습니다.",
+    "title": "Studio Iyan UV Mask Tool",
+    "copy": "`Studio Iyan UV Mask Tool`은 Renderer의 Material Slot 기준으로 UV 섬 또는 개별 UV Face를 선택하고, 선택된 영역을 `PNG` 마스크 텍스처로 내보내는 Unity `Editor-only` 유틸리티입니다. 아바타, 의상, 소품, 텍스처 마스크 작업에서 Unity 안에서 바로 정확한 UV 영역을 추출할 수 있도록 설계되어 있습니다.",
     "cards": [
       {
         "title": "Best For",
-        "body": "VRChat 아바타, 의상, 소품, 모듈형 메쉬처럼 여러 머티리얼 슬롯과 UV 섬을 가진 에셋의 텍스처 마스크 작업에 적합합니다."
+        "body": "특정 Material Slot 영역에서 정확한 텍스처 마스크가 필요한 VRChat 아바타, 의상, 소품, 모듈형 메쉬 작업에 적합합니다."
       },
       {
-        "title": "UV Selection Workflow",
-        "body": "Material Slot 기준 submesh 삼각형만 읽고, UV 섬 또는 Face 단위로 선택한 뒤 바로 PNG 마스크로 내보낼 수 있습니다."
+        "title": "Island and Face Selection",
+        "body": "UV Island 단위로 빠르게 선택할 수 있고, 더 좁거나 복잡한 영역이 필요할 때는 개별 Face 선택 모드로 전환할 수 있습니다."
       },
       {
-        "title": "Preview and Export",
-        "body": "UV 미리보기, 텍스처 오버레이, 와이어프레임, Scene View 하이라이트, 해상도 프리셋, 패딩, 안티앨리어싱까지 한 흐름에서 다룰 수 있습니다."
+        "title": "Brush and Overlay Workflow",
+        "body": "버전 `1.3.0`에서 Face 드래그 선택, Preview Texture 오버레이, Wireframe Color 조절, 브러시 작업 중 Scene Overlay 일시정지 옵션이 추가되었습니다."
       },
       {
         "title": "Editor Only",
-        "body": "UV 선택과 PNG 마스크 출력은 모두 Editor 제작 단계에서 수행되며, 런타임에서는 내보낸 텍스처를 사용하는 흐름을 전제로 합니다."
+        "body": "전체 작업 흐름은 Unity Editor 안에서만 동작합니다. 런타임에서는 내보낸 텍스처만 사용하는 구성을 전제로 합니다."
       }
     ],
     "meta": {
@@ -27,105 +27,127 @@
         "Mask",
         "VPM"
       ],
-      "body": "Unity 2022.3 이상, MeshRenderer 또는 SkinnedMeshRenderer, UV가 포함된 Mesh, Material Slot이 있는 Renderer를 기준으로 동작합니다."
+      "body": "Unity `2022.3+`, `MeshRenderer` 또는 `SkinnedMeshRenderer`, 유효한 UV 데이터를 가진 메쉬, 그리고 하나 이상의 Material Slot을 가진 Renderer를 기준으로 동작합니다."
     },
     "image": {
       "src": "./assets/wiki/vpm-tools/uv-mask-tool/ko_01.png",
-      "alt": "UV Mask Tool Korean UI screenshot",
-      "caption": "Renderer, Material Slot, UV 프리뷰, 선택 모드, 해상도와 색상 설정을 한 창에서 조정하고 PNG 마스크를 바로 내보낼 수 있습니다."
+      "alt": "Studio Iyan UV Mask Tool Korean UI screenshot",
+      "caption": "Renderer와 Material Slot을 지정하고, UV를 확인한 뒤 Island 또는 Face 모드로 선택하여 마스크 텍스처를 바로 내보낼 수 있습니다."
     },
     "sections": [
       {
         "title": "주요 기능",
         "items": [
-          "Material Slot 기준으로 해당 submesh 삼각형만 읽어 UV 섬을 생성합니다.",
-          "선택된 슬롯에서 사용 가능한 UV 채널을 자동 감지합니다.",
-          "UV 미리보기에서 줌, 패닝, 와이어프레임, 프리뷰 텍스처 표시를 지원합니다.",
-          "Island 선택과 Face 선택 모드를 모두 지원합니다.",
-          "선택한 UV 영역에 대응되는 삼각형을 Scene View에서 강조 표시할 수 있습니다.",
-          "PNG 마스크 내보내기, 해상도 프리셋, 사용자 지정 해상도, 알파 포함, 패딩, 안티앨리어싱을 지원합니다.",
-          "한국어, 영어, 일본어 UI를 지원하며 언어 설정은 EditorPrefs에 저장됩니다."
+          "Material Slot 기준 UV 삼각형 검출",
+          "선택한 슬롯만 기준으로 한 UV Island 생성",
+          "Island 선택과 개별 Face 선택 지원",
+          "Face 선택용 브러시 워크플로우 (`LMB` 드래그 칠하기 / `RMB` 드래그 지우기)",
+          "UV 미리보기 안의 Preview Texture 오버레이",
+          "줌 / 패닝이 가능한 UV 미리보기",
+          "조절 가능한 `UV Wireframe Color`",
+          "별도 `Preview Color`와 출력용 `Selected Color`",
+          "선택 영역용 Scene View 하이라이트",
+          "브러시 작업 중 Scene Overlay 업데이트 일시정지 옵션",
+          "프리셋 및 사용자 지정 해상도, 알파, 패딩, 안티에일리어싱을 지원하는 `PNG` 내보내기",
+          "영어 / 한국어 / 일본어 UI 및 언어 설정 저장"
         ]
       },
       {
         "title": "요구 사항",
         "items": [
-          "Unity 2022.3 이상",
-          "MeshRenderer 또는 SkinnedMeshRenderer",
-          "UV가 포함된 Mesh",
-          "Material Slot이 있는 Renderer",
-          "Unity Editor 전용 사용"
+          "Unity `2022.3` 이상",
+          "`MeshRenderer` 또는 `SkinnedMeshRenderer`",
+          "유효한 UV 데이터를 가진 메쉬",
+          "하나 이상의 Material Slot을 가진 Renderer",
+          "Editor 전용 사용"
         ]
       },
       {
         "title": "기본 사용 방법",
         "ordered": true,
         "items": [
-          "Studio Iyan > Tools > UV Island Mask Generator 메뉴를 엽니다.",
-          "렌더러 필드에 MeshRenderer 또는 SkinnedMeshRenderer를 지정합니다.",
-          "Material Slot에서 마스크를 만들고 싶은 슬롯을 선택합니다.",
-          "UV 미리보기에서 원하는 UV 섬 또는 Face를 선택합니다.",
-          "해상도, 알파 포함, 배경 색상, 선택 색상, 패딩, 안티앨리어싱을 설정합니다.",
-          "PNG 내보내기 버튼을 눌러 선택한 UV 영역을 마스크로 저장합니다."
+          "`Studio Iyan > Tools > UV Island Mask Generator`를 엽니다.",
+          "`MeshRenderer` 또는 `SkinnedMeshRenderer`를 지정합니다.",
+          "대상 `Material Slot`을 선택합니다.",
+          "미리보기에서 생성된 UV 영역을 확인합니다.",
+          "UV Island를 선택하거나, 더 세밀한 제어가 필요하면 Face 모드로 전환합니다.",
+          "필요하면 Face 모드에서 드래그 브러시를 사용합니다.",
+          "출력 해상도, 알파, 색상, 패딩, 안티에일리어싱을 설정합니다.",
+          "`Export PNG`를 눌러 선택 영역을 마스크 텍스처로 저장합니다."
+        ]
+      },
+      {
+        "title": "작동 방식",
+        "items": [
+          "선택한 Renderer를 읽습니다.",
+          "지정한 Material Slot이 사용하는 submesh 삼각형만 스캔합니다.",
+          "사용 가능한 UV 채널을 자동으로 감지합니다.",
+          "연결된 UV 삼각형을 기준으로 UV Island를 생성합니다.",
+          "Island 선택, Face 선택, Face 모드 브러시 선택이 가능합니다.",
+          "최종 선택 영역을 `PNG` 마스크로 래스터라이즈합니다."
         ]
       },
       {
         "title": "옵션 설명",
         "entries": [
           {
-            "title": "렌더러 / Material Slot",
-            "body": "작업 대상이 되는 MeshRenderer 또는 SkinnedMeshRenderer와, UV를 추출할 머티리얼 슬롯을 지정합니다. 선택한 슬롯에 대응되는 submesh 삼각형만 검사합니다."
+            "title": "`Renderer` / `Material Slot`",
+            "body": "작업 대상이 되는 메쉬와 UV를 추출할 Material Slot을 정의합니다. 선택된 슬롯의 submesh 삼각형만 검출 대상이 됩니다."
           },
           {
-            "title": "UV 미리보기 / Preview Texture",
-            "body": "선택한 Material Slot의 UV를 직접 확인하고 선택할 수 있는 영역입니다. 별도 Texture2D를 지정하거나 현재 머티리얼의 메인 텍스처를 가져와 UV 위에 겹쳐볼 수 있습니다."
+            "title": "`UV Preview` / `Preview Texture`",
+            "body": "선택된 슬롯의 UV 레이아웃을 보여주며, 별도로 지정한 텍스처나 현재 Material의 메인 텍스처를 오버레이로 표시할 수 있습니다."
           },
           {
-            "title": "Selection Mode / 전체 선택 / 반전 / 해제",
-            "body": "Island 모드와 Face 모드를 전환할 수 있고, 전체 선택, 반전, 해제를 통해 선택 상태를 빠르게 정리할 수 있습니다."
+            "title": "`Selection Mode`",
+            "body": "Island 모드와 Face 모드를 지원합니다. `1.3.0`의 Face 모드는 클릭만이 아니라 드래그 페인트 / 지우기 방식까지 지원합니다."
           },
           {
-            "title": "Scene View 하이라이트",
-            "body": "선택한 UV 영역에 대응되는 실제 메쉬 삼각형을 Scene View에서 선으로 강조 표시합니다."
+            "title": "`Scene View Highlight`",
+            "body": "선택한 UV 영역에 대응되는 실제 메쉬 삼각형을 Scene View에서 강조 표시합니다. `SkinnedMeshRenderer`의 경우 현재 포즈 / 트랜스폼 기준으로 정렬됩니다."
           },
           {
-            "title": "내보내기 설정",
-            "body": "해상도 프리셋(256 ~ 4096), 사용자 지정 해상도(최대 8192), 알파 포함, 배경/선택 색상, 패딩, 안티앨리어싱(Off / SSAA 2x / SSAA 4x)을 설정할 수 있습니다."
+            "title": "`Preview and Color Controls`",
+            "body": "`UV Wireframe Color`, 별도 `Preview Color`, 출력용 `Selected Color`, Preview Texture 오버레이, 그리고 브러시 작업 중 Scene Overlay 일시정지 옵션을 지원합니다."
+          },
+          {
+            "title": "`Export Settings`",
+            "body": "프리셋 해상도 `256`, `512`, `1024`, `2048`, `4096`, 사용자 지정 최대 `8192`, 알파 포함 여부, 배경 / 선택 색상, 패딩, 안티에일리어싱을 지원합니다."
           }
         ]
       },
       {
-        "title": "활용 팁",
+        "title": "사용 팁",
         "items": [
-          "Material Slot을 먼저 선택한 뒤 UV 섬을 고르면 원하는 머티리얼 영역만 정확히 마스크로 만들 수 있습니다.",
-          "UV 섬이 깔끔하게 나뉜 메쉬일수록 Island 모드가 편하고, 작은 일부 면만 필요하면 Face 모드가 유용합니다.",
-          "프리뷰 텍스처를 켜면 실제 텍스처 위에서 어떤 영역을 선택하는지 확인하기 쉽습니다.",
-          "고해상도와 SSAA 4x를 함께 사용하면 메모리 사용량이 커질 수 있으니 큰 출력에서는 주의가 필요합니다.",
-          "VRChat 아바타의 의상 부위, 장식, 피부 영역, 파츠별 쉐이더 마스크 제작에 특히 유용합니다."
+          "먼저 Material Slot을 선택해 원하는 영역만 고립시킨 다음 UV 선택을 시작하는 편이 안정적입니다.",
+          "깔끔한 UV 레이아웃이라면 Island 모드가 가장 빠르고, 좁거나 복잡한 영역은 Face 모드가 더 적합합니다.",
+          "Preview Texture 오버레이를 켜면 실제 텍스처 기준으로 선택 상태를 확인하기 훨씬 쉽습니다.",
+          "고해상도와 `SSAA 4x`를 함께 사용하면 메모리 사용량이 커질 수 있으므로 큰 출력에서는 주의가 필요합니다.",
+          "Unity가 메쉬 데이터를 제대로 읽지 못할 경우, 모델 임포트 설정에서 메쉬 데이터 접근이 가능한지 확인하는 편이 좋습니다."
         ]
       },
       {
         "title": "문제 해결",
         "entries": [
           {
-            "title": "렌더러를 선택했는데 메시를 찾을 수 없습니다",
-            "body": "MeshRenderer의 경우 같은 GameObject에 MeshFilter가 있는지, sharedMesh가 연결되어 있는지 확인하세요. SkinnedMeshRenderer도 sharedMesh가 정상인지 점검해야 합니다."
+            "title": "메쉬를 찾을 수 없습니다",
+            "body": "`MeshRenderer`라면 같은 GameObject에 `MeshFilter`가 존재하는지, `sharedMesh`가 연결되어 있는지 확인하세요. `SkinnedMeshRenderer`라면 `sharedMesh` 연결 상태를 확인해야 합니다."
           },
           {
-            "title": "Material Slot이 보이지 않습니다",
-            "body": "Renderer에 머티리얼 슬롯이 있는지, 그리고 해당 submesh에 유효한 삼각형이 있는지 확인하세요. 비어 있는 submesh는 목록에서 제외될 수 있습니다."
+            "title": "Material Slot 목록이 비어 있습니다",
+            "body": "Renderer에 실제로 Material Slot이 있는지, 그리고 선택된 submesh에 유효한 삼각형이 존재하는지 확인하세요. 빈 submesh는 건너뛸 수 있습니다."
           },
           {
-            "title": "사용 가능한 UV 채널이 없습니다",
-            "body": "Mesh에 UV가 포함되어 있는지, 선택한 Material Slot의 삼각형이 실제 UV 면적을 가지고 있는지 확인하세요."
+            "title": "사용 가능한 UV 채널이 감지되지 않습니다",
+            "body": "메쉬에 UV 데이터가 있는지, 그리고 선택한 Material Slot의 삼각형들이 0이 아닌 UV 면적을 가지는지 확인하세요."
           },
           {
-            "title": "UV 아일랜드가 생성되지 않습니다",
-            "body": "UV가 겹쳐 있거나 면적이 0인 삼각형만 있는 경우 감지가 실패할 수 있습니다. 다른 Material Slot이나 다른 UV 채널 결과도 확인해 보세요."
+            "title": "UV Island가 생성되지 않습니다",
+            "body": "UV가 심하게 겹치거나 0 면적 삼각형만 있는 경우 감지가 실패할 수 있습니다. 다른 Material Slot을 시도하거나 자동 감지된 UV 채널 결과를 다시 확인하세요."
           },
           {
-            "title": "PNG 내보내기가 비활성화됩니다",
-            "body": "Renderer와 Material Slot이 정상 선택되어 있는지, UV 섬 또는 Face를 하나 이상 선택했는지, 해상도 값이 1 이상 8192 이하인지 확인하세요."
+            "title": "`Export PNG`가 비활성화됩니다",
+            "body": "Renderer와 Material Slot이 선택되어 있고, UV Island 또는 Face가 하나 이상 선택되어 있으며, 해상도가 `1` 이상 `8192` 이하인지 확인하세요."
           }
         ]
       },
@@ -134,7 +156,7 @@
         "entries": [
           {
             "title": "MIT License",
-            "body": "Iyan-Kim UV Mask Tool은 MIT License로 배포됩니다. 개인 및 상업 프로젝트에서 사용할 수 있으며, 라이선스 조건에 따라 수정 및 재배포할 수 있습니다."
+            "body": "이 프로젝트는 `MIT License`로 배포됩니다. 라이선스 조건에 따라 개인 및 상업 프로젝트에서 사용, 수정, 재배포가 가능합니다."
           }
         ]
       },
@@ -142,23 +164,27 @@
         "title": "릴리즈 노트",
         "entries": [
           {
+            "title": "1.3.0",
+            "body": "개별 UV 삼각형을 선택할 수 있는 Face Selection Mode를 추가했습니다.\nFace Selection용 브러시 워크플로우를 추가했습니다 (`LMB` 드래그 칠하기 / `RMB` 드래그 지우기).\nUV Preview 안의 Preview Texture 오버레이 지원을 추가했습니다.\n조절 가능한 `UV Wireframe Color`를 추가했습니다.\n별도 `Preview Color`와 출력용 `Selected Color`를 추가했습니다.\n브러시 작업 중 Scene Overlay 업데이트를 일시정지하는 옵션을 추가했습니다.\n`SkinnedMeshRenderer`에서 현재 포즈 / 트랜스폼 기준으로 Scene Overlay 정렬을 개선했습니다.\n현재 submesh 선택에 대한 Scene Overlay 렌더링을 개선했습니다.\n줌, 패닝, 텍스처 오버레이, Face 단위 피드백을 포함한 UV Preview 상호작용을 개선했습니다.\n캐시된 UV 공간 bin을 활용하는 브러시 후보 검색을 개선했습니다.\nHover 피킹 대상을 캐시된 후보 삼각형으로 좁혔습니다.\n브러시 작업 중 Scene View repaint를 줄였습니다.\nScene View Preview가 현재 포즈 기준 지오메트리를 사용하도록 변경했습니다.\nFace Selection이 클릭 전용에서 드래그 페인트 지원 방식으로 바뀌었습니다.\n기본 `UV Wireframe Color`를 검은색으로 변경했습니다."
+          },
+          {
             "title": "1.2.0",
-            "body": "패키지 표시 이름을 `Studio Iyan UV Mask Tool`으로 변경했습니다.\n제작자 이름을 `Studio Iyan`으로 변경했습니다.\n이메일 주소가 변경되었습니다."
+            "body": "패키지 표시 이름을 `Studio Iyan UV Mask Tool`로 변경했습니다.\n제작자 이름을 `Studio Iyan`으로 변경했습니다.\n이메일 주소를 업데이트했습니다."
           },
           {
             "title": "1.1.0",
-            "body": "패키지 버전을 `1.1.0`으로 갱신했습니다.\n패키지 표시 이름을 `Iyan-Kim UV Mask Tool`로 정리했습니다.\nMaterial Slot 기반 UV 섬 선택 및 PNG 마스크 내보내기 워크플로우를 정리했습니다.\nRenderer 선택, Material Slot 선택, UV 미리보기, 선택 정보, 내보내기 설정 UI를 구성했습니다.\nIsland / Face 선택 모드를 지원합니다.\nScene View 선택 영역 하이라이트를 지원합니다.\n해상도 프리셋과 사용자 지정 해상도를 지원합니다.\n패딩, 알파 포함, 배경 색상, 선택 색상, 안티앨리어싱 옵션을 지원합니다.\n한국어, 영어, 일본어 UI와 언어 설정 저장을 지원합니다."
+            "body": "패키지 버전을 `1.1.0`으로 갱신했습니다.\n패키지 표시 이름을 `Iyan-Kim UV Mask Tool`로 정리했습니다.\nMaterial Slot 기반 UV Island 선택과 PNG 마스크 내보내기 워크플로우를 정리했습니다.\nRenderer 선택, Material Slot 선택, UV Preview, 선택 정보, Export Settings UI를 추가했습니다.\nIsland / Face 선택 모드를 지원합니다.\nScene View 삼각형 하이라이트를 지원합니다.\n프리셋 및 사용자 지정 해상도를 지원합니다.\n패딩, 알파, 색상, 안티에일리어싱 설정을 지원합니다.\n영어 / 한국어 / 일본어 UI와 언어 설정 저장을 지원합니다."
           },
           {
             "title": "1.0.0",
-            "body": "최초 릴리즈입니다.\nUnity Editor에서 UV 섬을 선택하고 PNG 마스크로 내보내는 기본 구조를 추가했습니다.\nMeshRenderer와 SkinnedMeshRenderer의 Mesh를 읽는 기능을 추가했습니다.\nMaterial Slot 기준으로 submesh 삼각형을 읽는 기능을 추가했습니다.\nUV 채널 감지 및 UV 섬 생성 기능을 추가했습니다.\nUV 미리보기와 선택 기능을 추가했습니다.\nPNG 마스크 내보내기 기능을 추가했습니다.\nMIT License와 VPM 패키지 구조를 추가했습니다."
+            "body": "초기 릴리즈입니다.\nUnity Editor에서 UV Island를 선택하고 PNG 마스크로 내보내는 기본 워크플로우를 추가했습니다.\n`MeshRenderer`와 `SkinnedMeshRenderer` 대상 메쉬 읽기를 추가했습니다.\nMaterial Slot 기준 submesh 삼각형 읽기를 추가했습니다.\nUV 채널 감지와 UV Island 생성을 추가했습니다.\nUV Preview와 선택 도구를 추가했습니다.\nPNG Export를 추가했습니다.\nMIT License와 VPM 패키지 구조를 추가했습니다."
           }
         ]
       }
     ],
     "leadAction": {
       "title": "Package VPM Listing",
-      "body": "이 버튼을 누르면 UV Mask Tool 전용 VPM listing이 VCC에 추가됩니다. 전체 Studio Iyan 저장소가 아니라, 이 툴만을 위한 개별 listing을 등록합니다.",
+      "body": "이 버튼을 누르면 `Studio Iyan UV Mask Tool` 전용 VPM listing이 VCC에 추가됩니다. 전체 Studio Iyan 저장소가 아니라, 이 툴만을 위한 개별 listing을 등록합니다.",
       "href": "vcc://vpm/addRepo?url=https://raw.githubusercontent.com/Yunhyuk-Jeong/iyan-vpm/main/uv-mask-tool.json",
       "label": "Add to VCC"
     }
