@@ -1,5 +1,20 @@
 [
 	{
+		"date": "2026-05-07",
+		"address": "https://foxyplay.booth.pm/items/8326219",
+		"shopName": "FOXYPLAY",
+		"productName": "Adrian-Bikini",
+		"tag": "VRChat Gimmick",
+		"platform": "VRChat",
+		"category": "Gimmick",
+		"builtWith": "Unity",
+		"description": {
+			"ko": "Adrian-Bikini는 입의 끈을 잡아당겨 비키니 상의의 움직임을 제어할 수 있는 기믹이 포함된 의상입니다.",
+			"en": "Adrian-Bikini is an outfit featuring a gimmick that lets you control the movement of the bikini top by pulling the string with your mouth.",
+			"ja": "Adrian-Bikiniは、口元の紐を引っ張ることでビキニトップの動きを制御できるギミックを搭載した衣装です。"
+		}
+	},
+	{
 		"date": "2026-04-30",
 		"address": "https://milktank-booth.booth.pm/items/8286800",
 		"shopName": "Studio Iyan",
