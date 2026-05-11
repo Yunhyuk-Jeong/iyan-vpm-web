@@ -1636,6 +1636,12 @@ h1 {
   --card-accent-border: rgba(149, 107, 255, 0.28);
 }
 
+.product-card--game-mods {
+  --card-accent: #74d7b2;
+  --card-accent-soft: rgba(70, 192, 145, 0.18);
+  --card-accent-border: rgba(70, 192, 145, 0.28);
+}
+
 body.modal-open {
   overflow: hidden;
 }

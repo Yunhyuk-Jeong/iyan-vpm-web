@@ -237,11 +237,7 @@ const applyFilter = (filterValue) => {
 
 	getProjectCards().forEach((card) => {
 		const cardType = card.dataset.type;
-		const matchesFilter =
-			filterValue === 'all' ||
-			(filterValue === 'tool' && cardType === 'tool') ||
-			(filterValue === 'unity-shader' && cardType === 'unity-shader') ||
-			(filterValue === 'vrchat-gimmick' && cardType === 'vrchat-gimmick');
+		const matchesFilter = filterValue === 'all' || cardType === filterValue;
 		card.dataset.matchesFilter = String(matchesFilter);
 	});
 

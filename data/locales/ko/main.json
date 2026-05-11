@@ -21,10 +21,11 @@
     "all": "All",
     "vrchat-gimmick": "VRChat Gimmick",
     "tool": "Tool",
-    "unity-shader": "Unity Shader"
+    "unity-shader": "Unity Shader",
+    "game-mods": "Game Mods"
   },
   "modal": {
-    "visit": "BOOTH 방문",
+    "visit": "Visit Page",
     "close": "닫기"
   },
   "status": {
@@ -36,11 +37,13 @@
     "VRChat Gimmick": "VRChat Gimmick",
     "Tool": "Tool",
     "Unity Tool": "Tool",
-    "Unity Shader": "Unity Shader"
+    "Unity Shader": "Unity Shader",
+    "Game Mods": "Game Mods"
   },
   "categories": {
     "Gimmick": "Gimmick",
     "Tool": "Tool",
-    "Shader": "Shader"
+    "Shader": "Shader",
+    "Mods": "Mods"
   }
 }

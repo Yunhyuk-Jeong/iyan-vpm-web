@@ -53,6 +53,10 @@ const buildFallbackSummary = (project) => {
     return `${project.productName} is a Unity shader release published through ${project.shopName}. Add a short summary here to explain the visual target, rendering workflow, and what this shader is built for.`;
   }
 
+  if (project.tag === "Game Mods") {
+    return `${project.productName} is a game mod release published through ${project.shopName}. Add a short summary here to explain the target game, the assets or systems it changes, and the player experience it is designed for.`;
+  }
+
   return `${project.productName} is a VRChat gimmick release published through ${project.shopName}. Add a short summary here to explain the core interaction, technical focus, and what makes this work stand out.`;
 };
 
@@ -73,6 +77,14 @@ const inferMeta = (tag) => {
     };
   }
 
+  if (tag === "Game Mods") {
+    return {
+      platform: "Game",
+      category: "Mods",
+      builtWith: "Engine",
+    };
+  }
+
   return {
     platform: "VRChat",
     category: "Gimmick",
@@ -83,6 +95,9 @@ const inferMeta = (tag) => {
 const normalizeProject = (project, index, thumbnailCache) => {
   const normalizedTag = normalizeTag(project.tag || "VRChat Gimmick");
   const fallbackMeta = inferMeta(normalizedTag);
+  const resolvedImage = project.manualImage
+    || thumbnailCache[project.address]
+    || PROJECT_PLACEHOLDER_IMAGE;
 
   return {
     id: `${slugifyTag(project.shopName || "project")}-${slugifyTag(project.productName || String(index + 1))}-${index + 1}`,
@@ -98,7 +113,7 @@ const normalizeProject = (project, index, thumbnailCache) => {
       project.shopName,
       project.productName,
     ),
-    image: thumbnailCache[project.address] || PROJECT_PLACEHOLDER_IMAGE,
+    image: resolvedImage,
     date: project.date || "",
     parsedDate: parseProjectDate(project.date),
     meta: {
@@ -165,6 +180,8 @@ export const createProjectCard = (project) => {
     card.classList.add("product-card--tool");
   } else if (project.typeSlug === "unity-shader") {
     card.classList.add("product-card--unity-shader");
+  } else if (project.typeSlug === "game-mods") {
+    card.classList.add("product-card--game-mods");
   }
 
   card.href = project.address;

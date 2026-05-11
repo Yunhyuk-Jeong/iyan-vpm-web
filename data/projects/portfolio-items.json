@@ -1,5 +1,21 @@
 [
 	{
+		"date": "2026-05-11",
+		"address": "https://www.nexusmods.com/slaythespire2/mods/858?tab=description",
+		"shopName": "Team JCI",
+		"productName": "STS2 Booba Necrobinder",
+		"tag": "Game Mods",
+		"platform": "Slay The Spire II",
+		"category": "Mods",
+		"builtWith": "Godot",
+		"manualImage": "./assets/projects/booba-necrobinder/cover.png",
+		"description": {
+			"ko": "Booba Necrobinder Mod는 Slay the Spire 2의 Necrobinder 캐릭터를 위한 비주얼 교체 모드입니다.\n전투 비주얼, 상점 비주얼, 휴식 지점 연출, 캐릭터 선택 아트, 그리고 관련 UI 에셋 일부를 커스텀 외형으로 교체하면서도 게임플레이 자체는 변경하지 않습니다.",
+			"en": "Booba Necrobinder Mod is a visual replacement mod for Slay the Spire 2's Necrobinder character.\nIt replaces Necrobinder's combat visuals, merchant visuals, rest-site presentation, character select art, and several related UI assets with a custom appearance while keeping gameplay unchanged.",
+			"ja": "Booba Necrobinder Modは、Slay the Spire 2 の Necrobinder キャラクター向けビジュアル置き換えモッドです。\n戦闘ビジュアル、商人ビジュアル、休憩地点の演出、キャラクター選択アート、および関連 UI アセットの一部をカスタム外観へ置き換えつつ、ゲームプレイ自体は変更しません。"
+		}
+	},
+	{
 		"date": "2026-05-07",
 		"address": "https://foxyplay.booth.pm/items/8326219",
 		"shopName": "FOXYPLAY",

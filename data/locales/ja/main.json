@@ -13,18 +13,19 @@
   "portfolio": {
     "kicker": "Portfolio",
     "title": "VRChat Gimmicks & Unity Tools",
-    "copy": "これまで制作してきたプロジェクト、商品、ギミック、ツールをまとめたスペースです。",
+    "copy": "これまで制作してきたプロジェクト、商品、ギミック、ツールをまとめたアーカイブです。",
     "showMore": "もっと見る",
-    "showLess": "折りたたむ"
+    "showLess": "閉じる"
   },
   "filters": {
     "all": "All",
     "vrchat-gimmick": "VRChat Gimmick",
     "tool": "Tool",
-    "unity-shader": "Unity Shader"
+    "unity-shader": "Unity Shader",
+    "game-mods": "Game Mods"
   },
   "modal": {
-    "visit": "BOOTHを見る",
+    "visit": "Visit Page",
     "close": "閉じる"
   },
   "status": {
@@ -36,11 +37,13 @@
     "VRChat Gimmick": "VRChat Gimmick",
     "Tool": "Tool",
     "Unity Tool": "Tool",
-    "Unity Shader": "Unity Shader"
+    "Unity Shader": "Unity Shader",
+    "Game Mods": "Game Mods"
   },
   "categories": {
     "Gimmick": "Gimmick",
     "Tool": "Tool",
-    "Shader": "Shader"
+    "Shader": "Shader",
+    "Mods": "Mods"
   }
 }
