@@ -1,5 +1,20 @@
 [
 	{
+		"date": "2026-05-20",
+		"address": "https://minuel.booth.pm/items/8385480",
+		"shopName": "MINUEL",
+		"productName": "Aoi Kiba",
+		"tag": "VRChat Gimmick",
+		"platform": "VRChat",
+		"category": "Gimmick",
+		"builtWith": "Unity",
+		"description": {
+			"ko": "Aoi Kiba는 세 위치에서 칼을 뽑고 다시 넣을 수 있는 기믹 시스템입니다.\n칼을 어느 손으로 잡는지에 따라 상태가 다르게 전환되며, 머리 뒤의 나비에는 자연스러운 애니메이션, 이미션, 파티클 효과를 적용해 더 아름답고 생동감 있는 연출을 구성했습니다.",
+			"en": "Aoi Kiba is a gimmick system that allows the sword to be drawn from and returned to three different positions.\nIts state changes depending on which hand holds the sword, and the butterfly behind the head is enhanced with natural animation, emission, and particle effects to create a more elegant and lively presentation.",
+			"ja": "Aoi Kibaは、3か所の位置から刀を抜き差しできるギミックシステムです。\nどちらの手で刀を持つかによって状態が切り替わり、頭の後ろの蝶には自然なアニメーション、エミッション、パーティクル効果を加えることで、より美しく生き生きとした演出を実現しています。"
+		}
+	},
+	{
 		"date": "2026-05-11",
 		"address": "https://www.nexusmods.com/slaythespire2/mods/858?tab=description",
 		"shopName": "Team JCI",
