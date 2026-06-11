@@ -1,5 +1,35 @@
 [
 	{
+		"date": "2026-06-08",
+		"address": "https://milktank-booth.booth.pm/items/8480722",
+		"shopName": "Studio Iyan",
+		"productName": "FaceBridge",
+		"tag": "Tool",
+		"platform": "Unity",
+		"category": "Tool",
+		"builtWith": "C#",
+		"description": {
+			"ko": "FaceBridge는 Unity 에디터 상에서 VRCFT와 VRChat의 가상 연결 환경을 구성하고, OSC를 통해 Facial Tracking 기능을 테스트할 수 있도록 설계된 개발 지원 툴입니다.",
+			"en": "FaceBridge is a development support tool designed to create a virtual connection environment between VRCFT and VRChat within the Unity Editor, enabling Facial Tracking features to be tested via OSC.",
+			"ja": "FaceBridgeは、Unityエディター上でVRCFTとVRChatの仮想接続環境を構築し、OSCを通じてFacial Tracking機能をテストできるように設計された開発支援ツールです。"
+		}
+	},
+	{
+		"date": "2026-05-28",
+		"address": "https://noirvail029.booth.pm/items/8419116",
+		"shopName": "NOIRVAIL",
+		"productName": "COZYOVER",
+		"tag": "VRChat Gimmick",
+		"platform": "VRChat",
+		"category": "Gimmick",
+		"builtWith": "Unity",
+		"description": {
+			"ko": "COZYOVER에서는 캐릭터 의상과 소품에 기반한 인터랙션 시스템을 구축했습니다.\n상의의 끈을 잡아당겨 의상이 자연스럽게 풀리는 기믹과, 손에 든 전자담배를 통해 베이핑 연출이 가능한 기능을 구현했습니다.",
+			"en": "In COZYOVER, I developed an interaction system based on the character’s outfit and props.\nThis includes a gimmick where pulling the string on the top naturally loosens the outfit, as well as a vaping effect using the electronic cigarette held in the character’s hand.",
+			"ja": "COZYOVERでは、キャラクターの衣装や小物を活用したインタラクションシステムを構築しました。\nトップスの紐を引くことで衣装が自然にほどけるギミックや、手に持った電子タバコを使用してベイピング演出を行える機能を実装しました。"
+		}
+	},
+	{
 		"date": "2026-05-20",
 		"address": "https://minuel.booth.pm/items/8385480",
 		"shopName": "MINUEL",

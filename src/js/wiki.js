@@ -25,6 +25,7 @@ const LOCALE_BUNDLES = [
 	'wiki/tools-overview',
 	'wiki/vsf-avatar-converter',
 	'wiki/sdf-generator',
+	'wiki/facebridge',
 	'wiki/blender-tools-overview',
 	'wiki/iyan-tools',
 	'wiki/notes',
@@ -228,7 +229,7 @@ const GROUP_CHILDREN = {
 		'prefab-material-remapper',
 		'uv-mask-tool',
 	],
-	'paid-tools': ['tools-overview', 'vsf-avatar-converter', 'sdf-generator'],
+	'paid-tools': ['tools-overview', 'vsf-avatar-converter', 'sdf-generator', 'facebridge'],
 	'blender-tools': ['blender-tools-overview', 'iyan-tools'],
 };
 
