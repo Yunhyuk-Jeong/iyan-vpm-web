@@ -1,5 +1,20 @@
 [
 	{
+		"date": "2026-06-12",
+		"address": "https://monvie.booth.pm/items/8501193",
+		"shopName": "MONVIE",
+		"productName": "Midnight Kagura",
+		"tag": "VRChat Gimmick",
+		"platform": "VRChat",
+		"category": "Gimmick",
+		"builtWith": "Unity",
+		"description": {
+			"ko": "Midnight Kagura에서는 가면이 디졸브 효과를 통해 자연스럽게 나타나고 사라지는 기믹, 손과 얼굴 사이를 오가는 가면 연출, 우산과 담배 파이프를 온오프할 수 있는 소품 기믹을 구현하였습니다.",
+			"en": "In Midnight Kagura, I implemented a mask gimmick that naturally appears and disappears through a dissolve effect, a mask animation that moves between the hand and the face, and prop gimmicks that allow the umbrella and smoking pipe to be toggled on and off.",
+			"ja": "Midnight Kaguraでは、ディゾルブ効果によって仮面が自然に現れたり消えたりするギミック、手と顔の間を行き来する仮面の演出、傘や煙管をオン・オフできる小物ギミックを実装しました。"
+		}
+	},
+	{
 		"date": "2026-06-08",
 		"address": "https://milktank-booth.booth.pm/items/8480722",
 		"shopName": "Studio Iyan",
