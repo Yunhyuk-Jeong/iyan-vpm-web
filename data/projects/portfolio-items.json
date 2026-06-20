@@ -1,5 +1,20 @@
 [
 	{
+		"date": "2026-06-16",
+		"address": "https://mashiro-vrc.booth.pm/items/8516197",
+		"shopName": "mashiro",
+		"productName": "Frill Seraph",
+		"tag": "VRChat Gimmick",
+		"platform": "VRChat",
+		"category": "Gimmick",
+		"builtWith": "Unity",
+		"description": {
+			"ko": "Frill Seraph에서는 파티클 시스템을 활용하여 자연스럽고 아름다운 헤일로 연출을 구현하였으며, Sprite Sheet 기반 텍스처를 애니메이션처럼 렌더링하는 커스텀 쉐이더를 제작해 헤일로 위를 뛰어다니는 토끼 연출을 구현하였습니다.",
+			"en": "In Frill Seraph, I created a natural and elegant halo effect using the particle system. I also developed a custom shader that renders Sprite Sheet-based textures as animated visuals, implementing a rabbit animation that runs across the halo.",
+			"ja": "Frill Seraphでは、パーティクルシステムを活用して自然で美しいヘイロー演出を実装しました。また、Sprite Sheetベースのテクスチャをアニメーションのようにレンダリングするカスタムシェーダーを制作し、ヘイローの上を跳ね回るウサギの演出を実装しました。"
+		}
+	},
+	{
 		"date": "2026-06-12",
 		"address": "https://monvie.booth.pm/items/8501193",
 		"shopName": "MONVIE",
