@@ -1,5 +1,35 @@
 [
 	{
+		"date": "2026-08-12",
+		"address": "https://minuel.booth.pm/items/8707867",
+		"shopName": "MINUEL",
+		"productName": "Red Shift",
+		"tag": "VRChat Gimmick",
+		"platform": "VRChat",
+		"category": "Gimmick",
+		"builtWith": "Unity",
+		"description": {
+			"ko": "Red Shift는 검을 자연스럽게 뽑을 수 있으며, 검을 뽑은 정도에 따라 서로 다른 효과가 발동합니다. 또한 검기를 생성할 수 있습니다.",
+			"en": "Red Shift allows you to draw the sword naturally, triggering different effects depending on how far it is drawn. You can also unleash energy slashes from the blade.",
+			"ja": "Red Shiftでは、剣を自然に抜くことができ、どこまで抜いたかに応じて異なるエフェクトが発動します。また、剣気を放つこともできます。"
+		}
+	},
+	{
+		"date": "2026-07-10",
+		"address": "https://zrpt.booth.pm/items/8600314",
+		"shopName": "029 Shop",
+		"productName": "WaveShift",
+		"tag": "VRChat Gimmick",
+		"platform": "VRChat",
+		"category": "Gimmick",
+		"builtWith": "Unity",
+		"description": {
+			"ko": "Wave Shift는 PhysBone을 활용하여 옷을 자연스럽게 벗을 수 있는 기믹을 구현했습니다.",
+			"en": "Wave Shift features a gimmick that utilizes PhysBones to allow clothing to be removed naturally.",
+			"ja": "Wave Shiftでは、PhysBoneを活用することで、衣装を自然に脱がせることができるギミックを実装しています."
+		}
+	},
+	{
 		"date": "2026-06-16",
 		"address": "https://mashiro-vrc.booth.pm/items/8516197",
 		"shopName": "mashiro",
